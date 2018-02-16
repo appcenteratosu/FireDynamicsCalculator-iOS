@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343F5DE201EBA1A0090CBB6 /* Conversion.swift */; };
 		7379945620154EBC0076F570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379945520154EBC0076F570 /* AppDelegate.swift */; };
-		7379945820154EBC0076F570 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379945720154EBC0076F570 /* ViewController.swift */; };
 		7379945B20154EBC0076F570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7379945920154EBC0076F570 /* Main.storyboard */; };
 		7379945D20154EBC0076F570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7379945C20154EBC0076F570 /* Assets.xcassets */; };
 		7379946020154EBC0076F570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7379945E20154EBC0076F570 /* LaunchScreen.storyboard */; };
+		7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379946720154F820076F570 /* ReportListTableViewController.swift */; };
+		7379946A201551550076F570 /* FlashoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73799469201551550076F570 /* FlashoverViewController.swift */; };
+		7379946D201559750076F570 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379946C201559750076F570 /* RoundedButton.swift */; };
+		99C8ABC4EBBADD23A13447CD /* Pods_FireDynamicsCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireDynamicsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7343F5DE201EBA1A0090CBB6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		7379945220154EBC0076F570 /* FireDynamicsCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireDynamicsCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7379945520154EBC0076F570 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7379945720154EBC0076F570 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7379945A20154EBC0076F570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7379945C20154EBC0076F570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7379945F20154EBC0076F570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7379946120154EBC0076F570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7379946720154F820076F570 /* ReportListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListTableViewController.swift; sourceTree = "<group>"; };
+		73799469201551550076F570 /* FlashoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashoverViewController.swift; sourceTree = "<group>"; };
+		7379946C201559750076F570 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9EA1E6FDE208FA4483FEF2CE /* Pods-FireDynamicsCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C8ABC4EBBADD23A13447CD /* Pods_FireDynamicsCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34478C833460E1F5E71CDAE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EA1E6FDE208FA4483FEF2CE /* Pods-FireDynamicsCalculator.debug.xcconfig */,
+				A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		734075DDBFD0DF32CE1C347A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7379944920154EBC0076F570 = {
 			isa = PBXGroup;
 			children = (
 				7379945420154EBC0076F570 /* FireDynamicsCalculator */,
 				7379945320154EBC0076F570 /* Products */,
+				34478C833460E1F5E71CDAE7 /* Pods */,
+				734075DDBFD0DF32CE1C347A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +85,24 @@
 			isa = PBXGroup;
 			children = (
 				7379945520154EBC0076F570 /* AppDelegate.swift */,
-				7379945720154EBC0076F570 /* ViewController.swift */,
+				7379946C201559750076F570 /* RoundedButton.swift */,
+				7343F5DE201EBA1A0090CBB6 /* Conversion.swift */,
 				7379945920154EBC0076F570 /* Main.storyboard */,
+				7379946720154F820076F570 /* ReportListTableViewController.swift */,
+				7379946B201551590076F570 /* Calculator Controllers */,
 				7379945C20154EBC0076F570 /* Assets.xcassets */,
 				7379945E20154EBC0076F570 /* LaunchScreen.storyboard */,
 				7379946120154EBC0076F570 /* Info.plist */,
 			);
 			path = FireDynamicsCalculator;
+			sourceTree = "<group>";
+		};
+		7379946B201551590076F570 /* Calculator Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				73799469201551550076F570 /* FlashoverViewController.swift */,
+			);
+			path = "Calculator Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7379946420154EBC0076F570 /* Build configuration list for PBXNativeTarget "FireDynamicsCalculator" */;
 			buildPhases = (
+				DE07E938A06301BD084000F0 /* [CP] Check Pods Manifest.lock */,
 				7379944E20154EBC0076F570 /* Sources */,
 				7379944F20154EBC0076F570 /* Frameworks */,
 				7379945020154EBC0076F570 /* Resources */,
+				DAAB1A60E1343894C12AEFD1 /* [CP] Embed Pods Frameworks */,
+				C818CCEB2B7A170CED78D840 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +175,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C818CCEB2B7A170CED78D840 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAAB1A60E1343894C12AEFD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE07E938A06301BD084000F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FireDynamicsCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7379944E20154EBC0076F570 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7379945820154EBC0076F570 /* ViewController.swift in Sources */,
+				7379946A201551550076F570 /* FlashoverViewController.swift in Sources */,
+				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				7379945620154EBC0076F570 /* AppDelegate.swift in Sources */,
+				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
+				7379946D201559750076F570 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +373,7 @@
 		};
 		7379946520154EBC0076F570 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EA1E6FDE208FA4483FEF2CE /* Pods-FireDynamicsCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +389,7 @@
 		};
 		7379946620154EBC0076F570 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
