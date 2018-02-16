@@ -67,7 +67,9 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func selectMaterial(_ sender: UIButton) {
         self.view.endEditing(true)
-        setDataSource(data: materials.toStringArray())
+        let options = materials.toStringArray()
+        let ops = options.sorted()
+        setDataSource(data: ops)
         self.showPicker(tag: sender.tag)
     }
     
@@ -239,7 +241,7 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet var picker: UIPickerView!
     var pickerItems: [String] = []
     var lengths = ["Please Select a Value", "cm", "feet", "inches", "meters", "mm"]
-    var materials = [
+    var materials = ["* Please Select an Option *": 0.0,
                      "Aerated Concrete": 0.00026,
                      "Alumina Silicate Block": 0.00014,
                      "Aluminum (pure)": 0.206,
@@ -249,16 +251,13 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                      "Chipboard": 0.00015,
                      "Concrete": 0.0016,
                      "Expended Polystyrene": 0.000034,
-        
                      "Fiber Insulation Board": 0.00053,
                      "Glass Fiber Insulation": 0.000037,
                      "Glass Plate": 0.00076,
-        
                      "Gypsum Board": 0.00017,
                      "Plasterboard": 0.00016,
                      "Plywood": 0.00012,
-        
-                     "Steel (0.5% Carbon)": 0.054]
+                     "Steel": 0.054]
     var finalUnits = ["Please Select a Value", "kW", "Btu / sec"]
     
     func setDataSource(data: [String]) {

@@ -14,7 +14,12 @@ class RoundedButton: UIButton {
         super.awakeFromNib()
         
         self.layer.cornerRadius = 5
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.white.cgColor
         
+        if self.titleLabel?.text == "Calculate" {
+            self.layer.borderWidth = 0
+        }
     }
 
 }
