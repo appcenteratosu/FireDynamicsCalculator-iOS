@@ -9,7 +9,7 @@
 import Foundation
 
 class Conversion {
-    func length(value: Double, to unit: Units.Length) -> Double {
+    func length(value: Double, from unit: Units.Length) -> Double {
         switch unit {
         case .cm:
             return value * 0.01
@@ -262,10 +262,13 @@ class Conversion {
 }
 
 
-
-
-
-
+extension Double {
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
 
 
 
