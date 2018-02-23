@@ -701,6 +701,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="GGA-MD-iNh" id="OVc-3n-uGv"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ2-jv-6fJ">
                                                 <rect key="frame" x="263" y="0.0" width="80" height="30"/>
@@ -711,6 +714,9 @@
                                                 <state key="normal" title="kW" backgroundImage="default">
                                                     <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changeHRR_Units:" destination="GGA-MD-iNh" eventType="touchUpInside" id="CVR-iT-xO5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -732,6 +738,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="GGA-MD-iNh" id="gmR-SO-m7X"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOJ-g4-HL2">
                                                 <rect key="frame" x="263" y="0.0" width="80" height="30"/>
@@ -742,6 +751,9 @@
                                                 <state key="normal" title="m" backgroundImage="default">
                                                     <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changeDiameter_Units:" destination="GGA-MD-iNh" eventType="touchUpInside" id="kPf-UR-H9y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -769,6 +781,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="GGA-MD-iNh" id="GtQ-qW-UwC"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4b-9E-L2u">
                                                 <rect key="frame" x="263" y="0.0" width="80" height="30"/>
@@ -779,6 +794,9 @@
                                                 <state key="normal" title="m²" backgroundImage="default">
                                                     <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changeArea_Units:" destination="GGA-MD-iNh" eventType="touchUpInside" id="hXP-Nq-oRd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -817,6 +835,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WeC-1x-Lmo"/>
                     </view>
+                    <connections>
+                        <outlet property="HRR_TF" destination="DlH-Jo-dgx" id="ea5-It-z9d"/>
+                        <outlet property="HRR_Units" destination="cZ2-jv-6fJ" id="TSo-u9-Qav"/>
+                        <outlet property="area_TF" destination="riB-g7-xhv" id="7zK-um-Xsz"/>
+                        <outlet property="area_Units" destination="z4b-9E-L2u" id="P07-5J-x2u"/>
+                        <outlet property="diameterTF" destination="DDe-ra-eHV" id="EzG-hE-Moh"/>
+                        <outlet property="diameter_Units" destination="aOJ-g4-HL2" id="ddW-G3-ikf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZ2-Fz-oX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
