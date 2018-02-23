@@ -22,7 +22,7 @@ class ReportListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    let list = ["Flashover", "Heat Release Rate", "Self Heating", "Radiation", "Conduction", "Radiation"]
+    let list = ["Flashover", "Heat Release Rate", "Flame Height", "Radiation", "Conduction", "Radiation"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -50,8 +50,8 @@ class ReportListTableViewController: UITableViewController {
            performSegue(withIdentifier: "flashover", sender: self)
         case "Heat Release Rate":
             performSegue(withIdentifier: "HRR", sender: self)
-        case "Self Heating":
-            performSegue(withIdentifier: "flashover", sender: self)
+        case "Flame Height":
+            performSegue(withIdentifier: "flameHeight", sender: self)
         case "Radiation":
             performSegue(withIdentifier: "flashover", sender: self)
         case "Conduction":
