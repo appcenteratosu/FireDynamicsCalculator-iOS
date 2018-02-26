@@ -24,7 +24,24 @@ class Conversion {
         }
     }
     
-    func volume(value: Double, to unit: Units.Volume) -> Double {
+    func getLengthUnits(from: String) -> Units.Length {
+        switch from {
+        case "cm":
+            return .cm
+        case "ft":
+            return .feet
+        case "in":
+            return .inches
+        case "m":
+            return .meters
+        case "mm":
+            return .mm
+        default:
+            return .meters
+        }
+    }
+    
+    func volume(value: Double, from unit: Units.Volume) -> Double {
         switch unit {
         case .ftCub:
             return value * 0.0283168
@@ -39,7 +56,7 @@ class Conversion {
         }
     }
     
-    func density(value: Double, to unit: Units.Density) -> Double {
+    func density(value: Double, from unit: Units.Density) -> Double {
         switch unit {
         case .kgCubM:
             return value * 1.0
@@ -48,7 +65,7 @@ class Conversion {
         }
     }
     
-    func energy(value: Double, to unit: Units.Energy) -> Double {
+    func energy(value: Double, from unit: Units.Energy) -> Double {
         switch unit {
         case .BtuSec:
             return value * 1.055055852
@@ -57,7 +74,18 @@ class Conversion {
         }
     }
     
-    func area(value: Double, to unit: Units.Area) -> Double {
+    func getEnergyUnits(from: String) -> Units.Energy {
+        switch from {
+        case "Btu / Sec":
+            return .BtuSec
+        case "kW":
+            return .kW
+        default:
+            return .kW
+        }
+    }
+    
+    func area(value: Double, from unit: Units.Area) -> Double {
         switch unit {
         case .FtSq:
             return value * 0.092950625
@@ -68,7 +96,20 @@ class Conversion {
         }
     }
     
-    func mass(value: Double, to unit: Units.Mass) -> Double {
+    func getAreaUnits(from: String) -> Units.Area {
+        switch from {
+        case "ft²":
+            return .FtSq
+        case "in²":
+            return .inchesSq
+        case "m²":
+            return .mSq
+        default:
+            return .mSq
+        }
+    }
+    
+    func mass(value: Double, from unit: Units.Mass) -> Double {
         switch unit {
         case .g:
             return value * 0.001
@@ -79,7 +120,7 @@ class Conversion {
         }
     }
     
-    func energyDensity(value: Double, to unit: Units.Mass) -> Double {
+    func energyDensity(value: Double, from unit: Units.Mass) -> Double {
         switch unit {
         case .g:
             return value * 0.001
@@ -90,7 +131,7 @@ class Conversion {
         }
     }
     
-    func time(value: Double, to unit: Units.Time) -> Double {
+    func time(value: Double, from unit: Units.Time) -> Double {
         switch unit {
         case .Hour:
             return value * 0.000277778
@@ -101,7 +142,7 @@ class Conversion {
         }
     }
     
-    func pressure(value: Double, to unit: Units.Pressure) -> Double {
+    func pressure(value: Double, from unit: Units.Pressure) -> Double {
         switch unit {
         case .inchesH2O:
             return value * 2.490889083
@@ -114,7 +155,7 @@ class Conversion {
         }
     }
     
-    func flow(value: Double, to unit: Units.Flow) -> Double {
+    func flow(value: Double, from unit: Units.Flow) -> Double {
         switch unit {
         case .cfm:
             return value * 0.588125867
@@ -135,6 +176,23 @@ class Conversion {
             case inches
             case meters
             case mm
+        }
+        
+        func length(value: String) -> Length {
+            switch value {
+            case "cm":
+                return .cm
+            case "feet":
+                return .feet
+            case "inches":
+                return .inches
+            case "meters":
+                return .meters
+            case "mm":
+                return .mm
+            default:
+                return .feet
+            }
         }
         
         enum Volume {

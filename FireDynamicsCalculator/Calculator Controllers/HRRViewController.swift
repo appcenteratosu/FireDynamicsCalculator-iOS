@@ -408,12 +408,12 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     func convertArea(area: Double, to unit: Conversion.Units.Area) -> Double {
-        let area = Conversion().area(value: area, to: unit)
+        let area = Conversion().area(value: area, from: unit)
         return area
     }
     
     func convertEnergy(area: Double, to unit: Conversion.Units.Energy) {
-        self.HRR = Conversion().energy(value: area, to: unit)
+        self.HRR = Conversion().energy(value: area, from: unit)
     }
     
     func convertLength(length: Double, to unit: Conversion.Units.Length) {

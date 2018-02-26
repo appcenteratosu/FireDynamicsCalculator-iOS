@@ -132,9 +132,9 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                              t: measureSet(measure: thicknes, units: getLength(button: thicknessButton)),
                              m: getMaterial(material: material))
             
-            let rMQH = Conversion().energy(value: mqh, to: .kW)
-            let rBABR = Conversion().energy(value: babr, to: .kW)
-            let rTOM = Conversion().energy(value: tom, to: .kW)
+            let rMQH = Conversion().energy(value: mqh, from: .kW)
+            let rBABR = Conversion().energy(value: babr, from: .kW)
+            let rTOM = Conversion().energy(value: tom, from: .kW)
             
             
             self.mqh = Int(rMQH.rounded())
@@ -285,15 +285,15 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             self.lining = line
             calculate()
         } else if buttonForEditing == mkhButton {
-            let value = Conversion().energy(value: Double(self.mqh), to: getEnergy(buttonTitle: pickerItems[row]))
+            let value = Conversion().energy(value: Double(self.mqh), from: getEnergy(buttonTitle: pickerItems[row]))
             let rValue = Int(value.rounded())
             mqhLabel.text = "\(rValue)"
         } else if buttonForEditing == babraukasButton {
-            let value = Conversion().energy(value: Double(self.babr), to: getEnergy(buttonTitle: pickerItems[row]))
+            let value = Conversion().energy(value: Double(self.babr), from: getEnergy(buttonTitle: pickerItems[row]))
             let rValue = Int(value.rounded())
             babrLabel.text = "\(rValue)"
         } else if buttonForEditing == thomasButton {
-            let value = Conversion().energy(value: Double(self.tom), to: getEnergy(buttonTitle: pickerItems[row]))
+            let value = Conversion().energy(value: Double(self.tom), from: getEnergy(buttonTitle: pickerItems[row]))
             let rValue = Int(value.rounded())
             tomLabel.text = "\(rValue)"
         }
