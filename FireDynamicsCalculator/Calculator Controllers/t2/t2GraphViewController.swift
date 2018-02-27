@@ -27,6 +27,8 @@ class t2GraphViewController: UIViewController, ChartViewDelegate {
     
     // MARK: - Outlets
     
+    
+    
     @IBOutlet weak var chart: LineChartView!
     
     func updateChartData(times: [Int], heats: [Double]) {

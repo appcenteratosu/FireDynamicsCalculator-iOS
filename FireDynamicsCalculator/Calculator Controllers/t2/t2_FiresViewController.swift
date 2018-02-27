@@ -14,7 +14,8 @@ class t2_FiresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupToolbar()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,8 +28,20 @@ class t2_FiresViewController: UIViewController {
     @IBOutlet weak var peakHRR: UITextField!
     @IBOutlet weak var time: UITextField!
     
+    @IBOutlet var toolbar: UIToolbar!
+    func setupToolbar() {
+        self.t1.inputAccessoryView = toolbar
+        self.peakHRR.inputAccessoryView = toolbar
+        self.time.inputAccessoryView = toolbar
+    }
     
+    func closeEditor() {
+        self.view.endEditing(true)
+    }
     
+    @IBAction func doneEditing(_ sender: Any) {
+        closeEditor()
+    }
     
     @IBAction func calculate(_ sender: Any) {
         

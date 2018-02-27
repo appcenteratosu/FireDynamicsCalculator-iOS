@@ -1068,6 +1068,7 @@
                         <outlet property="peakHRR" destination="apG-xq-Zsm" id="Ndd-0J-3Ra"/>
                         <outlet property="t1" destination="2Tn-pA-hzH" id="ID6-W5-7Oe"/>
                         <outlet property="time" destination="GwM-BX-2Kg" id="OwJ-Gy-me7"/>
+                        <outlet property="toolbar" destination="w9k-i8-1XY" id="YQv-iV-vO9"/>
                         <segue destination="RQJ-cF-XeF" kind="show" identifier="showChart" id="Cid-W6-U4q"/>
                     </connections>
                 </viewController>
@@ -1080,7 +1081,7 @@
                         <barButtonItem systemItem="done" id="qhw-ip-2eW">
                             <color key="tintColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="closeView:" destination="GGA-MD-iNh" id="wdT-B9-5af"/>
+                                <action selector="doneEditing:" destination="rxC-sW-zrw" id="d9L-C9-Luv"/>
                             </connections>
                         </barButtonItem>
                     </items>
