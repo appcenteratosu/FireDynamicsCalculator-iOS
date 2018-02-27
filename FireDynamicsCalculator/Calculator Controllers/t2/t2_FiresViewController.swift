@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class t2_FiresViewController: UIViewController {
 
@@ -41,6 +42,7 @@ class t2_FiresViewController: UIViewController {
         
         let set = (calc.timeSet, calc.heatSet)
         
+        performSegue(withIdentifier: "showChart", sender: set)
         
     }
     
@@ -88,22 +90,35 @@ class t2_FiresViewController: UIViewController {
                 totalSeconds += time
             }
             
+            let index = heatSet.index { (value) -> Bool in
+                return value == peak
+            }
             
-            return (timeSet, heatSet)
+            let endIndex = index! + 4
+            let finalHeat = Array(heatSet[0...endIndex])
+            let finalTime = Array(timeSet[0...endIndex])
+            
+            
+            return (finalTime, heatSet)
         }
         
     }
-    
-    
 
-    /*
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showChart" {
+            if let vc = segue.destination as? t2GraphViewController {
+                if let data = sender as? ([Int], [Double]) {
+                    vc.times = data.0
+                    vc.heats = data.1
+                }
+            }
+        }
     }
-    */
+ 
 
 }

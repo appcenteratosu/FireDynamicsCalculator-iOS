@@ -7,5 +7,6 @@ target 'FireDynamicsCalculator' do
 
   # Pods for FireDynamicsCalculator
 pod 'SnapKit'
+pod 'Charts'
 
 end

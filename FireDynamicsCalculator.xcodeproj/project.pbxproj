@@ -19,6 +19,7 @@
 		7379946D201559750076F570 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379946C201559750076F570 /* RoundedButton.swift */; };
 		73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */; };
 		73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57BF72043E03E000341CC /* t2_FiresViewController.swift */; };
+		73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */; };
 		99C8ABC4EBBADD23A13447CD /* Pods_FireDynamicsCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		7379946C201559750076F570 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightViewController.swift; sourceTree = "<group>"; };
 		73E57BF72043E03E000341CC /* t2_FiresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2_FiresViewController.swift; sourceTree = "<group>"; };
+		73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2GraphViewController.swift; sourceTree = "<group>"; };
 		9EA1E6FDE208FA4483FEF2CE /* Pods-FireDynamicsCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,9 +114,18 @@
 				73799469201551550076F570 /* FlashoverViewController.swift */,
 				735DAD9E2037855500EA97AA /* HRRViewController.swift */,
 				73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */,
-				73E57BF72043E03E000341CC /* t2_FiresViewController.swift */,
+				73E9E8562044DBF7009B6BE9 /* t2 */,
 			);
 			path = "Calculator Controllers";
+			sourceTree = "<group>";
+		};
+		73E9E8562044DBF7009B6BE9 /* t2 */ = {
+			isa = PBXGroup;
+			children = (
+				73E57BF72043E03E000341CC /* t2_FiresViewController.swift */,
+				73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */,
+			);
+			path = t2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +222,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +264,7 @@
 				735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */,
 				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				7379945620154EBC0076F570 /* AppDelegate.swift in Sources */,
+				73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */,
 				73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */,
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
 				73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */,
