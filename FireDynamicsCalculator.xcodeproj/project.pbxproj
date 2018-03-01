@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
 		7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343F5DE201EBA1A0090CBB6 /* Conversion.swift */; };
 		735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */; };
 		735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DAD9E2037855500EA97AA /* HRRViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireDynamicsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
 		7343F5DE201EBA1A0090CBB6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firedynamics_background_1.png; sourceTree = "<group>"; };
 		735DAD9E2037855500EA97AA /* HRRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				735DAD9E2037855500EA97AA /* HRRViewController.swift */,
 				73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */,
 				73E9E8562044DBF7009B6BE9 /* t2 */,
+				7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */,
 			);
 			path = "Calculator Controllers";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */,
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
 				73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */,
+				7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */,
 				7379946D201559750076F570 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

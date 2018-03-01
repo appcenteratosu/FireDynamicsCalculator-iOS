@@ -120,14 +120,23 @@ class Conversion {
         }
     }
     
-    func energyDensity(value: Double, from unit: Units.Mass) -> Double {
+    func energyDensity(value: Double, to unit: Units.EnergyDensity) -> Double {
         switch unit {
-        case .g:
-            return value * 0.001
-        case .kg:
+        case .Btu_Sec_ft²:
+            return value * 1/11.3565267
+        case .kW_m²:
             return value * 1.0
-        case .lb:
-            return value * 0.453592
+        }
+    }
+    
+    func getEnergyDensityUnits(from: String) -> Units.EnergyDensity {
+        switch from {
+        case "Btu/sec/ft²":
+            return .Btu_Sec_ft²
+        case "kW/m²":
+            return .kW_m²
+        default:
+            return .kW_m²
         }
     }
     
@@ -239,8 +248,8 @@ class Conversion {
         }
         
         enum EnergyDensity {
-            case BtuSecSqFt
-            case kWSqM
+            case Btu_Sec_ft²
+            case kW_m²
         }
         
         enum Flow {

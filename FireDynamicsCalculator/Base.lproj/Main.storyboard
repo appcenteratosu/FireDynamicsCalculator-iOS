@@ -56,6 +56,7 @@
                         <segue destination="Jkg-s0-rhQ" kind="show" identifier="HRR" id="Gme-7i-mJF"/>
                         <segue destination="GGA-MD-iNh" kind="show" identifier="flameHeight" id="cCy-tq-9Rk"/>
                         <segue destination="rxC-sW-zrw" kind="show" identifier="t2Fire" id="XXL-AA-oof"/>
+                        <segue destination="zQv-YB-Fpy" kind="show" identifier="radiationPool" id="gsP-sv-UWZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbm-kf-2hZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1090,6 +1091,189 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbZ-bP-i6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="367.19999999999999" y="1857.6354679802957"/>
+        </scene>
+        <!--Radiation Pool Fire View Controller-->
+        <scene sceneID="1kX-D6-740">
+            <objects>
+                <viewController id="zQv-YB-Fpy" customClass="RadiationPoolFireViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X4r-bw-AD8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firedynamics_background_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="aIS-zI-vc5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8s-2X-MFu" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="149" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19215819240000001" green="0.18804961440000001" blue="0.20000287889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Select an option">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectMethod:" destination="zQv-YB-Fpy" eventType="touchUpInside" id="6PC-xa-9FC"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-CW-bQd">
+                                <rect key="frame" x="0.0" y="520" width="414" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aIS-zI-vc5" firstAttribute="top" secondItem="X4r-bw-AD8" secondAttribute="top" id="0nK-li-R4l"/>
+                            <constraint firstItem="aIS-zI-vc5" firstAttribute="trailing" secondItem="9c2-Nl-VoL" secondAttribute="trailing" id="9su-TH-nVu"/>
+                            <constraint firstItem="E7y-CW-bQd" firstAttribute="leading" secondItem="9c2-Nl-VoL" secondAttribute="leading" id="LJ7-M4-3TF"/>
+                            <constraint firstItem="aIS-zI-vc5" firstAttribute="leading" secondItem="9c2-Nl-VoL" secondAttribute="leading" id="hC2-fO-akM"/>
+                            <constraint firstItem="E7y-CW-bQd" firstAttribute="trailing" secondItem="9c2-Nl-VoL" secondAttribute="trailing" id="wnO-xQ-DRB"/>
+                            <constraint firstItem="9c2-Nl-VoL" firstAttribute="bottom" secondItem="E7y-CW-bQd" secondAttribute="bottom" id="zCs-33-XJz"/>
+                            <constraint firstItem="aIS-zI-vc5" firstAttribute="bottom" secondItem="9c2-Nl-VoL" secondAttribute="bottom" id="zGg-BU-suw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9c2-Nl-VoL"/>
+                    </view>
+                    <connections>
+                        <outlet property="diameter" destination="hYN-5f-FFB" id="Ysg-hV-mdR"/>
+                        <outlet property="diameterUnits" destination="mdg-we-FiV" id="8aF-Hj-cIE"/>
+                        <outlet property="diameterView" destination="sdc-kU-8GT" id="kRc-ZU-2WZ"/>
+                        <outlet property="distance" destination="Ujy-zx-nT9" id="cUt-d4-09Q"/>
+                        <outlet property="distanceUnits" destination="x4e-JH-whP" id="0DO-Oq-Wtb"/>
+                        <outlet property="heatFlux" destination="FqE-Au-my4" id="TWS-ry-sja"/>
+                        <outlet property="heatFluxUnits" destination="srd-gS-oQm" id="Yxc-1A-FM5"/>
+                        <outlet property="picker" destination="E7y-CW-bQd" id="fHw-Ts-oog"/>
+                        <outlet property="selectMethodButton" destination="G8s-2X-MFu" id="nNt-O5-HHv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MqC-w4-ni4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="sdc-kU-8GT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SME-0Z-DJW">
+                            <rect key="frame" x="16" y="50" width="343" height="150"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="jGr-qL-vcD">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diameter of Pool" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2PQ-Fh-JYO">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="YGA-JG-cqg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="hYN-5f-FFB">
+                                            <rect key="frame" x="124" y="0.0" width="110" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="ms4-ai-ped"/>
+                                                <constraint firstAttribute="height" constant="30" id="tj6-uL-qHv"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-we-FiV" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                            <rect key="frame" x="243" y="0.0" width="100" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="089-TS-CV2"/>
+                                                <constraint firstAttribute="width" constant="100" id="0id-PK-zeV"/>
+                                            </constraints>
+                                            <state key="normal" title="ft" backgroundImage="default"/>
+                                            <connections>
+                                                <action selector="changeDiameterUnits:" destination="zQv-YB-Fpy" eventType="touchUpInside" id="7d1-sX-Aym"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sxC-uU-THA">
+                                    <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance of target from center of pool:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-pd-WoJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="BG4-SB-dMH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ujy-zx-nT9">
+                                            <rect key="frame" x="124" y="0.0" width="110" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="7KD-22-3Sf"/>
+                                                <constraint firstAttribute="width" constant="110" id="hmf-Md-au6"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-JH-whP" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                            <rect key="frame" x="243" y="0.0" width="100" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="BA1-yi-Nzy"/>
+                                                <constraint firstAttribute="width" constant="100" id="cw3-HU-IAl"/>
+                                            </constraints>
+                                            <state key="normal" title="ft" backgroundImage="default"/>
+                                            <connections>
+                                                <action selector="changeDistanceUnits:" destination="zQv-YB-Fpy" eventType="touchUpInside" id="gwe-3U-hJ1"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5jQ-At-dgN">
+                                    <rect key="frame" x="0.0" y="120" width="343" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heat Flux to Target:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="wue-EF-8Pj">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="CY1-df-R5b"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqE-Au-my4">
+                                            <rect key="frame" x="149.33333333333334" y="0.0" width="59.333333333333343" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srd-gS-oQm" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                            <rect key="frame" x="243" y="0.0" width="100" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="1GW-ow-zwO"/>
+                                                <constraint firstAttribute="height" constant="30" id="Uzq-K9-sEw"/>
+                                            </constraints>
+                                            <state key="normal" title="Btu/sec/ft²" backgroundImage="default"/>
+                                            <connections>
+                                                <action selector="changeHeatFluxUnits:" destination="zQv-YB-Fpy" eventType="touchUpInside" id="omg-41-gDt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-Dz-KCz" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                            <rect key="frame" x="16" y="254" width="343" height="30"/>
+                            <color key="backgroundColor" red="0.19215819240000001" green="0.18804961440000001" blue="0.20000287889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Calculate">
+                                <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.86274509799999999" green="0.38431372549999998" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="U8C-Dz-KCz" firstAttribute="leading" secondItem="f6b-mT-M4G" secondAttribute="leading" constant="16" id="Nax-ug-Iiz"/>
+                        <constraint firstItem="f6b-mT-M4G" firstAttribute="trailing" secondItem="SME-0Z-DJW" secondAttribute="trailing" constant="16" id="OLZ-VV-eM1"/>
+                        <constraint firstItem="f6b-mT-M4G" firstAttribute="trailing" secondItem="U8C-Dz-KCz" secondAttribute="trailing" constant="16" id="hEQ-r6-Ldk"/>
+                        <constraint firstItem="SME-0Z-DJW" firstAttribute="leading" secondItem="f6b-mT-M4G" secondAttribute="leading" constant="16" id="qOY-aU-c3d"/>
+                        <constraint firstItem="f6b-mT-M4G" firstAttribute="bottom" secondItem="U8C-Dz-KCz" secondAttribute="bottom" constant="16" id="snI-lq-159"/>
+                        <constraint firstItem="SME-0Z-DJW" firstAttribute="top" secondItem="f6b-mT-M4G" secondAttribute="top" constant="50" id="uZi-Uh-aJP"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="f6b-mT-M4G"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1008.6956521739131" y="1413.5869565217392"/>
         </scene>
         <!--Graph View Controller-->
         <scene sceneID="FTi-7H-4XK">
