@@ -22,6 +22,8 @@ class ConductionViewController: UIViewController {
     }
     
     
+    
+    
     struct ConductionCalculator {
         init(material: String, thickness: String, thicknessUnits: String, t2: String, t2Units: String, t1: String, t1Units: String) {
             self.material = Helper().getMaterial(string: material)
