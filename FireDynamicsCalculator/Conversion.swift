@@ -177,6 +177,40 @@ class Conversion {
         }
     }
     
+    func getTemperatureUnits(string: String) -> Units.Temperature {
+        switch string {
+        case "C":
+            return .C
+        case "F":
+            return .F
+        case "K":
+            return .K
+        case "R":
+            return .R
+        default:
+            return .C
+        }
+    }
+    
+    func convertTemperature(value: String, from units: Units.Temperature) -> Double {
+        if let value = Double(value) {
+            if units == .F {
+                let result = (value - 32) * ( 5  / 9)
+                return result
+            } else if units == .C {
+                return value
+            } else if units == .K {
+                let result = value - 273.15
+                return result
+            } else {
+                let result = (value - 459.67 - 32 ) * (5 / 9)
+                return result
+            }
+        } else {
+            return 0.0
+        }
+    }
+    
 
     struct Units {
         enum Length {
@@ -264,40 +298,6 @@ class Conversion {
             case F
             case K
             case R
-        }
-        
-        func getTemperatureUnits(string: String) -> Temperature {
-            switch string {
-            case "C":
-                return .C
-            case "F":
-                return .F
-            case "K":
-                return .K
-            case "R":
-                return .R
-            default:
-                return .C
-            }
-        }
-        
-        func convertTemperature(value: String, from units: Temperature) -> Double {
-            if let value = Double(value) {
-                if units == .F {
-                    let result = (value - 32) * ( 5  / 9)
-                    return result
-                } else if units == .C {
-                    return value
-                } else if units == .K {
-                    let result = value - 273.15
-                    return result
-                } else {
-                    let result = (value - 459.67 - 32 ) * (5 / 9)
-                    return result
-                }
-            } else {
-                return 0.0
-            }
         }
         
     }

@@ -8,12 +8,15 @@
 
 import UIKit
 
-class ConductionViewController: UIViewController {
+class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupButtons()
+        setupTextFields()
+        setupPicker()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +24,116 @@ class ConductionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Data Source
+    let length: [String] = ["Please Select an Option", "m", "cm", "ft", "mm", "in"]
+    let temperature: [String] = ["°C","°F","K","R"]
+    let energy: [String] = ["Please Select an Option", "Btu/sec/ft²", "kW/m²"]
+    let materials: [String] = ["Air", "Asbestos", "Brick", "Concrete High", "Concrete Low", "Copper", "Fiber Insulating Board", "Glass Plate", "Gypsum Plaster", "Oak", "PMMA", "Polyurethane Foam", "Steel Mild", "Yellow Pine"]
+    let time: [String] = ["Hr", "Min", "Sec"]
     
+    
+    // MARK: - Outlets / Actions
+    @IBOutlet weak var selectedMaterial: UIButton!
+    @IBOutlet weak var thicknessUnits: UIButton!
+    @IBOutlet weak var t2Units: UIButton!
+    @IBOutlet weak var t1Units: UIButton!
+    @IBOutlet weak var heatFluxUnits: UIButton!
+    @IBOutlet weak var penetrationTimeUnits: UIButton!
+    
+    @IBOutlet weak var thickness: UITextField!
+    @IBOutlet weak var t2: UITextField!
+    @IBOutlet weak var t1: UITextField!
+    
+    @IBOutlet weak var heatFlux: UILabel!
+    @IBOutlet weak var penetrationTime: UILabel!
+    
+    @IBAction func selectMaterial(_ sender: Any) {
+    }
+    
+    @IBAction func selectThicknessUnits(_ sender: Any) {
+    }
+    
+    @IBAction func selectT2Units(_ sender: Any) {
+    }
+    
+    @IBAction func selectT1Units(_ sender: Any) {
+    }
+    
+    @IBAction func selectHeatFluxUnits(_ sender: Any) {
+    }
+    
+    @IBAction func selectPenetrationTime(_ sender: Any) {
+    }
+    
+    @IBAction func calculate(_ sender: Any) {
+    }
+    
+    @IBOutlet var toolbar: UIToolbar!
+    @IBAction func endEditing(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    // MARK: Picker
+    @IBOutlet weak var picker: UIPickerView!
+    var pickerData: [String] = []
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(pickerData[row])
+    }
+    
+    func showPicker() {
+        picker.isHidden = false
+    }
+    
+    func closePicker() {
+        picker.isHidden = true
+    }
+    
+    
+    // MARK: - Setup and Admin
+    func setupTextFields() {
+        thickness.inputAccessoryView = toolbar
+        t2.inputAccessoryView = toolbar
+        t1.inputAccessoryView = toolbar
+    }
+    
+    func setupButtons() {
+        thicknessUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        t2Units.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        t1Units.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        heatFluxUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        penetrationTimeUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+    }
+    
+    func setupPicker() {
+        picker.dataSource = self
+        picker.delegate = self
+        picker.isHidden = true
+    }
+
+    func setDataSource(list: [String]) {
+        pickerData = list
+        picker.reloadAllComponents()
+    }
+    
+    
+    
+    // MARK: - Calculation
+    func calculate() {
+        
+    }
     
     
     struct ConductionCalculator {
@@ -30,6 +142,7 @@ class ConductionViewController: UIViewController {
             self.thickness = Helper().getThicknessInMeters(string: thickness, units: thicknessUnits)
             self.t1 = Conversion().convertTemperature(value: t1, from: Conversion().getTemperatureUnits(string: t1Units))
             self.t2 = Conversion().convertTemperature(value: t2, from: Conversion().getTemperatureUnits(string: t2Units))
+            
         }
         
         let material: ConductionMaterial
@@ -37,7 +150,7 @@ class ConductionViewController: UIViewController {
         let t1: Double
         let t2: Double
         
-        func calculate(qUnits: Conversion.EnergyDensity, tUnits: Conversion.Time) -> (q: Double, t: Double) {
+        func calculate(qUnits: Conversion.Units.EnergyDensity, tUnits: Conversion.Units.Time) -> (q: Double, t: Double) {
             
             let k = material.thermalConductivity / 1000
             let tempDiff = t2 - t1
@@ -108,7 +221,7 @@ class ConductionViewController: UIViewController {
                 let thickness = Double(string)!
                 let thicknessUnits = Conversion().getLengthUnits(from: units)
                 
-                let result = Conversion().convertLength(value: thickness, from: thicknessUnits)
+                let result = Conversion().length(value: thickness, from: thicknessUnits)
                 return result
             }
         }

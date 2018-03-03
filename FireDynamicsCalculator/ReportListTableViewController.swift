@@ -64,6 +64,8 @@ class ReportListTableViewController: UITableViewController {
             performSegue(withIdentifier: "t2Fire", sender: self)
         case "Radiation Pool":
             performSegue(withIdentifier: "radiationPool", sender: self)
+        case "Conduction":
+            performSegue(withIdentifier: "conduction", sender: self)
         default:
             print("Error")
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7301547A204A59E40096293B /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73015479204A59E40096293B /* todo.rtf */; };
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
 		7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343F5DE201EBA1A0090CBB6 /* Conversion.swift */; };
 		735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireDynamicsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73015479204A59E40096293B /* todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
 		7343F5DE201EBA1A0090CBB6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firedynamics_background_1.png; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		7379945420154EBC0076F570 /* FireDynamicsCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				73015479204A59E40096293B /* todo.rtf */,
 				7379945520154EBC0076F570 /* AppDelegate.swift */,
 				7379946C201559750076F570 /* RoundedButton.swift */,
 				7343F5DE201EBA1A0090CBB6 /* Conversion.swift */,
@@ -200,6 +203,7 @@
 				735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */,
 				7379945D20154EBC0076F570 /* Assets.xcassets in Resources */,
 				7379945B20154EBC0076F570 /* Main.storyboard in Resources */,
+				7301547A204A59E40096293B /* todo.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
