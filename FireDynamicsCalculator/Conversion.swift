@@ -143,9 +143,9 @@ class Conversion {
     func time(value: Double, from unit: Units.Time) -> Double {
         switch unit {
         case .Hour:
-            return value * 0.000277778
+            return value * (1/3600)
         case .Min:
-            return value * 0.016666667
+            return value * (1/60)
         case .Sec:
             return value * 1
         }
@@ -258,6 +258,48 @@ class Conversion {
             case cubMHr
             case cubMSec
         }
+        
+        enum Temperature {
+            case C
+            case F
+            case K
+            case R
+        }
+        
+        func getTemperatureUnits(string: String) -> Temperature {
+            switch string {
+            case "C":
+                return .C
+            case "F":
+                return .F
+            case "K":
+                return .K
+            case "R":
+                return .R
+            default:
+                return .C
+            }
+        }
+        
+        func convertTemperature(value: String, from units: Temperature) -> Double {
+            if let value = Double(value) {
+                if units == .F {
+                    let result = (value - 32) * ( 5  / 9)
+                    return result
+                } else if units == .C {
+                    return value
+                } else if units == .K {
+                    let result = value - 273.15
+                    return result
+                } else {
+                    let result = (value - 459.67 - 32 ) * (5 / 9)
+                    return result
+                }
+            } else {
+                return 0.0
+            }
+        }
+        
     }
     
     struct Materials {
