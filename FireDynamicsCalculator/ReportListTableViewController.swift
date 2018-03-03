@@ -12,6 +12,8 @@ class ReportListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.tableFooterView = UIView()
 
     }
 

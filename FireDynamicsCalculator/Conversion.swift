@@ -151,6 +151,19 @@ class Conversion {
         }
     }
     
+    func getTimeUnits(string: String) -> Units.Time {
+        switch string {
+        case "Hr":
+            return .Hour
+        case "Min":
+            return .Min
+        case "Sec":
+            return .Sec
+        default:
+            return .Sec
+        }
+    }
+    
     func pressure(value: Double, from unit: Units.Pressure) -> Double {
         switch unit {
         case .inchesH2O:

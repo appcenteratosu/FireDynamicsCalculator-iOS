@@ -536,19 +536,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeE-ZP-HQt">
-                                                <rect key="frame" x="199" y="0.0" width="75" height="30"/>
+                                                <rect key="frame" x="199" y="0.0" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="HQO-Hm-99G"/>
-                                                    <constraint firstAttribute="width" constant="75" id="vB2-Fx-tQw"/>
+                                                    <constraint firstAttribute="width" constant="100" id="vB2-Fx-tQw"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32y-GS-9AT" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                                                <rect key="frame" x="282" y="0.0" width="100" height="30"/>
+                                                <rect key="frame" x="307" y="0.0" width="75" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="CWK-VB-zA7"/>
+                                                    <constraint firstAttribute="width" constant="75" id="CWK-VB-zA7"/>
                                                     <constraint firstAttribute="height" constant="30" id="xlL-rI-bl5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -562,27 +562,27 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-Bm-2OA">
                                         <rect key="frame" x="0.0" y="80" width="382" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot side temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-ic-1Vw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot side temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-ic-1Vw">
                                                 <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LS1-6T-nzR">
-                                                <rect key="frame" x="199" y="0.0" width="75" height="30"/>
+                                                <rect key="frame" x="199" y="0.0" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="mKu-nm-ceP"/>
-                                                    <constraint firstAttribute="width" constant="75" id="mXG-8L-jP7"/>
+                                                    <constraint firstAttribute="width" constant="100" id="mXG-8L-jP7"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLn-Oo-SVL" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                                                <rect key="frame" x="282" y="0.0" width="100" height="30"/>
+                                                <rect key="frame" x="307" y="0.0" width="75" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="gXV-Ju-kjM"/>
-                                                    <constraint firstAttribute="width" constant="100" id="keh-nS-peP"/>
+                                                    <constraint firstAttribute="width" constant="75" id="keh-nS-peP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="°C" backgroundImage="default"/>
@@ -595,26 +595,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="35O-vo-R9J">
                                         <rect key="frame" x="0.0" y="120" width="382" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cold side temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0t-dw-WqM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cold side temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="W0t-dw-WqM">
                                                 <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sYv-qJ-qlS">
-                                                <rect key="frame" x="199" y="0.0" width="75" height="30"/>
+                                                <rect key="frame" x="199" y="0.0" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="1TT-Pg-UGM"/>
-                                                    <constraint firstAttribute="width" constant="75" id="MoP-c0-RAT"/>
+                                                    <constraint firstAttribute="width" constant="100" id="MoP-c0-RAT"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6T-48-5z6" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                                                <rect key="frame" x="282" y="0.0" width="100" height="30"/>
+                                                <rect key="frame" x="307" y="0.0" width="75" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="gb7-8l-H5U"/>
+                                                    <constraint firstAttribute="width" constant="75" id="gb7-8l-H5U"/>
                                                     <constraint firstAttribute="height" constant="30" id="vFT-0v-UY2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -667,7 +667,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gMc-i6-chg">
                                         <rect key="frame" x="0.0" y="240" width="382" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thermal Penetration Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-0l-rie">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thermal Penetration Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-0l-rie">
                                                 <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -690,7 +690,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="vn0-Dz-OPP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Btu/sec/ft²" backgroundImage="default"/>
+                                                <state key="normal" title="sec" backgroundImage="default"/>
                                                 <connections>
                                                     <action selector="selectPenetrationTime:" destination="iIV-7R-mbf" eventType="touchUpInside" id="TOS-CA-Ogs"/>
                                                 </connections>
