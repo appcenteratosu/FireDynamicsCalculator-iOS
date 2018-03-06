@@ -110,8 +110,9 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
             return
         }
         
-        let qUnits = Conversion().getEnergyUnits(from: getUnits(button: HRR_Units))
-        let q = Conversion().energy(value: qq, from: qUnits)
+        let qUnits = Conversion.Energy().getEnergyUnits(from: getUnits(button: HRR_Units))
+
+        let q = Conversion.Energy().energy(value: qq, from: qUnits)
         
         if diameterTF.isEnabled {
             guard let diam = diameterTF.text else {
@@ -120,11 +121,11 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
             guard let dd = Double(diam) else {
                 return
             }
-            let units = Conversion().getLengthUnits(from: getUnits(button: diameter_Units))
-            let d = Conversion().length(value: dd, from: units)
+            let units = Conversion.Length().getLengthUnits(from: getUnits(button: diameter_Units))
+            let d = Conversion.Length().convertLength(value: dd, from: units)
             
             let result = calculateDiam(q: q, diam: d)
-            let avgFlameUnits = Conversion().getLengthUnits(from: getUnits(button: avgFlameHeight_Units))
+            let avgFlameUnits = Conversion.Length().getLengthUnits(from: getUnits(button: avgFlameHeight_Units))
             
             
             let avgFlameHeight = getL(value: result, to: avgFlameUnits)
@@ -135,7 +136,7 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
             let diameter = diameterFrom(area: area)
             
             let result = calculateDiam(q: q, diam: diameter)
-            let avgFlameUnits = Conversion().getLengthUnits(from: getUnits(button: avgFlameHeight_Units))
+            let avgFlameUnits = Conversion.Length().getLengthUnits(from: getUnits(button: avgFlameHeight_Units))
             
             let avgFlameHeight = getL(value: result, to: avgFlameUnits)
             avgFlameHeightLabel.text = "Average Flame Height: \(avgFlameHeight.rounded(toPlaces: 2))"
@@ -156,13 +157,13 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
     func diameterFrom(area: Double) -> Double {
         let a = area / Double.pi
         let b = sqrt(a)
-        let units = Conversion().getAreaUnits(from: getUnits(button: area_Units))
+        let units = Conversion.Area().getAreaUnits(from: getUnits(button: area_Units))
         let r = getL(value: b, to: units)
         let diameter = r * 2
         return diameter
     }
     
-    func getL(value: Double, to unit: Conversion.Units.Length) -> Double {
+    func getL(value: Double, to unit: Conversion.Length.Length) -> Double {
         switch unit {
         case .cm:
             return value / 0.01
