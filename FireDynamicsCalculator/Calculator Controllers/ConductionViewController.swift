@@ -183,8 +183,8 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
         init(material: String, thickness: String, thicknessUnits: String, t2: String, t2Units: String, t1: String, t1Units: String) {
             self.material = Helper().getMaterial(string: material)
             self.thickness = Helper().getThicknessInMeters(string: thickness, units: thicknessUnits)
-            self.t1 = Conversion().convertTemperature(value: t1, from: Conversion().getTemperatureUnits(string: t1Units))
-            self.t2 = Conversion().convertTemperature(value: t2, from: Conversion().getTemperatureUnits(string: t2Units))
+            self.t1 = Conversion.Temperature().convertTemperature(value: t1, from: Conversion.Temperature().getTemperatureUnits(string: t1Units))
+            self.t2 = Conversion.Temperature().convertTemperature(value: t2, from: Conversion.Temperature().getTemperatureUnits(string: t2Units))
             
         }
         
@@ -195,18 +195,18 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         func calculate(qUnitsString: String, tUnitsString: String) -> (q: Double, t: Double) {
             
-            let qUnits = Conversion().getEnergyDensityUnits(from: qUnitsString)
-            let tUnits = Conversion().getTimeUnits(string: tUnitsString)
+            let qUnits = Conversion.EnergyDensity().getEnergyDensityUnits(from: qUnitsString)
+            let tUnits = Conversion.Time().getTimeUnits(string: tUnitsString)
             
             let k = material.thermalConductivity / 1000
             let tempDiff = t2 - t1
             let l = thickness
             
             let sub = (k * tempDiff / l)
-            let q = Conversion().energyDensity(value: sub, to: qUnits)
+            let q = Conversion.EnergyDensity().convertEnergyDensity(value: sub, to: qUnits)
             
             let sub2 = (pow(l, 2.0) / (16 * material.thermalDiffusivity))
-            let t = Conversion().time(value: sub2, from: tUnits)
+            let t = Conversion.Time().time(value: sub2, from: tUnits)
             
             return (q.rounded(toPlaces: 4), t.rounded(toPlaces: 2))
         }
@@ -265,9 +265,9 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
             }
             func getThicknessInMeters(string: String, units: String) -> Double {
                 let thickness = Double(string)!
-                let thicknessUnits = Conversion().getLengthUnits(from: units)
+                let thicknessUnits = Conversion.Length().getLengthUnits(from: units)
                 
-                let result = Conversion().length(value: thickness, from: thicknessUnits)
+                let result = Conversion.Length().convertLength(value: thickness, from: thicknessUnits)
                 return result
             }
         }
