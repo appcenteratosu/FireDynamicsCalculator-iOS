@@ -20,6 +20,7 @@
 		7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379946720154F820076F570 /* ReportListTableViewController.swift */; };
 		7379946A201551550076F570 /* FlashoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73799469201551550076F570 /* FlashoverViewController.swift */; };
 		7379946D201559750076F570 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379946C201559750076F570 /* RoundedButton.swift */; };
+		737D068F204E146800B8D36E /* SolidIgnitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */; };
 		73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */; };
 		73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57BF72043E03E000341CC /* t2_FiresViewController.swift */; };
 		73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */; };
@@ -43,6 +44,7 @@
 		7379946720154F820076F570 /* ReportListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListTableViewController.swift; sourceTree = "<group>"; };
 		73799469201551550076F570 /* FlashoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashoverViewController.swift; sourceTree = "<group>"; };
 		7379946C201559750076F570 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidIgnitionViewController.swift; sourceTree = "<group>"; };
 		73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightViewController.swift; sourceTree = "<group>"; };
 		73E57BF72043E03E000341CC /* t2_FiresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2_FiresViewController.swift; sourceTree = "<group>"; };
 		73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2GraphViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				73E9E8562044DBF7009B6BE9 /* t2 */,
 				7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */,
 				73768A89204A2B8C00F7CA97 /* ConductionViewController.swift */,
+				737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */,
 			);
 			path = "Calculator Controllers";
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				7379945620154EBC0076F570 /* AppDelegate.swift in Sources */,
 				73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */,
+				737D068F204E146800B8D36E /* SolidIgnitionViewController.swift in Sources */,
 				73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */,
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
 				73768A8A204A2B8C00F7CA97 /* ConductionViewController.swift in Sources */,

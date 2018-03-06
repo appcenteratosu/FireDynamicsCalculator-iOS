@@ -91,9 +91,9 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     
     // MARK: - Calculations
-    var mqh: Int = 0
-    var babr: Int = 0
-    var tom: Int = 0
+    var mqh: Double = 0.0
+    var babr: Double = 0.0
+    var tom: Double = 0.0
     
     func calculate() {
         if emptyTFExists() {
@@ -132,14 +132,14 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                              t: measureSet(measure: thicknes, units: getLength(button: thicknessButton)),
                              m: getMaterial(material: material))
             
-            let rMQH = Conversion().energy(value: mqh, from: .kW)
-            let rBABR = Conversion().energy(value: babr, from: .kW)
-            let rTOM = Conversion().energy(value: tom, from: .kW)
+            let rMQH = Conversion.Energy().energy(value: mqh, from: .kW)
+            let rBABR = Conversion.Energy().energy(value: babr, from: .kW)
+            let rTOM = Conversion.Energy().energy(value: tom, from: .kW)
             
             
-            self.mqh = Int(rMQH.rounded())
-            self.babr = Int(rBABR.rounded())
-            self.tom = Int(rTOM.rounded())
+            self.mqh = rMQH.rounded(toPlaces: 2)
+            self.babr = rBABR.rounded(toPlaces: 2)
+            self.tom = rTOM.rounded(toPlaces: 2)
             
             self.mqhLabel.text = "\(self.mqh)"
             self.babrLabel.text = "\(self.babr)"
@@ -147,7 +147,7 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    func getLength(button: UIButton) -> Conversion.Units.Length {
+    func getLength(button: UIButton) -> Conversion.Length.Length {
         switch button.titleLabel!.text! {
         case "cm":
             return .cm
@@ -285,15 +285,15 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             self.lining = line
             calculate()
         } else if buttonForEditing == mkhButton {
-            let value = Conversion().energy(value: Double(self.mqh), from: getEnergy(buttonTitle: pickerItems[row]))
+            let value = Conversion.Energy().energy(value: Double(self.mqh), from: getEnergy(buttonTitle: pickerItems[row]))
             let rValue = Int(value.rounded())
             mqhLabel.text = "\(rValue)"
         } else if buttonForEditing == babraukasButton {
-            let value = Conversion().energy(value: Double(self.babr), from: getEnergy(buttonTitle: pickerItems[row]))
+            let value = Conversion.Energy().energy(value: Double(self.babr), from: getEnergy(buttonTitle: pickerItems[row]))
             let rValue = Int(value.rounded())
             babrLabel.text = "\(rValue)"
         } else if buttonForEditing == thomasButton {
-            let value = Conversion().energy(value: Double(self.tom), from: getEnergy(buttonTitle: pickerItems[row]))
+            let value = Conversion.Energy().energy(value: Double(self.tom), from: getEnergy(buttonTitle: pickerItems[row]))
             let rValue = Int(value.rounded())
             tomLabel.text = "\(rValue)"
         }
@@ -348,17 +348,17 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     // MARK: - Calculation
-    typealias measureSet = (measure: Double, units: Conversion.Units.Length)
+    typealias measureSet = (measure: Double, units: Conversion.Length.Length)
     typealias areaMeasures = (l: measureSet, w: measureSet, h: measureSet)
     typealias ventMeasures = (vW: measureSet, vH: measureSet)
 
     func MQH(a: areaMeasures, v: ventMeasures, t: measureSet, m: Conversion.Materials.material) -> Double {
-        let cw = Conversion().length(value: a.w.measure, from: a.w.units)
-        let cl = Conversion().length(value: a.l.measure, from: a.l.units)
-        let ch = Conversion().length(value: a.h.measure, from: a.h.units)
-        let vw = Conversion().length(value: v.vW.measure, from: v.vW.units)
-        let vh = Conversion().length(value: v.vH.measure, from: v.vH.units)
-        let thickness = Conversion().length(value: t.measure, from: t.units)
+        let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
+        let cl = Conversion.Length().convertLength(value: a.l.measure, from: a.l.units)
+        let ch = Conversion.Length().convertLength(value: a.h.measure, from: a.h.units)
+        let vw = Conversion.Length().convertLength(value: v.vW.measure, from: v.vW.units)
+        let vh = Conversion.Length().convertLength(value: v.vH.measure, from: v.vH.units)
+        let thickness = Conversion.Length().convertLength(value: t.measure, from: t.units)
         let thermalConductivity = Conversion.Materials().getMaterialValue(material: m)
         
         let hk = thermalConductivity / thickness
@@ -373,12 +373,12 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func Babrauskas(a: areaMeasures, v: ventMeasures, t: measureSet, m: Conversion.Materials.material) -> Double {
-        let cw = Conversion().length(value: a.w.measure, from: a.w.units)
-        let cl = Conversion().length(value: a.l.measure, from: a.l.units)
-        let ch = Conversion().length(value: a.h.measure, from: a.h.units)
-        let vw = Conversion().length(value: v.vW.measure, from: v.vW.units)
-        let vh = Conversion().length(value: v.vH.measure, from: v.vH.units)
-        let thickness = Conversion().length(value: t.measure, from: t.units)
+        let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
+        let cl = Conversion.Length().convertLength(value: a.l.measure, from: a.l.units)
+        let ch = Conversion.Length().convertLength(value: a.h.measure, from: a.h.units)
+        let vw = Conversion.Length().convertLength(value: v.vW.measure, from: v.vW.units)
+        let vh = Conversion.Length().convertLength(value: v.vH.measure, from: v.vH.units)
+        let thickness = Conversion.Length().convertLength(value: t.measure, from: t.units)
         let thermalConductivity = Conversion.Materials().getMaterialValue(material: m)
         
         let hk = thermalConductivity / thickness
@@ -392,12 +392,12 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func Thomas(a: areaMeasures, v: ventMeasures, t: measureSet, m: Conversion.Materials.material) -> Double {
-        let cw = Conversion().length(value: a.w.measure, from: a.w.units)
-        let cl = Conversion().length(value: a.l.measure, from: a.l.units)
-        let ch = Conversion().length(value: a.h.measure, from: a.h.units)
-        let vw = Conversion().length(value: v.vW.measure, from: v.vW.units)
-        let vh = Conversion().length(value: v.vH.measure, from: v.vH.units)
-        let thickness = Conversion().length(value: t.measure, from: t.units)
+        let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
+        let cl = Conversion.Length().convertLength(value: a.l.measure, from: a.l.units)
+        let ch = Conversion.Length().convertLength(value: a.h.measure, from: a.h.units)
+        let vw = Conversion.Length().convertLength(value: v.vW.measure, from: v.vW.units)
+        let vh = Conversion.Length().convertLength(value: v.vH.measure, from: v.vH.units)
+        let thickness = Conversion.Length().convertLength(value: t.measure, from: t.units)
         let thermalConductivity = Conversion.Materials().getMaterialValue(material: m)
         
         let hk = thermalConductivity / thickness
