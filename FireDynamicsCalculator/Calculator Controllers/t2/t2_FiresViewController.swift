@@ -100,6 +100,7 @@ class t2_FiresViewController: UIViewController {
                     heatSet.append(newheat)
                 }
                 
+                
                 totalSeconds += time
             }
             
