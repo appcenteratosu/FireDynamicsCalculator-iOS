@@ -295,34 +295,34 @@ class RadiationPoolFireViewController: UIViewController, UIPickerViewDelegate, U
 
 struct RadiationPoolCalculator {
     
-    var energyUnits: Conversion.Units.EnergyDensity
+    var energyUnits: Conversion.EnergyDensity.EnergyDensity
     init(energyUnits: String) {
-        self.energyUnits = Conversion().getEnergyDensityUnits(from: energyUnits)
+        self.energyUnits = Conversion.EnergyDensity().getEnergyDensityUnits(from: energyUnits)
     }
     
     func calculatePool(d: Double, dU: String, dist: Double, distU: String) -> Double {
-        let dMeters = Conversion().length(value: d, from: Conversion().getLengthUnits(from: dU))
-        let distMeters = Conversion().length(value: dist, from: Conversion().getLengthUnits(from: distU))
+        let dMeters = Conversion.Length().convertLength(value: d, from: Conversion.Length().getLengthUnits(from: dU))
+        let distMeters = Conversion.Length().convertLength(value: dist, from: Conversion.Length().getLengthUnits(from: distU))
         
         let LD = distMeters / dMeters
         
         let heatFluxToTarget = (15.4 * pow(LD, -1.59))
-        let HFTT = Conversion().energyDensity(value: heatFluxToTarget, to: energyUnits)
+        let HFTT = Conversion.EnergyDensity().convertEnergyDensity(value: heatFluxToTarget, to: energyUnits)
         return HFTT.rounded(toPlaces: 2)
     }
     
     func calculateSquare(dist: Double, distU: String, l: Double, lU: String, w: Double, wU: String) -> Double {
-        let distMeters = Conversion().length(value: dist, from: Conversion().getLengthUnits(from: distU))
+        let distMeters = Conversion.Length().convertLength(value: dist, from: Conversion.Length().getLengthUnits(from: distU))
         
-        let lM = Conversion().length(value: l, from: Conversion().getLengthUnits(from: lU))
-        let wM = Conversion().length(value: w, from: Conversion().getLengthUnits(from: wU))
+        let lM = Conversion.Length().convertLength(value: l, from: Conversion.Length().getLengthUnits(from: lU))
+        let wM = Conversion.Length().convertLength(value: w, from: Conversion.Length().getLengthUnits(from: wU))
         
-        let eqDiam = Conversion().length(value: (sqrt(4.0 * lM * wM / Double.pi).rounded(toPlaces: 2)), from: Conversion().getLengthUnits(from: distU))
+        let eqDiam = Conversion.Length().convertLength(value: (sqrt(4.0 * lM * wM / Double.pi).rounded(toPlaces: 2)), from: Conversion.Length().getLengthUnits(from: distU))
         
         let LD = distMeters / eqDiam
         
         let heatFluxToTarget = (15.4 * pow(LD, -1.59))
-        let HFTT = Conversion().energyDensity(value: heatFluxToTarget, to: energyUnits)
+        let HFTT = Conversion.EnergyDensity().convertEnergyDensity(value: heatFluxToTarget, to: energyUnits)
         return HFTT.rounded(toPlaces: 2)
         
     }
