@@ -40,7 +40,8 @@ struct SolidIgnitionCalculator {
                         thermalConductivity: String,
                         TIG: String, TIGUnits: String,
                         TAMB: String, TAMBUnits: String,
-                        heatFlux: String, heatFluxUnits: String) -> Double {
+                        heatFlux: String, heatFluxUnits: String,
+                        ttiUnits: String) -> Double {
         
         let c = Double(c)!
         let density = Conversion.Density().convertDensity(value: Double(density)!, from: Conversion.Density().getDensityUnits(from: densityUnits))
@@ -54,7 +55,8 @@ struct SolidIgnitionCalculator {
         let p1 = c * thermalConductivity * density * specificHeat
         let p2 = ((TIG - TAMB) / (heatFlux))
         let result = (p1 * pow(p2, 2.0)).rounded(toPlaces: 2)
-        return result
+        let conversion = Conversion.Time().time(value: result, from: Conversion.Time().getTimeUnits(string: ttiUnits))
+        return conversion.rounded(toPlaces: 2)
         
     }
     

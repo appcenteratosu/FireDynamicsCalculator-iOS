@@ -27,18 +27,28 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         openPicker()
     }
     
+    var currentUIView: UIView?
+    func checkForAndHandleOpenViews() {
+        if let view = currentUIView {
+            view.removeFromSuperview()
+        }
+    }
+    
     @IBOutlet var thermallyThinUIView: ThermallyThinView!
+    @IBOutlet var thermallyThickUIVIew: ThermallyThickView!
+    @IBOutlet var thermallyThinkWithMaterialsUIView: UIView!
     
     var responderDelegate: PickerResponderDelegate?
     
     func open(view: UIView) {
+//        checkForAndHandleOpenViews()
+        
         if view == thermallyThinUIView {
             thermallyThinUIView.pickerDelegate = self
             self.responderDelegate = thermallyThinUIView
             thermallyThinUIView.configure()
             
             self.view.addSubview(thermallyThinUIView)
-            thermallyThinUIView.center = self.view.center
             
             thermallyThinUIView.snp.makeConstraints({ (make) in
                 make.top.equalTo(methodSelectionButton).offset(25)
@@ -46,6 +56,21 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
                 make.right.equalToSuperview()
                 make.height.equalTo(380)
             })
+        } else if view == thermallyThickUIVIew {
+            thermallyThickUIVIew.pickerDelegate = self
+            self.responderDelegate = thermallyThickUIVIew
+            thermallyThickUIVIew.configure()
+            
+            self.view.addSubview(thermallyThickUIVIew)
+            thermallyThickUIVIew.snp.makeConstraints({ (make) in
+                make.top.equalTo(methodSelectionButton).offset(25)
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.height.equalTo(400)
+            })
+            
+        } else if view == thermallyThinkWithMaterialsUIView {
+            
         }
     }
     
@@ -89,12 +114,18 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         } else {
             self.methodSelectionButton.setTitle(selection, for: .normal)
             
+            checkForAndHandleOpenViews()
             if selection == options[1] {
+                currentUIView = thermallyThinUIView
                 open(view: thermallyThinUIView)
                 closePicker()
             } else if selection == options[2] {
+                currentUIView = thermallyThickUIVIew
+                open(view: thermallyThickUIVIew)
                 closePicker()
             } else if selection == options[3] {
+                currentUIView = thermallyThinkWithMaterialsUIView
+                
                 closePicker()
             }
         }

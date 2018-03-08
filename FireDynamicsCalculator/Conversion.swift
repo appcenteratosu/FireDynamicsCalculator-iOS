@@ -62,7 +62,7 @@ class Conversion {
             switch string {
             case "kg/m³":
                 return .kg_m³
-            case "lbs/ft³":
+            case "lb/ft³":
                 return .lbs_ft³
             default:
                 return .kg_m³

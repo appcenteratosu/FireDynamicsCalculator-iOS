@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThermallyThinView: UIView, PickerResponderDelegate, UITextFieldDelegate {
+class ThermallyThinView: UIView, PickerResponderDelegate, UITextFieldDelegate, ToolbarHandlerDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -22,6 +22,7 @@ class ThermallyThinView: UIView, PickerResponderDelegate, UITextFieldDelegate {
     func configure() {
         setupButton()
         setupTextFields()
+        setupToolbar()
     }
     
     private func setupButton() {
@@ -32,9 +33,14 @@ class ThermallyThinView: UIView, PickerResponderDelegate, UITextFieldDelegate {
         self.heatFluxButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
     }
     
-    @IBOutlet weak var toolbar: UIToolbar!
-    @IBAction func endEditingButton(_ sender: Any) {
+    
+    @IBOutlet weak var toolbar: ToolbarHandler!
+    func endEditing() {
         self.endEditing(true)
+    }
+    
+    func setupToolbar() {
+        toolbar.tbDelegate = self
     }
     
     private func setupTextFields() {
