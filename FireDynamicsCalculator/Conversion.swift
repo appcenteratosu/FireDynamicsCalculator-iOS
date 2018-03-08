@@ -266,6 +266,22 @@ class Conversion {
     }
     
     struct Units {
+        
+        enum List {
+            case Length
+            case Volume
+            case Density
+            case Energy
+            case Area
+            case Mass
+            case Time
+            case EneregyDensity
+            case Pressure
+            case Flow
+            case Temperature
+            case Materials
+        }
+        
         enum Length {
             case cm
             case feet
