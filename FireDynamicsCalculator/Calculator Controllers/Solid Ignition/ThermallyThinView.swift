@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThermallyThinView: UIView, PickerResponderDelegate {
+class ThermallyThinView: UIView, PickerResponderDelegate, UITextFieldDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,6 +17,34 @@ class ThermallyThinView: UIView, PickerResponderDelegate {
         // Drawing code
     }
     */
+    
+    // Setup
+    func configure() {
+        setupButton()
+        setupTextFields()
+    }
+    
+    private func setupButton() {
+        self.densityButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        self.thicknessButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        self.ignitionButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        self.ambientButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        self.heatFluxButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+    }
+    
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBAction func endEditingButton(_ sender: Any) {
+        self.endEditing(true)
+    }
+    
+    private func setupTextFields() {
+        self.densityTF.inputAccessoryView = toolbar
+        self.specificHeatTF.inputAccessoryView = toolbar
+        self.thicknessTF.inputAccessoryView = toolbar
+        self.ignitionTempTF.inputAccessoryView = toolbar
+        self.ambientTempTF.inputAccessoryView = toolbar
+        self.heatFluxTF.inputAccessoryView = toolbar
+    }
     
     // Delegate
     
@@ -32,11 +60,32 @@ class ThermallyThinView: UIView, PickerResponderDelegate {
     @IBOutlet weak var ambientTempTF: UITextField!
     @IBOutlet weak var heatFluxTF: UITextField!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == densityTF {
+            specificHeatTF.becomeFirstResponder()
+        } else if textField == specificHeatTF {
+            thicknessTF.becomeFirstResponder()
+        } else if textField == thicknessTF {
+            ignitionTempTF.becomeFirstResponder()
+        } else if textField == ignitionTempTF {
+            ambientTempTF.becomeFirstResponder()
+        } else if textField == ambientTempTF {
+            heatFluxTF.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
     @IBOutlet weak var densityButton: UIButton!
     @IBOutlet weak var thicknessButton: UIButton!
     @IBOutlet weak var ignitionButton: UIButton!
     @IBOutlet weak var ambientButton: UIButton!
     @IBOutlet weak var heatFluxButton: UIButton!
+    @IBOutlet weak var ttiButton: RoundedButton!
+    
+    @IBOutlet weak var timeToIgnitionLabel: UILabel!
     
     // Change Units
     var buttonForEditing: UIButton?
@@ -66,6 +115,11 @@ class ThermallyThinView: UIView, PickerResponderDelegate {
         pickerDelegate?.setDataSource(dataSet: .EneregyDensity)
     }
     
+    @IBAction func changeTTIUnits(_ sender: Any) {
+        buttonForEditing = ttiButton
+        pickerDelegate?.setDataSource(dataSet: .Time)
+    }
+    
     func didSelectOption(option: String) {
         buttonForEditing?.setTitle(option, for: .normal)
     }
@@ -73,9 +127,23 @@ class ThermallyThinView: UIView, PickerResponderDelegate {
     // Calculate
     
     @IBAction func calculate(_ sender: Any) {
+        let calc = SolidIgnitionCalculator()
+        let result = calc.thermallyThin(density: densityTF.text!,
+                           densityUnits: densityButton.titleLabel!.text!,
+                           specificHeat: specificHeatTF.text!,
+                           thickness: thicknessTF.text!,
+                           thicknessUnits: thicknessButton.titleLabel!.text!,
+                           TIG: ignitionTempTF.text!,
+                           TIGUnits: ignitionButton.titleLabel!.text!,
+                           TAMB: ambientTempTF.text!,
+                           TAMBUnits: ambientButton.titleLabel!.text!,
+                           heatFlux: heatFluxTF.text!,
+                           heatFluxUnits: heatFluxButton.titleLabel!.text!,
+                           ttiUnits: ttiButton.titleLabel!.text!)
+        
+        self.timeToIgnitionLabel.text = "\(result)"
         
     }
-    
     
     
 

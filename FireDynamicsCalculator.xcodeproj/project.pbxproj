@@ -12,6 +12,8 @@
 		7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343F5DE201EBA1A0090CBB6 /* Conversion.swift */; };
 		735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */; };
 		735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DAD9E2037855500EA97AA /* HRRViewController.swift */; };
+		736CD4E62051DA3F00CBAA33 /* SolidIgnitionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */; };
+		736CD4E82051DB0B00CBAA33 /* ThermallyThickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736CD4E72051DB0B00CBAA33 /* ThermallyThickView.swift */; };
 		73768A8A204A2B8C00F7CA97 /* ConductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73768A89204A2B8C00F7CA97 /* ConductionViewController.swift */; };
 		7379945620154EBC0076F570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379945520154EBC0076F570 /* AppDelegate.swift */; };
 		7379945B20154EBC0076F570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7379945920154EBC0076F570 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		7343F5DE201EBA1A0090CBB6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firedynamics_background_1.png; sourceTree = "<group>"; };
 		735DAD9E2037855500EA97AA /* HRRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRViewController.swift; sourceTree = "<group>"; };
+		736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidIgnitionCalculator.swift; sourceTree = "<group>"; };
+		736CD4E72051DB0B00CBAA33 /* ThermallyThickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThickView.swift; sourceTree = "<group>"; };
 		73768A89204A2B8C00F7CA97 /* ConductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConductionViewController.swift; sourceTree = "<group>"; };
 		7379945220154EBC0076F570 /* FireDynamicsCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireDynamicsCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7379945520154EBC0076F570 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */,
+				736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */,
 				739F99AA2050F69C00285105 /* ThermallyThinView.swift */,
+				736CD4E72051DB0B00CBAA33 /* ThermallyThickView.swift */,
 			);
 			path = "Solid Ignition";
 			sourceTree = "<group>";
@@ -290,9 +296,11 @@
 				739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */,
 				7379945620154EBC0076F570 /* AppDelegate.swift in Sources */,
 				73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */,
+				736CD4E62051DA3F00CBAA33 /* SolidIgnitionCalculator.swift in Sources */,
 				737D068F204E146800B8D36E /* SolidIgnitionViewController.swift in Sources */,
 				73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */,
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
+				736CD4E82051DB0B00CBAA33 /* ThermallyThickView.swift in Sources */,
 				73768A8A204A2B8C00F7CA97 /* ConductionViewController.swift in Sources */,
 				73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */,
 				7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */,

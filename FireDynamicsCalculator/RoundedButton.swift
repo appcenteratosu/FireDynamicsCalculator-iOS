@@ -16,9 +16,11 @@ class RoundedButton: UIButton {
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.white.cgColor
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         
         if self.titleLabel?.text == "Calculate" {
             self.layer.borderWidth = 0
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         }
     }
 

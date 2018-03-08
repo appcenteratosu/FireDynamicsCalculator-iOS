@@ -782,30 +782,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="firedynamics_background_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hXX-mT-gXc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firedynamics_background_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hXX-mT-gXc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02I-LH-LN1">
-                                <rect key="frame" x="152" y="165" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select an option"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKX-qF-WSI">
+                                <rect key="frame" x="0.0" y="520" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02I-LH-LN1" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                <rect key="frame" x="16" y="141" width="382" height="30"/>
+                                <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Select an option">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="selectMethod:" destination="O8d-ea-fQy" eventType="touchUpInside" id="CUD-8b-KDW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="02I-LH-LN1" firstAttribute="top" secondItem="jc2-29-rsR" secondAttribute="top" constant="25" id="44S-4p-Wc7"/>
+                            <constraint firstItem="hXX-mT-gXc" firstAttribute="trailing" secondItem="jc2-29-rsR" secondAttribute="trailing" id="8sz-RR-gAN"/>
+                            <constraint firstItem="02I-LH-LN1" firstAttribute="leading" secondItem="jc2-29-rsR" secondAttribute="leading" constant="16" id="8wh-i7-sWl"/>
+                            <constraint firstItem="tKX-qF-WSI" firstAttribute="leading" secondItem="jc2-29-rsR" secondAttribute="leading" id="CCZ-FP-OqB"/>
+                            <constraint firstItem="jc2-29-rsR" firstAttribute="trailing" secondItem="02I-LH-LN1" secondAttribute="trailing" constant="16" id="V4o-Cd-2MR"/>
+                            <constraint firstItem="hXX-mT-gXc" firstAttribute="top" secondItem="tjp-EJ-DVI" secondAttribute="top" id="fRG-rH-18x"/>
+                            <constraint firstItem="hXX-mT-gXc" firstAttribute="bottom" secondItem="jc2-29-rsR" secondAttribute="bottom" id="heH-iL-FE2"/>
+                            <constraint firstItem="hXX-mT-gXc" firstAttribute="leading" secondItem="jc2-29-rsR" secondAttribute="leading" id="jMe-pt-s00"/>
+                            <constraint firstItem="tKX-qF-WSI" firstAttribute="bottom" secondItem="jc2-29-rsR" secondAttribute="bottom" id="t65-Fz-4hq"/>
+                            <constraint firstItem="tKX-qF-WSI" firstAttribute="trailing" secondItem="jc2-29-rsR" secondAttribute="trailing" id="v13-Zn-dx5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jc2-29-rsR"/>
                     </view>
                     <connections>
                         <outlet property="methodSelectionButton" destination="02I-LH-LN1" id="fOk-U5-zr7"/>
+                        <outlet property="picker" destination="tKX-qF-WSI" id="uhq-Jm-InL"/>
                         <outlet property="thermallyThinUIView" destination="lvo-Pr-13X" id="bc6-DT-rHk"/>
                     </connections>
                 </viewController>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="5dC-Ga-Cfw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qZM-V6-Kj5"/>
+                        <barButtonItem systemItem="done" id="AwT-6q-xqs">
+                            <color key="tintColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="endEditingButton:" destination="lvo-Pr-13X" id="uYo-Tq-w64"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" red="0.33300891519999998" green="0.333286792" blue="0.33305191989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </toolbar>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLX-ex-eeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="lvo-Pr-13X" customClass="ThermallyThinView" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="319"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QGw-ut-mlf">
@@ -954,7 +985,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="10" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-0M-bD7">
                                     <rect key="frame" x="0.0" y="38" width="100" height="30"/>
@@ -964,7 +995,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="10" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9Xc-zv-MnT">
                                     <rect key="frame" x="0.0" y="76" width="100" height="30"/>
@@ -974,7 +1005,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="10" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aAd-0m-oJS">
                                     <rect key="frame" x="0.0" y="114" width="100" height="30"/>
@@ -984,7 +1015,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="10" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XQj-gh-56Y">
                                     <rect key="frame" x="0.0" y="152" width="100" height="30"/>
@@ -994,7 +1025,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="10" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="64B-eh-z1s">
                                     <rect key="frame" x="0.0" y="190" width="100" height="30"/>
@@ -1004,29 +1035,67 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0je-gt-h7x" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                            <rect key="frame" x="16" y="261" width="382" height="30"/>
-                            <state key="normal" title="Calculate"/>
+                            <rect key="frame" x="16" y="336" width="382" height="30"/>
+                            <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Calculate">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="calculate:" destination="lvo-Pr-13X" eventType="touchUpInside" id="dDa-dw-lpL"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to Ignition:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUH-ol-r3H">
+                            <rect key="frame" x="16" y="281" width="132.66666666666666" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="kVw-EM-Ukr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="XJl-Da-8JR">
+                            <rect key="frame" x="164.66666666666666" y="281" width="75" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="i7J-Pc-7Cp"/>
+                                <constraint firstAttribute="width" constant="75" id="liT-kf-Hs8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mop-S9-XQe" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                            <rect key="frame" x="298" y="281" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="fiq-SA-vxz"/>
+                                <constraint firstAttribute="width" constant="100" id="gk9-gz-WMu"/>
+                            </constraints>
+                            <state key="normal" title="sec" backgroundImage="default"/>
+                            <connections>
+                                <action selector="changeTTIUnits:" destination="lvo-Pr-13X" eventType="touchUpInside" id="435-G7-kIs"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="0je-gt-h7x" firstAttribute="top" secondItem="QGw-ut-mlf" secondAttribute="bottom" constant="25" id="12e-9A-EDy"/>
+                        <constraint firstItem="XJl-Da-8JR" firstAttribute="leading" secondItem="ZUH-ol-r3H" secondAttribute="trailing" constant="16" id="2L6-ks-DkB"/>
                         <constraint firstItem="eIo-0i-PsP" firstAttribute="centerX" secondItem="lvo-Pr-13X" secondAttribute="centerX" id="AEF-XV-q3f"/>
                         <constraint firstItem="oXn-rs-GDI" firstAttribute="trailing" secondItem="uej-zs-Feo" secondAttribute="trailing" constant="16" id="D1O-MU-jGW"/>
                         <constraint firstItem="QGw-ut-mlf" firstAttribute="leading" secondItem="oXn-rs-GDI" secondAttribute="leading" constant="16" id="I1y-Dl-Qvx"/>
+                        <constraint firstItem="mop-S9-XQe" firstAttribute="top" secondItem="uej-zs-Feo" secondAttribute="bottom" constant="45" id="I4q-Gi-auo"/>
                         <constraint firstItem="QGw-ut-mlf" firstAttribute="top" secondItem="oXn-rs-GDI" secondAttribute="top" constant="16" id="PeO-4p-hUK"/>
+                        <constraint firstItem="0je-gt-h7x" firstAttribute="top" secondItem="ZUH-ol-r3H" secondAttribute="bottom" constant="25" id="ZmW-cR-O6B"/>
+                        <constraint firstItem="oXn-rs-GDI" firstAttribute="trailing" secondItem="mop-S9-XQe" secondAttribute="trailing" constant="16" id="aY6-Y5-Rrh"/>
                         <constraint firstItem="eIo-0i-PsP" firstAttribute="top" secondItem="oXn-rs-GDI" secondAttribute="top" constant="16" id="au9-kV-iyF"/>
                         <constraint firstItem="0je-gt-h7x" firstAttribute="leading" secondItem="oXn-rs-GDI" secondAttribute="leading" constant="16" id="dd6-C2-TMD"/>
                         <constraint firstItem="oXn-rs-GDI" firstAttribute="trailing" secondItem="0je-gt-h7x" secondAttribute="trailing" constant="16" id="lYG-2f-pKl"/>
                         <constraint firstItem="uej-zs-Feo" firstAttribute="top" secondItem="oXn-rs-GDI" secondAttribute="top" constant="16" id="mBS-wP-C1G"/>
+                        <constraint firstItem="ZUH-ol-r3H" firstAttribute="leading" secondItem="oXn-rs-GDI" secondAttribute="leading" constant="16" id="nSX-rD-0IA"/>
+                        <constraint firstItem="XJl-Da-8JR" firstAttribute="top" secondItem="eIo-0i-PsP" secondAttribute="bottom" constant="45" id="nuj-kh-1hj"/>
+                        <constraint firstItem="ZUH-ol-r3H" firstAttribute="top" secondItem="QGw-ut-mlf" secondAttribute="bottom" constant="45" id="uAf-2C-oIM"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="oXn-rs-GDI"/>
                     <connections>
@@ -1041,6 +1110,9 @@
                         <outlet property="specificHeatTF" destination="Z08-0M-bD7" id="UsD-Tg-d8d"/>
                         <outlet property="thicknessButton" destination="7o0-p1-LL0" id="YtZ-ru-j8H"/>
                         <outlet property="thicknessTF" destination="9Xc-zv-MnT" id="Pr5-UK-cSy"/>
+                        <outlet property="timeToIgnitionLabel" destination="XJl-Da-8JR" id="wdF-8a-r0k"/>
+                        <outlet property="toolbar" destination="5dC-Ga-Cfw" id="Mxr-7h-gpW"/>
+                        <outlet property="ttiButton" destination="mop-S9-XQe" id="bdx-Vr-Zpo"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="Lnh-bZ-I9A">
