@@ -60,7 +60,7 @@ struct SolidIgnitionCalculator {
         
     }
     
-    func thermallyThick(withMaterial: String, c: String, TAMB: String, TAMBUnits: String, heatFlux: String, heatFluxUnits: String) -> String {
+    func thermallyThick(withMaterial: String, c: String, TAMB: String, TAMBUnits: String, heatFlux: String, heatFluxUnits: String, timeUnits: String) -> String {
         if let material =  materials[withMaterial] {
             let c = Double(c)!
             let kpc = material["kpc"]!
@@ -74,7 +74,8 @@ struct SolidIgnitionCalculator {
                 let p2 = (tig - TAMB) / heatFlux
                 let p3 = pow(p2, 2.0)
                 let result = (p1 * p3).rounded(toPlaces: 2)
-                return "\(result)"
+                let conversion = Conversion.Time().time(value: result, from: Conversion.Time().getTimeUnits(string: timeUnits))
+                return "\(conversion)"
             } else {
                 return "Below Critial Flux"
             }
@@ -113,4 +114,16 @@ struct SolidIgnitionCalculator {
                      "Polycarbonate (1.52mm)": ["kpc": 1.16, "Tig": 528, "crit q": 30],
                      "Polyisocyanurate (5.08cm)": ["kpc": 0.02, "Tig": 445, "crit q": 21],
                      "Polystyrene (5.08cm)": ["kpc": 0.38, "Tig": 630, "crit q": 46]]
+}
+
+extension Dictionary where Key == String {
+    func getKeyList() -> [String] {
+        var list: [String] = []
+        
+        for key in keys {
+            list.append(key)
+        }
+        
+        return list
+    }
 }

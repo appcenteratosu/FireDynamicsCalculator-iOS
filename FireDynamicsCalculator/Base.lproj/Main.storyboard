@@ -1433,13 +1433,18 @@
                         <outlet property="ttiButton" destination="K1x-ga-kE7" id="K6C-3g-uZ2"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="WPw-X0-r5E">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                <view contentMode="scaleToFill" id="WPw-X0-r5E" customClass="ThermallyThickMaterialsView" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOn-LA-lug" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
                             <rect key="frame" x="166" y="16" width="232" height="30"/>
-                            <state key="normal" title="Material"/>
+                            <state key="normal" title="Material">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="changeMaterial:" destination="WPw-X0-r5E" eventType="touchUpInside" id="kCx-Pc-s3j"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-gK-teI">
                             <rect key="frame" x="16" y="16" width="125" height="144"/>
@@ -1454,7 +1459,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specific Heat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPC-vn-Tst">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPC-vn-Tst">
                                     <rect key="frame" x="0.0" y="38" width="125" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="125" id="8HE-5A-4LY"/>
@@ -1497,7 +1502,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TBD-KA-EHd">
                                     <rect key="frame" x="0.0" y="38" width="100" height="30"/>
@@ -1507,7 +1512,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9zn-QN-Ltk">
                                     <rect key="frame" x="0.0" y="76" width="100" height="30"/>
@@ -1517,52 +1522,113 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MF9-9V-Qpb">
-                            <rect key="frame" x="323" y="92" width="75" height="68"/>
+                            <rect key="frame" x="313" y="92" width="85" height="68"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EO1-Ms-kHP" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="75" id="Nq9-Vl-CIH"/>
+                                        <constraint firstAttribute="width" constant="85" id="Nq9-Vl-CIH"/>
                                         <constraint firstAttribute="height" constant="30" id="fq9-UC-UiQ"/>
                                     </constraints>
                                     <state key="normal" title="˚C" backgroundImage="default"/>
+                                    <connections>
+                                        <action selector="changeTAMBUnits:" destination="WPw-X0-r5E" eventType="touchUpInside" id="hRV-MW-1sr"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OG0-xq-nyd" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="38" width="75" height="30"/>
+                                    <rect key="frame" x="0.0" y="38" width="85" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="sex-oF-8sf"/>
-                                        <constraint firstAttribute="width" constant="75" id="zKh-bp-G93"/>
+                                        <constraint firstAttribute="width" constant="85" id="zKh-bp-G93"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <state key="normal" title="kW/m²" backgroundImage="default"/>
+                                    <connections>
+                                        <action selector="changeHeatFluxUnits:" destination="WPw-X0-r5E" eventType="touchUpInside" id="y67-lI-tx4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZV-UR-C1K" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                            <rect key="frame" x="16" y="185" width="382" height="30"/>
-                            <state key="normal" title="Calculate"/>
+                            <rect key="frame" x="16" y="231" width="382" height="30"/>
+                            <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Calculate">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="calculate:" destination="WPw-X0-r5E" eventType="touchUpInside" id="QKw-1y-Cd7"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to Ignition:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOe-gM-ZLB">
+                            <rect key="frame" x="16" y="185" width="132.66666666666666" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="nGD-C1-0mD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fdI-ss-Ad6">
+                            <rect key="frame" x="164" y="185" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="V7m-ud-stT"/>
+                                <constraint firstAttribute="width" constant="100" id="kq4-gR-DTp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-53-sUW" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                            <rect key="frame" x="313" y="185" width="85" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Foe-ru-98z"/>
+                                <constraint firstAttribute="width" constant="85" id="k8n-xL-R2y"/>
+                            </constraints>
+                            <state key="normal" title="sec" backgroundImage="default"/>
+                            <connections>
+                                <action selector="chagneTTIUnits:" destination="WPw-X0-r5E" eventType="touchUpInside" id="tqs-0P-chi"/>
+                                <action selector="changeTTIUnits:" destination="lvo-Pr-13X" eventType="touchUpInside" id="VqQ-lJ-Dti"/>
+                                <action selector="changeTTIUnits:" destination="Lnh-bZ-I9A" eventType="touchUpInside" id="gtv-P5-5qJ"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="bQr-53-sUW" firstAttribute="top" secondItem="MF9-9V-Qpb" secondAttribute="bottom" constant="25" id="5h2-jg-p7e"/>
                         <constraint firstItem="am3-zs-fs6" firstAttribute="trailing" secondItem="jOn-LA-lug" secondAttribute="trailing" constant="16" id="BFd-EX-Bgg"/>
+                        <constraint firstItem="FOe-gM-ZLB" firstAttribute="leading" secondItem="am3-zs-fs6" secondAttribute="leading" constant="16" id="Duv-FO-zRL"/>
                         <constraint firstItem="am3-zs-fs6" firstAttribute="trailing" secondItem="iZV-UR-C1K" secondAttribute="trailing" constant="16" id="Gaj-r0-TfV"/>
                         <constraint firstItem="kbx-QE-FG7" firstAttribute="leading" secondItem="1Dh-gK-teI" secondAttribute="trailing" constant="25" id="VEJ-d5-thV"/>
+                        <constraint firstItem="am3-zs-fs6" firstAttribute="trailing" secondItem="bQr-53-sUW" secondAttribute="trailing" constant="16" id="Zx2-u0-L2P"/>
+                        <constraint firstItem="iZV-UR-C1K" firstAttribute="top" secondItem="FOe-gM-ZLB" secondAttribute="bottom" constant="16" id="c11-9M-SZv"/>
+                        <constraint firstItem="FOe-gM-ZLB" firstAttribute="top" secondItem="1Dh-gK-teI" secondAttribute="bottom" constant="25" id="chP-Le-tlG"/>
                         <constraint firstItem="kbx-QE-FG7" firstAttribute="top" secondItem="jOn-LA-lug" secondAttribute="bottom" constant="8" id="f89-VD-crp"/>
                         <constraint firstItem="kbx-QE-FG7" firstAttribute="bottom" secondItem="1Dh-gK-teI" secondAttribute="bottom" id="gEQ-DX-VAO"/>
                         <constraint firstItem="iZV-UR-C1K" firstAttribute="leading" secondItem="am3-zs-fs6" secondAttribute="leading" constant="16" id="kID-Ls-s1i"/>
                         <constraint firstItem="am3-zs-fs6" firstAttribute="trailing" secondItem="MF9-9V-Qpb" secondAttribute="trailing" constant="16" id="ki5-9W-HkC"/>
                         <constraint firstItem="1Dh-gK-teI" firstAttribute="leading" secondItem="am3-zs-fs6" secondAttribute="leading" constant="16" id="l5M-Vq-yVs"/>
-                        <constraint firstItem="iZV-UR-C1K" firstAttribute="top" secondItem="1Dh-gK-teI" secondAttribute="bottom" constant="25" id="mvH-gN-hLn"/>
+                        <constraint firstItem="fdI-ss-Ad6" firstAttribute="leading" secondItem="FOe-gM-ZLB" secondAttribute="trailing" constant="16" id="mxD-rU-fAE"/>
                         <constraint firstItem="1Dh-gK-teI" firstAttribute="top" secondItem="am3-zs-fs6" secondAttribute="top" constant="16" id="q3p-Jk-PJn"/>
                         <constraint firstItem="jOn-LA-lug" firstAttribute="leading" secondItem="kbx-QE-FG7" secondAttribute="leading" id="scv-6R-dxv"/>
+                        <constraint firstItem="fdI-ss-Ad6" firstAttribute="top" secondItem="kbx-QE-FG7" secondAttribute="bottom" constant="25" id="sfB-WB-UtX"/>
                         <constraint firstItem="MF9-9V-Qpb" firstAttribute="bottom" secondItem="kbx-QE-FG7" secondAttribute="bottom" id="vOu-Zb-EjK"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="am3-zs-fs6"/>
+                    <connections>
+                        <outlet property="heatFluxButton" destination="OG0-xq-nyd" id="DLG-r9-eBa"/>
+                        <outlet property="heatFluxTF" destination="9zn-QN-Ltk" id="RKl-1N-MIF"/>
+                        <outlet property="materialButton" destination="jOn-LA-lug" id="F54-eR-Yco"/>
+                        <outlet property="specificHeatTF" destination="5nW-c6-E8v" id="oRk-et-H0a"/>
+                        <outlet property="tambButton" destination="EO1-Ms-kHP" id="AVd-0z-0OH"/>
+                        <outlet property="tambTF" destination="TBD-KA-EHd" id="6gJ-JU-BWt"/>
+                        <outlet property="toolbar" destination="5dC-Ga-Cfw" id="Emp-q8-iWn"/>
+                        <outlet property="ttiButton" destination="bQr-53-sUW" id="g6g-Hp-BJX"/>
+                        <outlet property="ttiLabel" destination="fdI-ss-Ad6" id="Elq-uS-sEh"/>
+                    </connections>
                 </view>
             </objects>
             <point key="canvasLocation" x="-1087" y="3630"/>

@@ -26,6 +26,7 @@
 		737D068F204E146800B8D36E /* SolidIgnitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */; };
 		739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739F99AA2050F69C00285105 /* ThermallyThinView.swift */; };
 		73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */; };
+		73D23255205227810039DFE5 /* ThermallyThickMaterialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */; };
 		73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57BF72043E03E000341CC /* t2_FiresViewController.swift */; };
 		73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */; };
 		99C8ABC4EBBADD23A13447CD /* Pods_FireDynamicsCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */; };
@@ -54,6 +55,7 @@
 		737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidIgnitionViewController.swift; sourceTree = "<group>"; };
 		739F99AA2050F69C00285105 /* ThermallyThinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThinView.swift; sourceTree = "<group>"; };
 		73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightViewController.swift; sourceTree = "<group>"; };
+		73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThickMaterialsView.swift; sourceTree = "<group>"; };
 		73E57BF72043E03E000341CC /* t2_FiresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2_FiresViewController.swift; sourceTree = "<group>"; };
 		73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2GraphViewController.swift; sourceTree = "<group>"; };
 		9EA1E6FDE208FA4483FEF2CE /* Pods-FireDynamicsCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */,
 				739F99AA2050F69C00285105 /* ThermallyThinView.swift */,
 				736CD4E72051DB0B00CBAA33 /* ThermallyThickView.swift */,
+				73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */,
 				736CD4E92051EC7C00CBAA33 /* ToolbarHandler.swift */,
 			);
 			path = "Solid Ignition";
@@ -306,6 +309,7 @@
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
 				736CD4E82051DB0B00CBAA33 /* ThermallyThickView.swift in Sources */,
 				73768A8A204A2B8C00F7CA97 /* ConductionViewController.swift in Sources */,
+				73D23255205227810039DFE5 /* ThermallyThickMaterialsView.swift in Sources */,
 				73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */,
 				7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */,
 				7379946D201559750076F570 /* RoundedButton.swift in Sources */,
@@ -453,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlukedavis.FireDynamicsCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -469,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlukedavis.FireDynamicsCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

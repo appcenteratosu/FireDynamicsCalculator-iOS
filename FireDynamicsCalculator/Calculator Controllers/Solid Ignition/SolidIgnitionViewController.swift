@@ -36,7 +36,7 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet var thermallyThinUIView: ThermallyThinView!
     @IBOutlet var thermallyThickUIVIew: ThermallyThickView!
-    @IBOutlet var thermallyThinkWithMaterialsUIView: UIView!
+    @IBOutlet var thermallyThinkWithMaterialsUIView: ThermallyThickMaterialsView!
     
     var responderDelegate: PickerResponderDelegate?
     
@@ -62,6 +62,7 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
             thermallyThickUIVIew.configure()
             
             self.view.addSubview(thermallyThickUIVIew)
+            
             thermallyThickUIVIew.snp.makeConstraints({ (make) in
                 make.top.equalTo(methodSelectionButton).offset(25)
                 make.left.equalToSuperview()
@@ -70,7 +71,18 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
             })
             
         } else if view == thermallyThinkWithMaterialsUIView {
+            thermallyThinkWithMaterialsUIView.pickerDelegate = self
+            self.responderDelegate = thermallyThinkWithMaterialsUIView
+            thermallyThinkWithMaterialsUIView.configure()
             
+            self.view.addSubview(thermallyThinkWithMaterialsUIView)
+            
+            thermallyThinkWithMaterialsUIView.snp.makeConstraints({ (make) in
+                make.top.equalTo(methodSelectionButton).offset(25)
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.height.equalTo(275)
+            })
         }
     }
     
@@ -109,8 +121,12 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         let selection = pickerData[row]
         
         if pickerData != options {
-            responderDelegate?.didSelectOption(option: selection)
-            closePicker()
+            if userIsSelectingMaterial {
+                responderDelegate?.didSelectOption(option: selection)
+            } else {
+                responderDelegate?.didSelectOption(option: selection)
+                closePicker()
+            }
         } else {
             self.methodSelectionButton.setTitle(selection, for: .normal)
             
@@ -125,13 +141,14 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
                 closePicker()
             } else if selection == options[3] {
                 currentUIView = thermallyThinkWithMaterialsUIView
-                
+                open(view: thermallyThinkWithMaterialsUIView)
                 closePicker()
             }
         }
         
     }
 
+    var userIsSelectingMaterial: Bool = false
     func setDataSource(dataSet: Conversion.Units.List) {
         switch dataSet {
         case .Density:
@@ -141,7 +158,8 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         case .Temperature:
             self.pickerData = self.temperature
         case .Materials:
-            self.pickerData = self.materials
+            self.pickerData = SolidIgnitionCalculator().materials.getKeyList()
+            userIsSelectingMaterial = true
         case .Time:
             self.pickerData = self.time
         case .EneregyDensity:
@@ -163,6 +181,16 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         picker.isHidden = true
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if userIsSelectingMaterial {
+            if let touch = touches.first {
+                if touch.view != picker {
+                    closePicker()
+                    userIsSelectingMaterial = false
+                }
+            }
+        }
+    }
 
 }
 
