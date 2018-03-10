@@ -12,6 +12,8 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Conduction"
 
         masterSetup()
         

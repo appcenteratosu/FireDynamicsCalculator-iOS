@@ -196,29 +196,77 @@ class Conversion {
         }
     }
     
-    func pressure(value: Double, from unit: Units.Pressure) -> Double {
-        switch unit {
-        case .inchesH2O:
-            return value * 2.490889083
-        case .kPa:
-            return value * 10
-        case .mbar:
-            return value * 1
-        case .psi:
-            return value * 68.9475728
+    struct Pressure {
+        enum Pressure {
+            case inchesH2O
+            case kPa
+            case mbar
+            case psi
+        }
+        
+        func pressure(value: Double, from unit: Pressure) -> Double {
+            switch unit {
+            case .inchesH2O:
+                return value * 2.490889083
+            case .kPa:
+                return value * 10
+            case .mbar:
+                return value * 1
+            case .psi:
+                return value * 68.9475728
+            }
+        }
+        
+        func getPressureUnits(string: String) -> Pressure {
+            switch string {
+            case "in H₂O":
+                return .inchesH2O
+            case "kPa":
+                return .kPa
+            case "mbar":
+                return .mbar
+            case "psi":
+                return .psi
+            default:
+                return .inchesH2O
+            }
         }
     }
     
-    func flow(value: Double, from unit: Units.Flow) -> Double {
-        switch unit {
-        case .cfm:
-            return value * 0.588125867
-        case .cubFtSec:
-            return value * 0.009802098
-        case .cubMHr:
-            return value * 1
-        case .cubMSec:
-            return value * 0.000277778
+    struct Flow {
+        enum Flow {
+            case cfm
+            case ft³_Sec
+            case m³_Hr
+            case m³_Sec
+        }
+        
+        func flow(value: Double, from unit: Flow) -> Double {
+            switch unit {
+            case .cfm:
+                return value * 0.588125867
+            case .ft³_Sec:
+                return value * 0.009802098
+            case .m³_Hr:
+                return value * 1
+            case .m³_Sec:
+                return value * 0.000277778
+            }
+        }
+        
+        func getFlowUnits(string: String) -> Flow {
+            switch string {
+            case "m³ / Hr":
+                return .m³_Hr
+            case "m³ / Sec":
+                return .m³_Sec
+            case "ft³ / Sec":
+                return .ft³_Sec
+            case "ft³ / Min":
+                return .cfm
+            default:
+                return .cfm
+            }
         }
     }
     
@@ -357,9 +405,9 @@ class Conversion {
         
         enum Flow {
             case cfm
-            case cubFtSec
-            case cubMHr
-            case cubMSec
+            case ft³_Sec
+            case m³_Hr
+            case m³_Sec
         }
         
         enum Temperature {

@@ -14,6 +14,8 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Solid Ignition"
 
         setupPicker()
         

@@ -12,6 +12,8 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Flame Height"
 
         setupToolbar()
         setupPicker()

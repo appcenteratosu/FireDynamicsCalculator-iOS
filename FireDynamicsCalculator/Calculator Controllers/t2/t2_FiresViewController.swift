@@ -13,6 +13,8 @@ class t2_FiresViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "t2 Fires"
 
         setupToolbar()
         

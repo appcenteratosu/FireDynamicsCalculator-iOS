@@ -12,6 +12,8 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Heat Release Rate"
 
         setupPicker()
         setupKeyboard()
