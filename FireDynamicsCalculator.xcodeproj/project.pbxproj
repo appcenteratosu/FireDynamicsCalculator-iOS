@@ -10,7 +10,9 @@
 		7301547A204A59E40096293B /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73015479204A59E40096293B /* todo.rtf */; };
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
 		732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FA2053372200C0CF16 /* OpenPipeViewController.swift */; };
+		732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */; };
 		7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343F5DE201EBA1A0090CBB6 /* Conversion.swift */; };
+		73464ABD2058909A00E85853 /* GasConcentrationGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */; };
 		735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */; };
 		735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DAD9E2037855500EA97AA /* HRRViewController.swift */; };
 		736CD4E62051DA3F00CBAA33 /* SolidIgnitionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */; };
@@ -38,7 +40,9 @@
 		73015479204A59E40096293B /* todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
 		732666FA2053372200C0CF16 /* OpenPipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPipeViewController.swift; sourceTree = "<group>"; };
+		732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationViewController.swift; sourceTree = "<group>"; };
 		7343F5DE201EBA1A0090CBB6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationGraphViewController.swift; sourceTree = "<group>"; };
 		735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firedynamics_background_1.png; sourceTree = "<group>"; };
 		735DAD9E2037855500EA97AA /* HRRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRViewController.swift; sourceTree = "<group>"; };
 		736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidIgnitionCalculator.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				73768A89204A2B8C00F7CA97 /* ConductionViewController.swift */,
 				739F99A92050F57300285105 /* Solid Ignition */,
 				732666FA2053372200C0CF16 /* OpenPipeViewController.swift */,
+				732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */,
+				73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */,
 			);
 			path = "Calculator Controllers";
 			sourceTree = "<group>";
@@ -311,8 +317,10 @@
 				737D068F204E146800B8D36E /* SolidIgnitionViewController.swift in Sources */,
 				73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */,
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
+				732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */,
 				736CD4E82051DB0B00CBAA33 /* ThermallyThickView.swift in Sources */,
 				73768A8A204A2B8C00F7CA97 /* ConductionViewController.swift in Sources */,
+				73464ABD2058909A00E85853 /* GasConcentrationGraphViewController.swift in Sources */,
 				73D23255205227810039DFE5 /* ThermallyThickMaterialsView.swift in Sources */,
 				73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */,
 				7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */,

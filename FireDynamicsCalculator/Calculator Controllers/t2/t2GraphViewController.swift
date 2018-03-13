@@ -63,6 +63,8 @@ class t2GraphViewController: UIViewController, ChartViewDelegate {
         desc.text = "\(entry.x.rounded(toPlaces: 2)), \(entry.y.rounded(toPlaces: 2))"
         
         chartView.chartDescription = desc
+        let font = UIFont(name: UIFont.fontNames(forFamilyName: "Avenir Next")[0], size: 12)
+        chartView.chartDescription?.font = font!
     }
     
     

@@ -51,7 +51,6 @@ class Conversion {
         }
     }
     
-    
     struct Density {
         enum Density {
             case kg_m³
@@ -164,6 +163,48 @@ class Conversion {
         }
     }
     
+    struct Volume {
+        enum Volume {
+            case ft³
+            case gallon
+            case in³
+            case liter
+            case m³
+        }
+        
+        func convertVolume(value: Double, from Unit: Volume) -> Double {
+            switch Unit {
+            case .ft³:
+                return value * 0.0283168
+            case .gallon:
+                return value * 0.00378541
+            case .in³:
+                return value * 0.0000163870562770569
+            case .liter:
+                return value * 0.001
+            case .m³:
+                return value * 1.0
+            }
+        }
+        
+        func getUnits(string: String) -> Volume {
+            switch string {
+            case "ft³":
+                return .ft³
+            case "gallon":
+                return .gallon
+            case "in³":
+                return .in³
+            case "liter":
+                return .liter
+            case "m³":
+                return .m³
+            default:
+                return .m³
+            }
+        }
+    }
+    
     struct Time {
         enum Time {
             case Hour
@@ -251,6 +292,19 @@ class Conversion {
                 return value * 1
             case .m³_Sec:
                 return value * 0.000277778
+            }
+        }
+        
+        func toCubMHour(value: Double, from unit: Flow) -> Double {
+            switch unit {
+            case .cfm:
+                return value / 0.588125867
+            case .ft³_Sec:
+                return value / 0.009802098
+            case .m³_Hr:
+                return value / 1
+            case .m³_Sec:
+                return value / 0.000277778
             }
         }
         

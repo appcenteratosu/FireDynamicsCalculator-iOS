@@ -34,8 +34,9 @@ class ReportListTableViewController: UITableViewController {
                    "Radiation Pool",
                    "Conduction",
                    "Solid Ignition",
-                   "Open Pipe"]
-    let descriptions = ["Fire size required for flashover", "Fire Size", "Predict flame height", "Predict size of exponentially growing fire", "Predict radiant flux from a pool fire", "Predict conductive heat flux through a material", "Predict ignition time", "Predict gas flow rate through a leak in an open pipe"]
+                   "Open Pipe",
+                   "Gas Concentration"]
+    let descriptions = ["Fire size required for flashover", "Fire Size", "Predict flame height", "Predict size of exponentially growing fire", "Predict radiant flux from a pool fire", "Predict conductive heat flux through a material", "Predict ignition time", "Predict gas flow rate through a leak in an open pipe","Predict gas concentration in a space due to a leak"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -76,19 +77,11 @@ class ReportListTableViewController: UITableViewController {
             performSegue(withIdentifier: "solidIgnition", sender: self)
         case "Open Pipe":
             performSegue(withIdentifier: "openPipe", sender: self)
+        case "Gas Concentration":
+            performSegue(withIdentifier: "gasConcentration", sender: self)
         default:
             print("Error")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
