@@ -15,7 +15,6 @@ class GasConcentrationGraphViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         
         self.title = "Gas Concentration Chart"
-        
 
         chart.delegate = self
         updateChartData(set: self.data)
