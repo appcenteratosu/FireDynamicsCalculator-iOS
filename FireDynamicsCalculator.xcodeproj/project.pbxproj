@@ -11,6 +11,7 @@
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
 		732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FA2053372200C0CF16 /* OpenPipeViewController.swift */; };
 		732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */; };
+		7340734020589E15004374CA /* GasAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340733F20589E15004374CA /* GasAmountViewController.swift */; };
 		7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343F5DE201EBA1A0090CBB6 /* Conversion.swift */; };
 		73464ABD2058909A00E85853 /* GasConcentrationGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */; };
 		735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */; };
@@ -41,6 +42,7 @@
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
 		732666FA2053372200C0CF16 /* OpenPipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPipeViewController.swift; sourceTree = "<group>"; };
 		732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationViewController.swift; sourceTree = "<group>"; };
+		7340733F20589E15004374CA /* GasAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasAmountViewController.swift; sourceTree = "<group>"; };
 		7343F5DE201EBA1A0090CBB6 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationGraphViewController.swift; sourceTree = "<group>"; };
 		735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firedynamics_background_1.png; sourceTree = "<group>"; };
@@ -87,6 +89,15 @@
 				A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7340734120589E1A004374CA /* Gas Concentration */ = {
+			isa = PBXGroup;
+			children = (
+				732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */,
+				73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */,
+			);
+			path = "Gas Concentration";
 			sourceTree = "<group>";
 		};
 		734075DDBFD0DF32CE1C347A /* Frameworks */ = {
@@ -144,8 +155,8 @@
 				73768A89204A2B8C00F7CA97 /* ConductionViewController.swift */,
 				739F99A92050F57300285105 /* Solid Ignition */,
 				732666FA2053372200C0CF16 /* OpenPipeViewController.swift */,
-				732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */,
-				73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */,
+				7340734120589E1A004374CA /* Gas Concentration */,
+				7340733F20589E15004374CA /* GasAmountViewController.swift */,
 			);
 			path = "Calculator Controllers";
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 				736CD4EA2051EC7C00CBAA33 /* ToolbarHandler.swift in Sources */,
 				7379946A201551550076F570 /* FlashoverViewController.swift in Sources */,
 				732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */,
+				7340734020589E15004374CA /* GasAmountViewController.swift in Sources */,
 				735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */,
 				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */,
