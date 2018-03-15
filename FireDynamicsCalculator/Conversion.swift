@@ -127,7 +127,13 @@ class Conversion {
     }
     
     struct Area {
-        func area(value: Double, from unit: Units.Area) -> Double {
+        enum Area {
+            case FtSq
+            case inchesSq
+            case mSq
+        }
+        
+        func area(value: Double, from unit: Area) -> Double {
             switch unit {
             case .FtSq:
                 return value * 0.092950625
@@ -138,7 +144,7 @@ class Conversion {
             }
         }
         
-        func getAreaUnits(from: String) -> Units.Area {
+        func getAreaUnits(from: String) -> Area {
             switch from {
             case "ft²":
                 return .FtSq
@@ -151,17 +157,7 @@ class Conversion {
             }
         }
     }
-    
-    func mass(value: Double, from unit: Units.Mass) -> Double {
-        switch unit {
-        case .g:
-            return value * 0.001
-        case .kg:
-            return value * 1.0
-        case .lb:
-            return value * 0.453592
-        }
-    }
+
     
     struct Volume {
         enum Volume {
@@ -184,6 +180,21 @@ class Conversion {
                 return value * 0.001
             case .m³:
                 return value * 1.0
+            }
+        }
+        
+        func convertToCubM(value: Double, from unit: Volume) -> Double {
+            switch unit {
+            case .ft³:
+                return value / 0.0283168
+            case .gallon:
+                return value / 0.00378541
+            case .in³:
+                return value / 0.0000163870562770569
+            case .liter:
+                return value / 0.001
+            case .m³:
+                return value / 1.0
             }
         }
         
@@ -541,6 +552,51 @@ class Conversion {
     
     }
     
+    struct Mass {
+        enum Mass {
+            case g
+            case kg
+            case lb
+        }
+        
+        func convertMass(value: Double, from unit: Mass) -> Double {
+            switch unit {
+            case .g:
+                return value * 0.001
+            case .kg:
+                return value * 1
+            case .lb:
+                return value * 0.453592
+            }
+        }
+        
+        func convertToKg(value: Double, from unit: Mass) -> Double {
+            switch unit {
+            case .g:
+                return value / 0.001
+            case .kg:
+                return value / 1
+            case .lb:
+                return value / 0.453592
+            }
+        }
+        
+        func getUnits(string: String) -> Mass {
+            switch string {
+            case "g":
+                return .g
+            case "kg":
+                return .kg
+            case "lb":
+                return .lb
+            default:
+                return .g
+            }
+        }
+        
+    }
+    
+
 }
 
 

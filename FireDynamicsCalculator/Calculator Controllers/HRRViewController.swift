@@ -409,7 +409,7 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
-    func convertArea(area: Double, to unit: Conversion.Units.Area) -> Double {
+    func convertArea(area: Double, to unit: Conversion.Area.Area) -> Double {
         let area = Conversion.Area().area(value: area, from: unit)
         return area
     }

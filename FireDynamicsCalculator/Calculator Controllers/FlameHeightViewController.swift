@@ -180,7 +180,7 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
         }
     }
     
-    func getL(value: Double, to unit: Conversion.Units.Area) -> Double {
+    func getL(value: Double, to unit: Conversion.Area.Area) -> Double {
         switch unit {
         case .FtSq:
             return value / 0.092950625
