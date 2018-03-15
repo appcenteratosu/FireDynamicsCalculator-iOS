@@ -33,6 +33,9 @@
 		73D23255205227810039DFE5 /* ThermallyThickMaterialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */; };
 		73E57BF82043E03E000341CC /* t2_FiresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57BF72043E03E000341CC /* t2_FiresViewController.swift */; };
 		73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */; };
+		73EAC597205B3AC0009742C8 /* OxygenLevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAC596205B3AC0009742C8 /* OxygenLevelsViewController.swift */; };
+		73EAC59B205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAC59A205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift */; };
+		73EAC59E205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAC59D205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift */; };
 		99C8ABC4EBBADD23A13447CD /* Pods_FireDynamicsCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThickMaterialsView.swift; sourceTree = "<group>"; };
 		73E57BF72043E03E000341CC /* t2_FiresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2_FiresViewController.swift; sourceTree = "<group>"; };
 		73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t2GraphViewController.swift; sourceTree = "<group>"; };
+		73EAC596205B3AC0009742C8 /* OxygenLevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxygenLevelsViewController.swift; sourceTree = "<group>"; };
+		73EAC59A205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxygenLevelsGraphViewController.swift; sourceTree = "<group>"; };
+		73EAC59D205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxygenLevelsResultsViewController.swift; sourceTree = "<group>"; };
 		9EA1E6FDE208FA4483FEF2CE /* Pods-FireDynamicsCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireDynamicsCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireDynamicsCalculator/Pods-FireDynamicsCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +163,7 @@
 				732666FA2053372200C0CF16 /* OpenPipeViewController.swift */,
 				7340734120589E1A004374CA /* Gas Concentration */,
 				7340733F20589E15004374CA /* GasAmountViewController.swift */,
+				73EAC59C205B3AF4009742C8 /* OxygenLevels */,
 			);
 			path = "Calculator Controllers";
 			sourceTree = "<group>";
@@ -181,6 +188,16 @@
 				73E9E8572044DC11009B6BE9 /* t2GraphViewController.swift */,
 			);
 			path = t2;
+			sourceTree = "<group>";
+		};
+		73EAC59C205B3AF4009742C8 /* OxygenLevels */ = {
+			isa = PBXGroup;
+			children = (
+				73EAC596205B3AC0009742C8 /* OxygenLevelsViewController.swift */,
+				73EAC59A205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift */,
+				73EAC59D205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift */,
+			);
+			path = OxygenLevels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EAC597205B3AC0009742C8 /* OxygenLevelsViewController.swift in Sources */,
 				736CD4EA2051EC7C00CBAA33 /* ToolbarHandler.swift in Sources */,
 				7379946A201551550076F570 /* FlashoverViewController.swift in Sources */,
 				732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */,
@@ -323,6 +341,7 @@
 				735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */,
 				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */,
+				73EAC59E205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift in Sources */,
 				7379945620154EBC0076F570 /* AppDelegate.swift in Sources */,
 				73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */,
 				736CD4E62051DA3F00CBAA33 /* SolidIgnitionCalculator.swift in Sources */,
@@ -336,6 +355,7 @@
 				73D23255205227810039DFE5 /* ThermallyThickMaterialsView.swift in Sources */,
 				73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */,
 				7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */,
+				73EAC59B205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift in Sources */,
 				7379946D201559750076F570 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
