@@ -14,7 +14,7 @@ class RadiationPoolFireViewController: UIViewController, UIPickerViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Radiation Pool"
+        self.title = "Radiation Poolsnp"
 
         setupDiameterButtons()
         setupPicker()

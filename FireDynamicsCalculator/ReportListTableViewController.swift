@@ -35,8 +35,9 @@ class ReportListTableViewController: UITableViewController {
                    "Conduction",
                    "Solid Ignition",
                    "Open Pipe",
-                   "Gas Concentration"]
-    let descriptions = ["Fire size required for flashover", "Fire Size", "Predict flame height", "Predict size of exponentially growing fire", "Predict radiant flux from a pool fire", "Predict conductive heat flux through a material", "Predict ignition time", "Predict gas flow rate through a leak in an open pipe","Predict gas concentration in a space due to a leak"]
+                   "Gas Concentration",
+                   "Gas Amount"]
+    let descriptions = ["Fire size required for flashover", "Fire Size", "Predict flame height", "Predict size of exponentially growing fire", "Predict radiant flux from a pool fire", "Predict conductive heat flux through a material", "Predict ignition time", "Predict gas flow rate through a leak in an open pipe","Predict gas concentration in a space due to a leak",""]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -79,6 +80,8 @@ class ReportListTableViewController: UITableViewController {
             performSegue(withIdentifier: "openPipe", sender: self)
         case "Gas Concentration":
             performSegue(withIdentifier: "gasConcentration", sender: self)
+        case "Gas Amount":
+            performSegue(withIdentifier: "gasAmount", sender: self)
         default:
             print("Error")
         }
