@@ -37,7 +37,9 @@ class ReportListTableViewController: UITableViewController {
                    "Open Pipe",
                    "Gas Concentration",
                    "Gas Amount",
-                   "Oxygen Levels"]
+                   "Oxygen Levels",
+                   "Self Heating",
+                   "T Gas Layer"]
     let descriptions = ["Fire size required for flashover",
                         "Fire Size", "Predict flame height",
                         "Predict size of exponentially growing fire",
@@ -47,7 +49,9 @@ class ReportListTableViewController: UITableViewController {
                         "Predict gas flow rate through a leak in an open pipe",
                         "Predict gas concentration in a space due to a leak",
                         "Predict required amount of a gas needed to reach LEL/U",
-                        "Predict the amount of oxygen consumed by a fire in a room"]
+                        "Predict the amount of oxygen consumed by a fire in a room",
+                        "Predict critical pile size and temperature for spontaneous combustion",
+                        "Predict the temperature of the upper gas layer in a compartment fire"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -94,6 +98,10 @@ class ReportListTableViewController: UITableViewController {
             performSegue(withIdentifier: "gasAmount", sender: self)
         case "Oxygen Levels":
             performSegue(withIdentifier: "oxygenLevels", sender: self)
+        case "Self Heating":
+            performSegue(withIdentifier: "selfheating", sender: self)
+        case "T Gas Layer":
+            performSegue(withIdentifier: "tgaslayer", sender: self)
         default:
             print("Error")
         }

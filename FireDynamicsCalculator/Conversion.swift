@@ -17,6 +17,8 @@ class Conversion {
         let volume = ["Please select an option", "ft³", "gallon", "in³", "liter", "m³"]
         let mass = ["Please select an option", "g", "kg", "lb"]
         let time = ["Please Select an Option", "Hr", "Min", "Sec"]
+        let energy = ["Please Select an Option", "kW", "Btu / sec"]
+        let temperature = ["Please Select an Option", "°C","°F","K","R"]
     }
     
     struct Length {
@@ -167,7 +169,6 @@ class Conversion {
             }
         }
     }
-
     
     struct Volume {
         enum Volume {
@@ -386,6 +387,25 @@ class Conversion {
                 return 0.0
             }
         }
+        
+        func TGasConv(value: String, from units: Temperature) -> Double {
+            if let value = Double(value) {
+                if units == .F {
+                    let result = (value - 32) * ( 5  / 9) + 273.15
+                    return result
+                } else if units == .C {
+                    return value + 273.15
+                } else if units == .K {
+                    let result = 273.15
+                    return result
+                } else {
+                    let result = (value - 459.67 - 32 ) * (5 / 9) + 273.15
+                    return result
+                }
+            } else {
+                return 0.0
+            }
+        }
     }
     
     struct Units {
@@ -534,8 +554,46 @@ class Conversion {
                 return 0.054
             }
         }
-    
-    
+        
+        func getMaterial(material: String) -> Conversion.Materials.material {
+            switch material {
+            case "Aerated Concrete":
+                return .AeratedConcrete
+            case "Alumina Silicate Block":
+                return .AluminaSilicateBlock
+            case "Aluminum":
+                return .Aluminum
+            case "Brick":
+                return .Brick
+            case "Brick/Concrete Block":
+                return .BrickConcreteBlock
+            case "Calcium Silicate Board ":
+                return .CalciumSilicateBoard
+            case "Chipboard":
+                return .Chipboard
+            case "Concrete":
+                return .Concrete
+            case "Expended Polystyrene":
+                return .ExpendedPolystyrene
+            case "Fiber Insulation Board":
+                return .FiberInsulationBoard
+            case "Glass Fiber Insulation":
+                return .GlassFiberInsulation
+            case "Glass Plate":
+                return .GlassPlate
+            case "Gypsum Board":
+                return .GypsumBoard
+            case "Plasterboard":
+                return .Plasterboard
+            case "Plywood":
+                return .Plywood
+            case "Steel":
+                return .Steel
+            default:
+                return .GypsumBoard
+            }
+        }
+        
         enum material {
             case AeratedConcrete
             case AluminaSilicateBlock
@@ -557,9 +615,6 @@ class Conversion {
             
             case Steel
         }
-        
-        
-    
     }
     
     struct Mass {
