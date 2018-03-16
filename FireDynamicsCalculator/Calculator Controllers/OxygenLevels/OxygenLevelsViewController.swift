@@ -173,14 +173,16 @@ class OxygenLevelsViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowResults" {
             if let vc = segue.destination as? OxygenLevelsResultsViewController {
-                if let results = sender as? [[String: Double]] {
+                if let results = sender as? (Double, [[String: Double]]) {
                     vc.results = results
+                    
                 } else {
                     showAlert(title: "Oops!", message: "Please make sure to provide a value for each field")
                 }
             }
         }
     }
+    
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

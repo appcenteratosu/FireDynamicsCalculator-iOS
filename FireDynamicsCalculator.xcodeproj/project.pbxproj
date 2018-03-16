@@ -194,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				73EAC596205B3AC0009742C8 /* OxygenLevelsViewController.swift */,
-				73EAC59A205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift */,
 				73EAC59D205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift */,
+				73EAC59A205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift */,
 			);
 			path = OxygenLevels;
 			sourceTree = "<group>";

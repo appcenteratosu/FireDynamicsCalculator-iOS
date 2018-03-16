@@ -2516,10 +2516,10 @@
             </objects>
             <point key="canvasLocation" x="5192.753623188406" y="1854.6195652173915"/>
         </scene>
-        <!--Oxygen Levels View Controller-->
+        <!--Oxygen Levels-->
         <scene sceneID="Yxr-ms-lXL">
             <objects>
-                <viewController id="Wwh-uD-e0F" customClass="OxygenLevelsViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Oxygen Levels" id="Wwh-uD-e0F" customClass="OxygenLevelsViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ObX-Ma-7iv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2528,6 +2528,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="749-Bb-lp1">
+                                <rect key="frame" x="32" y="141" width="47" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mr4-rD-w2e">
                                 <rect key="frame" x="32" y="166" width="60" height="106"/>
                                 <subviews>
@@ -2687,22 +2693,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="749-Bb-lp1">
-                                <rect key="frame" x="32" y="141" width="47" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMh-9n-PKt" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
-                                <rect key="frame" x="32" y="477" width="311" height="30"/>
-                                <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="calculate:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="sT2-bH-pwF"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wc4-Bu-Hek">
                                 <rect key="frame" x="243" y="288" width="100" height="164"/>
                                 <subviews>
@@ -2751,6 +2741,16 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMh-9n-PKt" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                <rect key="frame" x="32" y="477" width="311" height="30"/>
+                                <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculate:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="sT2-bH-pwF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2792,7 +2792,7 @@
                         <outlet property="t2Growthrate" destination="CLM-Aq-h9G" id="Jig-XA-Rr1"/>
                         <outlet property="timestep" destination="c2O-SB-WuW" id="FVf-vX-kt1"/>
                         <outlet property="toolbar" destination="EKt-Nt-laB" id="FUp-82-yly"/>
-                        <segue destination="HYq-M0-rid" kind="show" identifier="showGraph" action="showDetailViewController:sender:" id="AR6-Ny-e1X"/>
+                        <segue destination="HYq-M0-rid" kind="show" identifier="ShowResults" id="tu0-IP-MqH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVG-Uq-RAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2817,20 +2817,117 @@
             </objects>
             <point key="canvasLocation" x="6136.8000000000002" y="1852.6236881559221"/>
         </scene>
-        <!--Oxygen Levels Results View Controller-->
+        <!--Results-->
         <scene sceneID="g9X-Ht-4p7">
             <objects>
-                <viewController id="HYq-M0-rid" customClass="OxygenLevelsResultsViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Results" id="HYq-M0-rid" customClass="OxygenLevelsResultsViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xCp-cu-VOc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firedynamics_background_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="yzb-CB-mOV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to reduce O2 levels to 14%:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHG-gu-lBE">
+                                <rect key="frame" x="16" y="191" width="150" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="CK7-IW-7dc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6666" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mml-6s-IHt">
+                                <rect key="frame" x="198" y="191" width="42" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dru-Xf-HDq" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                <rect key="frame" x="32" y="282" width="311" height="30"/>
+                                <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Time vs. Heat Release Rate Graph">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGraphHRR:" destination="HYq-M0-rid" eventType="touchUpInside" id="6gc-1i-Nis"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sH-4k-qfD" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                <rect key="frame" x="32" y="344" width="311" height="30"/>
+                                <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Time vs. O2 Consumption Graph">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGraphConcumption:" destination="HYq-M0-rid" eventType="touchUpInside" id="nOG-dn-dI3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-C1-rBn" customClass="RoundedButton" customModule="FireDynamicsCalculator" customModuleProvider="target">
+                                <rect key="frame" x="32" y="406" width="311" height="30"/>
+                                <color key="backgroundColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Time vs. O2 % in room Graph">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGraphO2:" destination="HYq-M0-rid" eventType="touchUpInside" id="GaR-W6-pMU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hum-EE-wUt">
+                                <rect key="frame" x="284" y="196" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="LRj-mx-fni"/>
+                                    <constraint firstAttribute="height" constant="30" id="Z6b-9o-A3N"/>
+                                </constraints>
+                                <state key="normal" title="sec" backgroundImage="default">
+                                    <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUnits:" destination="HYq-M0-rid" eventType="touchUpInside" id="7AN-PE-xPn"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMo-el-cKi">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mml-6s-IHt" firstAttribute="leading" secondItem="XHG-gu-lBE" secondAttribute="trailing" constant="32" id="6d1-Kq-lbt"/>
+                            <constraint firstItem="iwN-Yf-KVv" firstAttribute="trailing" secondItem="OVd-C1-rBn" secondAttribute="trailing" constant="32" id="6m1-Zm-aF1"/>
+                            <constraint firstItem="yzb-CB-mOV" firstAttribute="leading" secondItem="iwN-Yf-KVv" secondAttribute="leading" id="6oi-qk-k7d"/>
+                            <constraint firstItem="5sH-4k-qfD" firstAttribute="top" secondItem="dru-Xf-HDq" secondAttribute="bottom" constant="32" id="Apb-bl-9xC"/>
+                            <constraint firstItem="XHG-gu-lBE" firstAttribute="leading" secondItem="iwN-Yf-KVv" secondAttribute="leading" constant="16" id="CiQ-jk-YC6"/>
+                            <constraint firstItem="5sH-4k-qfD" firstAttribute="leading" secondItem="iwN-Yf-KVv" secondAttribute="leading" constant="32" id="N6N-LY-ueh"/>
+                            <constraint firstItem="iwN-Yf-KVv" firstAttribute="trailing" secondItem="dru-Xf-HDq" secondAttribute="trailing" constant="32" id="Sin-Db-eOp"/>
+                            <constraint firstItem="OVd-C1-rBn" firstAttribute="leading" secondItem="iwN-Yf-KVv" secondAttribute="leading" constant="32" id="Tlz-rd-lfE"/>
+                            <constraint firstItem="Hum-EE-wUt" firstAttribute="top" secondItem="iwN-Yf-KVv" secondAttribute="top" constant="80" id="V8y-sR-b3w"/>
+                            <constraint firstItem="yzb-CB-mOV" firstAttribute="trailing" secondItem="iwN-Yf-KVv" secondAttribute="trailing" id="WfP-xD-4Nd"/>
+                            <constraint firstItem="yzb-CB-mOV" firstAttribute="top" secondItem="xCp-cu-VOc" secondAttribute="top" id="Wil-DS-4if"/>
+                            <constraint firstItem="OVd-C1-rBn" firstAttribute="top" secondItem="5sH-4k-qfD" secondAttribute="bottom" constant="32" id="Xsp-tA-swg"/>
+                            <constraint firstItem="iwN-Yf-KVv" firstAttribute="trailing" secondItem="Hum-EE-wUt" secondAttribute="trailing" constant="16" id="YLT-Py-u7c"/>
+                            <constraint firstItem="dru-Xf-HDq" firstAttribute="top" secondItem="XHG-gu-lBE" secondAttribute="bottom" constant="50" id="a5W-mN-1lN"/>
+                            <constraint firstItem="iwN-Yf-KVv" firstAttribute="trailing" secondItem="5sH-4k-qfD" secondAttribute="trailing" constant="32" id="dI2-nX-hnl"/>
+                            <constraint firstItem="dru-Xf-HDq" firstAttribute="leading" secondItem="iwN-Yf-KVv" secondAttribute="leading" constant="32" id="e11-xy-QCT"/>
+                            <constraint firstItem="zMo-el-cKi" firstAttribute="trailing" secondItem="iwN-Yf-KVv" secondAttribute="trailing" id="itO-vn-nTt"/>
+                            <constraint firstItem="Mml-6s-IHt" firstAttribute="height" secondItem="XHG-gu-lBE" secondAttribute="height" id="j2X-9C-5so"/>
+                            <constraint firstItem="zMo-el-cKi" firstAttribute="bottom" secondItem="iwN-Yf-KVv" secondAttribute="bottom" id="mUr-6J-dGc"/>
+                            <constraint firstItem="yzb-CB-mOV" firstAttribute="bottom" secondItem="iwN-Yf-KVv" secondAttribute="bottom" id="mh1-rZ-jmj"/>
+                            <constraint firstItem="Mml-6s-IHt" firstAttribute="top" secondItem="iwN-Yf-KVv" secondAttribute="top" constant="75" id="nIR-Vd-FOa"/>
+                            <constraint firstItem="zMo-el-cKi" firstAttribute="leading" secondItem="iwN-Yf-KVv" secondAttribute="leading" id="uru-kV-wrd"/>
+                            <constraint firstItem="XHG-gu-lBE" firstAttribute="top" secondItem="iwN-Yf-KVv" secondAttribute="top" constant="75" id="wMj-r7-YlP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iwN-Yf-KVv"/>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="zMo-el-cKi" id="AAQ-u9-969"/>
+                        <outlet property="timeTo14Percent" destination="Mml-6s-IHt" id="z7s-qa-zAz"/>
+                        <outlet property="units" destination="Hum-EE-wUt" id="0IL-9o-Ilk"/>
+                        <segue destination="d7C-Ng-nQ9" kind="show" identifier="showGraph" id="KmP-jb-inF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb5-aO-B3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6137" y="2612"/>
+            <point key="canvasLocation" x="6136.8000000000002" y="2611.8440779610196"/>
         </scene>
         <!--Oxygen Levels Graph View Controller-->
         <scene sceneID="Wio-de-TRS">
@@ -2839,13 +2936,35 @@
                     <view key="view" contentMode="scaleToFill" id="wJw-ZC-7vf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firedynamics_background_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5oB-KD-tNb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMm-sP-jRG" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="132" width="343" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YMm-sP-jRG" firstAttribute="top" secondItem="kZX-fh-HiZ" secondAttribute="top" constant="16" id="2sK-b6-9PD"/>
+                            <constraint firstItem="5oB-KD-tNb" firstAttribute="leading" secondItem="kZX-fh-HiZ" secondAttribute="leading" id="7Ln-8n-JJJ"/>
+                            <constraint firstItem="5oB-KD-tNb" firstAttribute="trailing" secondItem="kZX-fh-HiZ" secondAttribute="trailing" id="AHK-0o-ViS"/>
+                            <constraint firstItem="5oB-KD-tNb" firstAttribute="bottom" secondItem="kZX-fh-HiZ" secondAttribute="bottom" id="MTm-VI-xz5"/>
+                            <constraint firstItem="YMm-sP-jRG" firstAttribute="leading" secondItem="kZX-fh-HiZ" secondAttribute="leading" constant="16" id="RiM-Iw-XuO"/>
+                            <constraint firstItem="kZX-fh-HiZ" firstAttribute="trailing" secondItem="YMm-sP-jRG" secondAttribute="trailing" constant="16" id="Wzs-ho-vcg"/>
+                            <constraint firstItem="kZX-fh-HiZ" firstAttribute="bottom" secondItem="YMm-sP-jRG" secondAttribute="bottom" constant="16" id="j6f-ed-SCz"/>
+                            <constraint firstItem="5oB-KD-tNb" firstAttribute="top" secondItem="wJw-ZC-7vf" secondAttribute="top" id="kyG-Cy-vgN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kZX-fh-HiZ"/>
                     </view>
+                    <connections>
+                        <outlet property="chart" destination="YMm-sP-jRG" id="GQ9-tA-jns"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPF-YU-DCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6137" y="3312"/>
+            <point key="canvasLocation" x="6136.8000000000002" y="3311.6941529235387"/>
         </scene>
         <!--Gas Concentration Graph View Controller-->
         <scene sceneID="TXq-if-nHG">
