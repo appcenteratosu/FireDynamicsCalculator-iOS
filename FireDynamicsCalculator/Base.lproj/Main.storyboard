@@ -2516,10 +2516,10 @@
             </objects>
             <point key="canvasLocation" x="5192.753623188406" y="1854.6195652173915"/>
         </scene>
-        <!--View Controller-->
+        <!--Oxygen Levels View Controller-->
         <scene sceneID="Yxr-ms-lXL">
             <objects>
-                <viewController id="Wwh-uD-e0F" sceneMemberID="viewController">
+                <viewController id="Wwh-uD-e0F" customClass="OxygenLevelsViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ObX-Ma-7iv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2564,37 +2564,37 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zss-Rh-KsQ">
-                                <rect key="frame" x="150" y="166" width="75" height="106"/>
+                                <rect key="frame" x="147.5" y="166" width="80" height="106"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWm-VF-VPy">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JWm-VF-VPy">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="IPS-r0-QwZ"/>
-                                            <constraint firstAttribute="height" constant="30" id="QPv-2D-GBt"/>
+                                            <constraint firstAttribute="height" constant="30" id="dBl-3K-hGw"/>
+                                            <constraint firstAttribute="width" constant="80" id="pvN-Sr-vzn"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWf-ki-ski">
-                                        <rect key="frame" x="0.0" y="38" width="75" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OWf-ki-ski">
+                                        <rect key="frame" x="0.0" y="38" width="80" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="Go4-zQ-YK5"/>
-                                            <constraint firstAttribute="height" constant="30" id="I69-Ft-6n5"/>
+                                            <constraint firstAttribute="width" constant="80" id="dfa-il-6mj"/>
+                                            <constraint firstAttribute="height" constant="30" id="qXX-j8-WEg"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZD9-bH-tbt">
-                                        <rect key="frame" x="0.0" y="76" width="75" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZD9-bH-tbt">
+                                        <rect key="frame" x="0.0" y="76" width="80" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="UFU-pk-3ea"/>
-                                            <constraint firstAttribute="width" constant="75" id="gvN-VE-AT4"/>
+                                            <constraint firstAttribute="height" constant="30" id="0cX-PI-b6t"/>
+                                            <constraint firstAttribute="width" constant="80" id="Ptf-Bh-nsv"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -2610,6 +2610,9 @@
                                         <state key="normal" title="m" backgroundImage="default">
                                             <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeWidthUnits:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="157-SI-wMa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePc-9t-JyN">
                                         <rect key="frame" x="0.0" y="38" width="60" height="30"/>
@@ -2620,6 +2623,9 @@
                                         <state key="normal" title="m" backgroundImage="default">
                                             <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeLengthUnits:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="Ncw-lS-DVk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDP-Cr-o9N">
                                         <rect key="frame" x="0.0" y="76" width="60" height="30"/>
@@ -2630,6 +2636,9 @@
                                         <state key="normal" title="m" backgroundImage="default">
                                             <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeHeightUnits:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="llk-8b-fY0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2690,6 +2699,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculate:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="sT2-bH-pwF"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wc4-Bu-Hek">
                                 <rect key="frame" x="243" y="288" width="100" height="164"/>
@@ -2702,7 +2714,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="txd-uP-nPf">
                                         <rect key="frame" x="0.0" y="44.5" width="100" height="30"/>
@@ -2712,9 +2724,9 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLM-Aq-h9G">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLM-Aq-h9G">
                                         <rect key="frame" x="0.0" y="89.5" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0Jp-AV-pbF"/>
@@ -2723,6 +2735,9 @@
                                         <state key="normal" title="Slow" backgroundImage="default">
                                             <color key="titleColor" red="0.1913091838" green="0.18674522639999999" blue="0.2006449401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="chagenGrowthRate:" destination="Wwh-uD-e0F" eventType="touchUpInside" id="t8R-z7-APD"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="c2O-SB-WuW">
                                         <rect key="frame" x="0.0" y="134" width="100" height="30"/>
@@ -2732,7 +2747,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -2764,17 +2779,48 @@
                         <viewLayoutGuide key="safeArea" id="4bT-fV-PXJ"/>
                     </view>
                     <connections>
+                        <outlet property="calculate" destination="nMh-9n-PKt" id="7Tv-MR-PEM"/>
+                        <outlet property="hrr" destination="txd-uP-nPf" id="3sh-7S-Ejc"/>
+                        <outlet property="initOx_Perc" destination="jq2-bY-G4s" id="4zx-Dj-hug"/>
+                        <outlet property="picker" destination="8M0-A6-jfZ" id="0cg-Nm-07P"/>
+                        <outlet property="rHeight" destination="ZD9-bH-tbt" id="sTj-ha-Zxl"/>
+                        <outlet property="rHeightUnits" destination="BDP-Cr-o9N" id="TO4-ft-qv8"/>
+                        <outlet property="rLength" destination="OWf-ki-ski" id="MxC-5E-aCy"/>
+                        <outlet property="rWidth" destination="JWm-VF-VPy" id="lgy-AL-E3J"/>
+                        <outlet property="rWidthUnits" destination="joS-SP-FXL" id="1sY-YO-IbS"/>
+                        <outlet property="rrLengthUnits" destination="ePc-9t-JyN" id="MR2-cY-6fb"/>
+                        <outlet property="t2Growthrate" destination="CLM-Aq-h9G" id="Jig-XA-Rr1"/>
+                        <outlet property="timestep" destination="c2O-SB-WuW" id="FVf-vX-kt1"/>
+                        <outlet property="toolbar" destination="EKt-Nt-laB" id="FUp-82-yly"/>
                         <segue destination="HYq-M0-rid" kind="show" identifier="showGraph" action="showDetailViewController:sender:" id="AR6-Ny-e1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVG-Uq-RAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pickerView contentMode="scaleToFill" id="8M0-A6-jfZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </pickerView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="EKt-Nt-laB">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ff2-8z-1Rp"/>
+                        <barButtonItem title="Item" systemItem="done" id="w9A-Gn-VZ8">
+                            <color key="tintColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="endEditingButton:" destination="Wwh-uD-e0F" id="KS4-Ip-hoS"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" red="0.30746763944625854" green="0.30340057611465454" blue="0.31178709864616394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="6136.8000000000002" y="1852.6236881559221"/>
         </scene>
-        <!--View Controller-->
+        <!--Oxygen Levels Results View Controller-->
         <scene sceneID="g9X-Ht-4p7">
             <objects>
-                <viewController id="HYq-M0-rid" sceneMemberID="viewController">
+                <viewController id="HYq-M0-rid" customClass="OxygenLevelsResultsViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xCp-cu-VOc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2786,10 +2832,10 @@
             </objects>
             <point key="canvasLocation" x="6137" y="2612"/>
         </scene>
-        <!--View Controller-->
+        <!--Oxygen Levels Graph View Controller-->
         <scene sceneID="Wio-de-TRS">
             <objects>
-                <viewController id="d7C-Ng-nQ9" sceneMemberID="viewController">
+                <viewController id="d7C-Ng-nQ9" customClass="OxygenLevelsGraphViewController" customModule="FireDynamicsCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wJw-ZC-7vf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

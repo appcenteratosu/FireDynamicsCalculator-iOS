@@ -9,6 +9,15 @@
 import Foundation
 
 class Conversion {
+    
+    struct UnitString {
+        let gases = ["Please select an option", "Propane", "Methane", "User Specified"]
+        let area = ["Please select an option", "ft²", "in²", "m²"]
+        let length = ["Please select an option", "cm", "ft", "in", "m", "mm"]
+        let volume = ["Please select an option", "ft³", "gallon", "in³", "liter", "m³"]
+        let mass = ["Please select an option", "g", "kg", "lb"]
+    }
+    
     struct Length {
         enum Length {
             case cm

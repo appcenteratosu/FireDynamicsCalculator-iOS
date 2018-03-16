@@ -21,6 +21,8 @@ class OxygenLevelsResultsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var results: [[String: Double]]?
+    
 
     /*
     // MARK: - Navigation
