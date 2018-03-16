@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7301547A204A59E40096293B /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73015479204A59E40096293B /* todo.rtf */; };
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
+		7311F328205C2206007CB8D4 /* SelfHeatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */; };
 		732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FA2053372200C0CF16 /* OpenPipeViewController.swift */; };
 		732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */; };
 		7340734020589E15004374CA /* GasAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340733F20589E15004374CA /* GasAmountViewController.swift */; };
@@ -44,6 +45,7 @@
 		2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireDynamicsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73015479204A59E40096293B /* todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
+		7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHeatingViewController.swift; sourceTree = "<group>"; };
 		732666FA2053372200C0CF16 /* OpenPipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPipeViewController.swift; sourceTree = "<group>"; };
 		732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationViewController.swift; sourceTree = "<group>"; };
 		7340733F20589E15004374CA /* GasAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasAmountViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				7340733F20589E15004374CA /* GasAmountViewController.swift */,
 				73EAC59C205B3AF4009742C8 /* OxygenLevels */,
 				73EAC59F205B833B009742C8 /* TGasLayerViewController.swift */,
+				7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */,
 			);
 			path = "Calculator Controllers";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73EAC597205B3AC0009742C8 /* OxygenLevelsViewController.swift in Sources */,
+				7311F328205C2206007CB8D4 /* SelfHeatingViewController.swift in Sources */,
 				736CD4EA2051EC7C00CBAA33 /* ToolbarHandler.swift in Sources */,
 				7379946A201551550076F570 /* FlashoverViewController.swift in Sources */,
 				732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */,
