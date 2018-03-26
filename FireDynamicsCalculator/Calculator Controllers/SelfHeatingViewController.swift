@@ -94,6 +94,7 @@ class SelfHeatingViewController: UIViewController, UIPickerViewDelegate, UIPicke
         volumeUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         heightUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         temperatureUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        material.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         material.setTitle("Select...", for: .normal)
     }
     
