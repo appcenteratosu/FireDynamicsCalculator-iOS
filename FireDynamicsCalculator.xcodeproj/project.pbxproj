@@ -10,6 +10,8 @@
 		7301547A204A59E40096293B /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73015479204A59E40096293B /* todo.rtf */; };
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
 		7311F328205C2206007CB8D4 /* SelfHeatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */; };
+		7320F1FF20C2469E001AE407 /* FireDynamicsCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */; };
+		7320F20720C24702001AE407 /* FlashoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320F20620C24702001AE407 /* FlashoverTests.swift */; };
 		732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FA2053372200C0CF16 /* OpenPipeViewController.swift */; };
 		732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */; };
 		7340734020589E15004374CA /* GasAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340733F20589E15004374CA /* GasAmountViewController.swift */; };
@@ -17,6 +19,7 @@
 		73464ABD2058909A00E85853 /* GasConcentrationGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */; };
 		735DAD9D20377A2C00EA97AA /* firedynamics_background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */; };
 		735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DAD9E2037855500EA97AA /* HRRViewController.swift */; };
+		7369134620C30E5A00E91DFA /* TGasLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369134520C30E5A00E91DFA /* TGasLayerTests.swift */; };
 		736CD4E62051DA3F00CBAA33 /* SolidIgnitionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */; };
 		736CD4E82051DB0B00CBAA33 /* ThermallyThickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736CD4E72051DB0B00CBAA33 /* ThermallyThickView.swift */; };
 		736CD4EA2051EC7C00CBAA33 /* ToolbarHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736CD4E92051EC7C00CBAA33 /* ToolbarHandler.swift */; };
@@ -41,11 +44,25 @@
 		99C8ABC4EBBADD23A13447CD /* Pods_FireDynamicsCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7320F20120C2469F001AE407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7379944A20154EBC0076F570 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7379945120154EBC0076F570;
+			remoteInfo = FireDynamicsCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireDynamicsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73015479204A59E40096293B /* todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
 		7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHeatingViewController.swift; sourceTree = "<group>"; };
+		7320F1FC20C2469E001AE407 /* FireDynamicsCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireDynamicsCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDynamicsCalculatorTests.swift; sourceTree = "<group>"; };
+		7320F20020C2469F001AE407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7320F20620C24702001AE407 /* FlashoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashoverTests.swift; sourceTree = "<group>"; };
 		732666FA2053372200C0CF16 /* OpenPipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPipeViewController.swift; sourceTree = "<group>"; };
 		732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationViewController.swift; sourceTree = "<group>"; };
 		7340733F20589E15004374CA /* GasAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasAmountViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +70,7 @@
 		73464ABC2058909A00E85853 /* GasConcentrationGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationGraphViewController.swift; sourceTree = "<group>"; };
 		735DAD9C20377A2C00EA97AA /* firedynamics_background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firedynamics_background_1.png; sourceTree = "<group>"; };
 		735DAD9E2037855500EA97AA /* HRRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRViewController.swift; sourceTree = "<group>"; };
+		7369134520C30E5A00E91DFA /* TGasLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TGasLayerTests.swift; sourceTree = "<group>"; };
 		736CD4E52051DA3F00CBAA33 /* SolidIgnitionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidIgnitionCalculator.swift; sourceTree = "<group>"; };
 		736CD4E72051DB0B00CBAA33 /* ThermallyThickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThickView.swift; sourceTree = "<group>"; };
 		736CD4E92051EC7C00CBAA33 /* ToolbarHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarHandler.swift; sourceTree = "<group>"; };
@@ -81,6 +99,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7320F1F920C2469E001AE407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7379944F20154EBC0076F570 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +124,17 @@
 				A48FA7895F3A00677654918D /* Pods-FireDynamicsCalculator.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7320F1FD20C2469E001AE407 /* FireDynamicsCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */,
+				7320F20620C24702001AE407 /* FlashoverTests.swift */,
+				7369134520C30E5A00E91DFA /* TGasLayerTests.swift */,
+				7320F20020C2469F001AE407 /* Info.plist */,
+			);
+			path = FireDynamicsCalculatorTests;
 			sourceTree = "<group>";
 		};
 		7340734120589E1A004374CA /* Gas Concentration */ = {
@@ -122,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7379945420154EBC0076F570 /* FireDynamicsCalculator */,
+				7320F1FD20C2469E001AE407 /* FireDynamicsCalculatorTests */,
 				7379945320154EBC0076F570 /* Products */,
 				34478C833460E1F5E71CDAE7 /* Pods */,
 				734075DDBFD0DF32CE1C347A /* Frameworks */,
@@ -132,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				7379945220154EBC0076F570 /* FireDynamicsCalculator.app */,
+				7320F1FC20C2469E001AE407 /* FireDynamicsCalculatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +247,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7320F1FB20C2469E001AE407 /* FireDynamicsCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7320F20520C2469F001AE407 /* Build configuration list for PBXNativeTarget "FireDynamicsCalculatorTests" */;
+			buildPhases = (
+				7320F1F820C2469E001AE407 /* Sources */,
+				7320F1F920C2469E001AE407 /* Frameworks */,
+				7320F1FA20C2469E001AE407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7320F20220C2469F001AE407 /* PBXTargetDependency */,
+			);
+			name = FireDynamicsCalculatorTests;
+			productName = FireDynamicsCalculatorTests;
+			productReference = 7320F1FC20C2469E001AE407 /* FireDynamicsCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7379945120154EBC0076F570 /* FireDynamicsCalculator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7379946420154EBC0076F570 /* Build configuration list for PBXNativeTarget "FireDynamicsCalculator" */;
@@ -235,10 +291,15 @@
 		7379944A20154EBC0076F570 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Luke Davis Development";
 				TargetAttributes = {
+					7320F1FB20C2469E001AE407 = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7379945120154EBC0076F570;
+					};
 					7379945120154EBC0076F570 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -259,11 +320,19 @@
 			projectRoot = "";
 			targets = (
 				7379945120154EBC0076F570 /* FireDynamicsCalculator */,
+				7320F1FB20C2469E001AE407 /* FireDynamicsCalculatorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7320F1FA20C2469E001AE407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7379945020154EBC0076F570 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +404,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7320F1F820C2469E001AE407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7320F20720C24702001AE407 /* FlashoverTests.swift in Sources */,
+				7369134620C30E5A00E91DFA /* TGasLayerTests.swift in Sources */,
+				7320F1FF20C2469E001AE407 /* FireDynamicsCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7379944E20154EBC0076F570 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +449,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7320F20220C2469F001AE407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7379945120154EBC0076F570 /* FireDynamicsCalculator */;
+			targetProxy = 7320F20120C2469F001AE407 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		7379945920154EBC0076F570 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -390,6 +477,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7320F20320C2469F001AE407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UM5ZRED5X;
+				INFOPLIST_FILE = FireDynamicsCalculatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.okstate.FireDynamicsCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FireDynamicsCalculator.app/FireDynamicsCalculator";
+			};
+			name = Debug;
+		};
+		7320F20420C2469F001AE407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UM5ZRED5X;
+				INFOPLIST_FILE = FireDynamicsCalculatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.okstate.FireDynamicsCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FireDynamicsCalculator.app/FireDynamicsCalculator";
+			};
+			name = Release;
+		};
 		7379946220154EBC0076F570 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -404,6 +531,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -411,6 +539,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -461,6 +590,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -468,6 +598,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -503,10 +634,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NJ97K3ZT3F;
+				DEVELOPMENT_TEAM = 5UM5ZRED5X;
 				INFOPLIST_FILE = FireDynamicsCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rlukedavis.FireDynamicsCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.okstate.FireDynamicsCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -519,10 +650,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NJ97K3ZT3F;
+				DEVELOPMENT_TEAM = 5UM5ZRED5X;
 				INFOPLIST_FILE = FireDynamicsCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rlukedavis.FireDynamicsCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.okstate.FireDynamicsCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -532,6 +663,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7320F20520C2469F001AE407 /* Build configuration list for PBXNativeTarget "FireDynamicsCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7320F20320C2469F001AE407 /* Debug */,
+				7320F20420C2469F001AE407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7379944D20154EBC0076F570 /* Build configuration list for PBXProject "FireDynamicsCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

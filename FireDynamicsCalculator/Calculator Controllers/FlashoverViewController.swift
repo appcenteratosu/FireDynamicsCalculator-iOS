@@ -108,28 +108,28 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             let thicknes = Double(thickness.text!)!
             let material = lining
             
-            let mqh = MQH(a: areaMeasures(l: measureSet(measure: length, units: getLength(button: lengthButton)),
-                                          w: measureSet(measure: width, units: getLength(button: widthButton)),
-                                          h: measureSet(measure: height, units: getLength(button: heightButton))),
-                          v: ventMeasures(vW: measureSet(measure: vwidth, units: getLength(button: ventWidthButton)),
-                                          vH: measureSet(measure: vheight, units: getLength(button: ventHeightButton))),
-                          t: measureSet(measure: thicknes, units: getLength(button: thicknessButton)),
+            let mqh = MQH(a: AreaMeasures(l: MeasureSet(measure: length, units: getLength(button: lengthButton)),
+                                          w: MeasureSet(measure: width, units: getLength(button: widthButton)),
+                                          h: MeasureSet(measure: height, units: getLength(button: heightButton))),
+                          v: VentMeasures(vW: MeasureSet(measure: vwidth, units: getLength(button: ventWidthButton)),
+                                          vH: MeasureSet(measure: vheight, units: getLength(button: ventHeightButton))),
+                          t: MeasureSet(measure: thicknes, units: getLength(button: thicknessButton)),
                           m: getMaterial(material: material))
             
-            let babr = Babrauskas(a: areaMeasures(l: measureSet(measure: length, units: getLength(button: lengthButton)),
-                                                  w: measureSet(measure: width, units: getLength(button: widthButton)),
-                                                  h: measureSet(measure: height, units: getLength(button: heightButton))),
-                                  v: ventMeasures(vW: measureSet(measure: vwidth, units: getLength(button: ventWidthButton)),
-                                                  vH: measureSet(measure: vheight, units: getLength(button: ventHeightButton))),
-                                  t: measureSet(measure: thicknes, units: getLength(button: thicknessButton)),
+            let babr = Babrauskas(a: AreaMeasures(l: MeasureSet(measure: length, units: getLength(button: lengthButton)),
+                                                  w: MeasureSet(measure: width, units: getLength(button: widthButton)),
+                                                  h: MeasureSet(measure: height, units: getLength(button: heightButton))),
+                                  v: VentMeasures(vW: MeasureSet(measure: vwidth, units: getLength(button: ventWidthButton)),
+                                                  vH: MeasureSet(measure: vheight, units: getLength(button: ventHeightButton))),
+                                  t: MeasureSet(measure: thicknes, units: getLength(button: thicknessButton)),
                                   m: getMaterial(material: material))
             
-            let tom = Thomas(a: areaMeasures(l: measureSet(measure: length, units: getLength(button: lengthButton)),
-                                             w: measureSet(measure: width, units: getLength(button: widthButton)),
-                                             h: measureSet(measure: height, units: getLength(button: heightButton))),
-                             v: ventMeasures(vW: measureSet(measure: vwidth, units: getLength(button: ventWidthButton)),
-                                             vH: measureSet(measure: vheight, units: getLength(button: ventHeightButton))),
-                             t: measureSet(measure: thicknes, units: getLength(button: thicknessButton)),
+            let tom = Thomas(a: AreaMeasures(l: MeasureSet(measure: length, units: getLength(button: lengthButton)),
+                                             w: MeasureSet(measure: width, units: getLength(button: widthButton)),
+                                             h: MeasureSet(measure: height, units: getLength(button: heightButton))),
+                             v: VentMeasures(vW: MeasureSet(measure: vwidth, units: getLength(button: ventWidthButton)),
+                                             vH: MeasureSet(measure: vheight, units: getLength(button: ventHeightButton))),
+                             t: MeasureSet(measure: thicknes, units: getLength(button: thicknessButton)),
                              m: getMaterial(material: material))
             
             let rMQH = Conversion.Energy().energy(value: mqh, from: .kW)
@@ -348,11 +348,13 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     // MARK: - Calculation
-    typealias measureSet = (measure: Double, units: Conversion.Length.Length)
-    typealias areaMeasures = (l: measureSet, w: measureSet, h: measureSet)
-    typealias ventMeasures = (vW: measureSet, vH: measureSet)
+//    typealias measureSet = (measure: Double, units: Conversion.Length.Length)
+//    typealias areaMeasures = (l: measureSet, w: measureSet, h: measureSet)
+//    typealias ventMeasures = (vW: measureSet, vH: measureSet)
+    
+    
 
-    func MQH(a: areaMeasures, v: ventMeasures, t: measureSet, m: Conversion.Materials.material) -> Double {
+    func MQH(a: AreaMeasures, v: VentMeasures, t: MeasureSet, m: Conversion.Materials.material) -> Double {
         let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
         let cl = Conversion.Length().convertLength(value: a.l.measure, from: a.l.units)
         let ch = Conversion.Length().convertLength(value: a.h.measure, from: a.h.units)
@@ -372,7 +374,7 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return q.rounded()
     }
     
-    func Babrauskas(a: areaMeasures, v: ventMeasures, t: measureSet, m: Conversion.Materials.material) -> Double {
+    func Babrauskas(a: AreaMeasures, v: VentMeasures, t: MeasureSet, m: Conversion.Materials.material) -> Double {
         let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
         let cl = Conversion.Length().convertLength(value: a.l.measure, from: a.l.units)
         let ch = Conversion.Length().convertLength(value: a.h.measure, from: a.h.units)
@@ -391,7 +393,7 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return q.rounded()
     }
     
-    func Thomas(a: areaMeasures, v: ventMeasures, t: measureSet, m: Conversion.Materials.material) -> Double {
+    func Thomas(a: AreaMeasures, v: VentMeasures, t: MeasureSet, m: Conversion.Materials.material) -> Double {
         let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
         let cl = Conversion.Length().convertLength(value: a.l.measure, from: a.l.units)
         let ch = Conversion.Length().convertLength(value: a.h.measure, from: a.h.units)
@@ -433,3 +435,38 @@ extension Dictionary where Key == String {
         return stringKeys
     }
 }
+
+struct MeasureSet {
+    let measure: Double
+    let units: Conversion.Length.Length
+    
+    init(measure: Double, units: Conversion.Length.Length) {
+        self.measure = measure
+        self.units = units
+    }
+}
+
+
+struct AreaMeasures {
+    let l: MeasureSet
+    let w: MeasureSet
+    let h: MeasureSet
+    
+    init(l: MeasureSet, w: MeasureSet, h: MeasureSet) {
+        self.l = l
+        self.w = w
+        self.h = h
+    }
+}
+
+struct VentMeasures {
+    let vW: MeasureSet
+    let vH: MeasureSet
+    
+    init(vW: MeasureSet, vH: MeasureSet) {
+        self.vW = vW
+        self.vH = vH
+    }
+    
+}
+

@@ -303,7 +303,7 @@ struct TGasLayCalculator {
         
         let thicknessConv = Conversion.Length().convertLength(value: thickness, from: Conversion.Length().getLengthUnits(from: thicknessUnits)).rounded(toPlaces: 4)
         let Q_Conv = Conversion.Energy().energy(value: q, from: Conversion.Energy().getEnergyUnits(from: Q_Units))
-        let tamb_Conv = Conversion.Temperature().TGasConv(value: tamb, from: Conversion.Temperature().getTemperatureUnits(string: tambUnits)).rounded(toPlaces: 2)
+        let tamb_Conv = Conversion.Temperature().TGasConv(value: tamb, from: Conversion.Temperature().getTemperatureUnits(string: tambUnits)).rounded(toPlaces: 1)
         let thermalConductivity = Conversion.Materials().getMaterialValue(material: Conversion.Materials().getMaterial(material: lining))
         let hk = (thermalConductivity / thicknessConv).rounded(toPlaces: 4)
         
@@ -316,7 +316,7 @@ struct TGasLayCalculator {
         let ch_Conv = Conversion.Length().convertLength(value: ch, from: Conversion.Length().getLengthUnits(from: cHUnits))
         let cl_Conv = Conversion.Length().convertLength(value: cl, from: Conversion.Length().getLengthUnits(from: cLUnits))
         
-        let AT = ((2 * (cw_Conv * cl_Conv) + 2 * (ch_Conv * cw_Conv) + 2 * (ch_Conv * cl_Conv)) - A0).rounded(toPlaces: 3)
+        let AT = ((2 * (cw_Conv * cl_Conv) + 2 * (ch_Conv * cw_Conv) + 2 * (ch_Conv * cl_Conv)) - A0).rounded(toPlaces: 1)
         
         let Ho = vh_Conv
         
@@ -327,7 +327,7 @@ struct TGasLayCalculator {
         let Tk = (p1 * p3 + tamb_Conv).rounded(toPlaces: 0)
         let T = Conversion.Temperature().TGasConv(value: "\(Tk)", from: Conversion.Temperature().getTemperatureUnits(string: TUnits))
         
-        return T.rounded(toPlaces: 2)
+        return T.rounded(toPlaces: 1)
         
     }
 }

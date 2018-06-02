@@ -51,6 +51,11 @@ class t2GraphViewController: UIViewController, ChartViewDelegate {
         chart.data = data
         chart.highlightPerTapEnabled = true
         
+        let desc = Description()
+        desc.text = ""
+        
+        chart.chartDescription = desc
+        
         chart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
     }
     
@@ -60,7 +65,7 @@ class t2GraphViewController: UIViewController, ChartViewDelegate {
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         let desc = Description()
-        desc.text = "\(entry.x.rounded(toPlaces: 2)), \(entry.y.rounded(toPlaces: 2))"
+        desc.text = "\(entry.x.rounded(toPlaces: 2)) sec, \(entry.y.rounded(toPlaces: 2)) kW"
         
         chartView.chartDescription = desc
         let font = UIFont(name: UIFont.fontNames(forFamilyName: "Avenir Next")[0], size: 12)
