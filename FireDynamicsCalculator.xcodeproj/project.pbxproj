@@ -10,6 +10,8 @@
 		7301547A204A59E40096293B /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73015479204A59E40096293B /* todo.rtf */; };
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
 		7311F328205C2206007CB8D4 /* SelfHeatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */; };
+		7316D84620C3356800779873 /* VariousTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316D84520C3356800779873 /* VariousTest.swift */; };
+		7316D84820C3357700779873 /* BasicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316D84720C3357700779873 /* BasicTest.swift */; };
 		7320F1FF20C2469E001AE407 /* FireDynamicsCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */; };
 		7320F20720C24702001AE407 /* FlashoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320F20620C24702001AE407 /* FlashoverTests.swift */; };
 		732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FA2053372200C0CF16 /* OpenPipeViewController.swift */; };
@@ -59,6 +61,8 @@
 		73015479204A59E40096293B /* todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
 		7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHeatingViewController.swift; sourceTree = "<group>"; };
+		7316D84520C3356800779873 /* VariousTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariousTest.swift; sourceTree = "<group>"; };
+		7316D84720C3357700779873 /* BasicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTest.swift; sourceTree = "<group>"; };
 		7320F1FC20C2469E001AE407 /* FireDynamicsCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireDynamicsCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDynamicsCalculatorTests.swift; sourceTree = "<group>"; };
 		7320F20020C2469F001AE407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */,
 				7320F20620C24702001AE407 /* FlashoverTests.swift */,
 				7369134520C30E5A00E91DFA /* TGasLayerTests.swift */,
+				7316D84520C3356800779873 /* VariousTest.swift */,
 				7320F20020C2469F001AE407 /* Info.plist */,
 			);
 			path = FireDynamicsCalculatorTests;
@@ -181,6 +186,7 @@
 				7379945520154EBC0076F570 /* AppDelegate.swift */,
 				7379946C201559750076F570 /* RoundedButton.swift */,
 				7343F5DE201EBA1A0090CBB6 /* Conversion.swift */,
+				7316D84720C3357700779873 /* BasicTest.swift */,
 				7379945920154EBC0076F570 /* Main.storyboard */,
 				7379946720154F820076F570 /* ReportListTableViewController.swift */,
 				7379946B201551590076F570 /* Calculator Controllers */,
@@ -409,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7320F20720C24702001AE407 /* FlashoverTests.swift in Sources */,
+				7316D84620C3356800779873 /* VariousTest.swift in Sources */,
 				7369134620C30E5A00E91DFA /* TGasLayerTests.swift in Sources */,
 				7320F1FF20C2469E001AE407 /* FireDynamicsCalculatorTests.swift in Sources */,
 			);
@@ -424,6 +431,7 @@
 				7379946A201551550076F570 /* FlashoverViewController.swift in Sources */,
 				732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */,
 				7340734020589E15004374CA /* GasAmountViewController.swift in Sources */,
+				7316D84820C3357700779873 /* BasicTest.swift in Sources */,
 				735DAD9F2037855500EA97AA /* HRRViewController.swift in Sources */,
 				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */,

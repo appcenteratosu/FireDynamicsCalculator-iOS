@@ -15,6 +15,9 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
 
         setupKeyboard()
+        setupPicker()
+        defaultLabels()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -231,6 +234,24 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         thickness.inputAccessoryView = toolbar
     }
     
+    func setupPicker() {
+        picker.isHidden = true
+//        picker.backgroundColor = UIColor.lightGray
+        picker.selectRow(0, inComponent: 0, animated: false)
+        picker.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(200)
+        }
+    }
+    
+    func defaultLabels() {
+        mqhLabel.text = ""
+        babrLabel.text = ""
+        tomLabel.text = ""
+    }
+    
     @IBOutlet var toolbar: UIToolbar!
     @IBAction func closeKeyboard(_ sender: Any) {
         self.view.endEditing(true)
@@ -265,40 +286,6 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         picker.reloadAllComponents()
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerItems.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerItems[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        buttonForEditing?.setTitle(pickerItems[row], for: .normal)
-        picker.removeFromSuperview()
-        if buttonForEditing == liningButton {
-            let line = pickerItems[row]
-            self.lining = line
-            calculate()
-        } else if buttonForEditing == mkhButton {
-            let value = Conversion.Energy().energy(value: Double(self.mqh), from: getEnergy(buttonTitle: pickerItems[row]))
-            let rValue = Int(value.rounded())
-            mqhLabel.text = "\(rValue)"
-        } else if buttonForEditing == babraukasButton {
-            let value = Conversion.Energy().energy(value: Double(self.babr), from: getEnergy(buttonTitle: pickerItems[row]))
-            let rValue = Int(value.rounded())
-            babrLabel.text = "\(rValue)"
-        } else if buttonForEditing == thomasButton {
-            let value = Conversion.Energy().energy(value: Double(self.tom), from: getEnergy(buttonTitle: pickerItems[row]))
-            let rValue = Int(value.rounded())
-            tomLabel.text = "\(rValue)"
-        }
-    }
-    
     var buttonForEditing: UIButton?
     func showPicker(tag: Int) {
         switch tag {
@@ -326,33 +313,15 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             buttonForEditing = widthButton
         }
         
-        picker.backgroundColor = UIColor.lightGray
-        picker.selectRow(0, inComponent: 0, animated: false)
+        picker.isHidden = false
         
-        self.view.addSubview(picker)
-        picker.transform = CGAffineTransform.init(scaleX: 0.01, y: 0.01)
-        UIView.animate(withDuration: 0.03) {
-            self.picker.transform = CGAffineTransform.identity
-        }
-        
-        picker.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.right.equalToSuperview()
-            make.height.equalTo(200)
-        }
     }
     
     func hidePicker() {
-        self.picker.removeFromSuperview()
+        self.picker.isHidden = true
     }
     
     // MARK: - Calculation
-//    typealias measureSet = (measure: Double, units: Conversion.Length.Length)
-//    typealias areaMeasures = (l: measureSet, w: measureSet, h: measureSet)
-//    typealias ventMeasures = (vW: measureSet, vH: measureSet)
-    
-    
 
     func MQH(a: AreaMeasures, v: VentMeasures, t: MeasureSet, m: Conversion.Materials.material) -> Double {
         let cw = Conversion.Length().convertLength(value: a.w.measure, from: a.w.units)
@@ -412,18 +381,43 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return q.rounded()
     }
     
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension FlashoverViewController {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerItems.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerItems[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        buttonForEditing?.setTitle(pickerItems[row], for: .normal)
+        hidePicker()
+        if buttonForEditing == liningButton {
+            let line = pickerItems[row]
+            self.lining = line
+            calculate()
+        } else if buttonForEditing == mkhButton {
+            let value = Conversion.Energy().energy(value: Double(self.mqh), from: getEnergy(buttonTitle: pickerItems[row]))
+            let rValue = Int(value.rounded())
+            mqhLabel.text = "\(rValue)"
+        } else if buttonForEditing == babraukasButton {
+            let value = Conversion.Energy().energy(value: Double(self.babr), from: getEnergy(buttonTitle: pickerItems[row]))
+            let rValue = Int(value.rounded())
+            babrLabel.text = "\(rValue)"
+        } else if buttonForEditing == thomasButton {
+            let value = Conversion.Energy().energy(value: Double(self.tom), from: getEnergy(buttonTitle: pickerItems[row]))
+            let rValue = Int(value.rounded())
+            tomLabel.text = "\(rValue)"
+        }
+    }
 }
 
 extension Dictionary where Key == String {
@@ -445,7 +439,6 @@ struct MeasureSet {
         self.units = units
     }
 }
-
 
 struct AreaMeasures {
     let l: MeasureSet
