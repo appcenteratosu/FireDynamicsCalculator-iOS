@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class HRRViewController: BaseViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +17,22 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 
         setupPicker()
         setupKeyboard()
-        
         setupButtons()
-        
+        setupTop()
         
     }
 
     // MARK: - Outlets and Actions
+    
+    func setupTop() {
+        view.addSubview(topView)
+        view.sendSubview(toBack: topView)
+        topView.contentMode = .scaleAspectFill
+        topView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview()
+        }
+    }
     
     func setupButtons() {
         hrrqButton.titleLabel?.sizeToFit()
@@ -39,7 +48,6 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         setDataSource(data: methodChoices)
         showPicker()
     }
-    
     
     @IBOutlet weak var selectedFuelLabel: UILabel!
     @IBOutlet weak var fuelButton: RoundedButton!
@@ -108,113 +116,7 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     var pickerItems: [String] = []
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerItems.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerItems[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if buttonForEditing == methodButton {
-            
-            // get selected method
-            let method = pickerItems[row]
-            
-            // set selected method to button label
-            self.methodButton.setTitle(method, for: .normal)
-            
-            // set selected method to area label
-            self.areaLabel.text = method
-            
-            // update picker data if Radius is selected
-            if method == "Radius" {
-                areaUnitsButton.setTitle("Meters", for: .normal)
-                
-            }
-            
-            // set method in class variable
-            setMethod(methodS: method)
-            
-            // close picker
-            hidePicker()
-            
-        } else if buttonForEditing == fuelButton {
-            // get selected fuel type
-            let fuel = pickerItems[row]
-            
-            // set selected fuel to button label
-            self.fuelButton.setTitle(fuel, for: .normal)
-            self.selectedFuelLabel.text = fuel
-            
-            // set fuel in class variable
-            setFuel(fuel: fuel)
-            
-            // close picker
-            hidePicker()
-            
-        } else if buttonForEditing == areaUnitsButton {
-            
-            // get selected units
-            let units = pickerItems[row]
-            
-            // set selected units to button label
-            self.areaUnitsButton.setTitle(units, for: .normal)
-            
-            
-            switch units {
-            case "ft^2":
-                self.AreaConversionFactor = 0.092950625
-            case "inch^2":
-                self.AreaConversionFactor = 0.00064549
-            case "m^2":
-                self.AreaConversionFactor = 1.0
-            case "cm":
-                self.AreaConversionFactor = 0.01
-            case "feet":
-                self.AreaConversionFactor = 0.304878049
-            case "inches":
-                self.AreaConversionFactor = 0.025406504
-            case "meters":
-                self.AreaConversionFactor = 1
-            case "mm":
-                self.AreaConversionFactor = 0.001
-            default:
-                print("Error getting conversion factor")
-            }
-            
-            if let str = self.areaTF.text {
-                if let value = Double(str) {
-                    self.Area = value
-                }
-            }
-            
-            hidePicker()
-            
-        } else if buttonForEditing == hrrqButton {
-            let units = pickerItems[row]
-            self.hrrqButton.setTitle(units, for: .normal)
-            
-            switch units {
-            case "kW":
-                self.QConversionFactor = 1
-            case "Btu / sec":
-                self.QConversionFactor = 1.055055852
-            default:
-                print("error converting area")
-            }
-            
-        }
-        
-        hidePicker()
-    }
-    
+
     func setDataSource(data: [String]) {
         pickerItems = data
         picker.reloadAllComponents()
@@ -238,9 +140,9 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                        "Wood"]
     
     var areaChoices = ["Please Select an Option",
-                       "m^2",
-                       "ft^2",
-                       "inch^2"]
+                       "m²",
+                       "ft²",
+                       "inch²"]
     
     var energyChoices = ["Please Select am Option",
                          "kW",
@@ -456,4 +358,113 @@ class HRRViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         return true
     }
 
+}
+
+extension HRRViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerItems.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerItems[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if buttonForEditing == methodButton {
+            
+            // get selected method
+            let method = pickerItems[row]
+            
+            // set selected method to button label
+            self.methodButton.setTitle(method, for: .normal)
+            
+            // set selected method to area label
+            self.areaLabel.text = method
+            
+            // update picker data if Radius is selected
+            if method == "Radius" {
+                areaUnitsButton.setTitle("Meters", for: .normal)
+                
+            }
+            
+            // set method in class variable
+            setMethod(methodS: method)
+            
+            // close picker
+            hidePicker()
+            
+        } else if buttonForEditing == fuelButton {
+            // get selected fuel type
+            let fuel = pickerItems[row]
+            
+            // set selected fuel to button label
+            self.fuelButton.setTitle(fuel, for: .normal)
+            self.selectedFuelLabel.text = fuel
+            
+            // set fuel in class variable
+            setFuel(fuel: fuel)
+            
+            // close picker
+            hidePicker()
+            
+        } else if buttonForEditing == areaUnitsButton {
+            
+            // get selected units
+            let units = pickerItems[row]
+            
+            // set selected units to button label
+            self.areaUnitsButton.setTitle(units, for: .normal)
+            
+            
+            switch units {
+            case "ft^2":
+                self.AreaConversionFactor = 0.092950625
+            case "inch^2":
+                self.AreaConversionFactor = 0.00064549
+            case "m^2":
+                self.AreaConversionFactor = 1.0
+            case "cm":
+                self.AreaConversionFactor = 0.01
+            case "feet":
+                self.AreaConversionFactor = 0.304878049
+            case "inches":
+                self.AreaConversionFactor = 0.025406504
+            case "meters":
+                self.AreaConversionFactor = 1
+            case "mm":
+                self.AreaConversionFactor = 0.001
+            default:
+                print("Error getting conversion factor")
+            }
+            
+            if let str = self.areaTF.text {
+                if let value = Double(str) {
+                    self.Area = value
+                }
+            }
+            
+            hidePicker()
+            
+        } else if buttonForEditing == hrrqButton {
+            let units = pickerItems[row]
+            self.hrrqButton.setTitle(units, for: .normal)
+            
+            switch units {
+            case "kW":
+                self.QConversionFactor = 1
+            case "Btu / sec":
+                self.QConversionFactor = 1.055055852
+            default:
+                print("error converting area")
+            }
+            
+        }
+        
+        hidePicker()
+    }
+    
 }

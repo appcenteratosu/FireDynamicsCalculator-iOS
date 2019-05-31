@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7301547A204A59E40096293B /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73015479204A59E40096293B /* todo.rtf */; };
 		7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */; };
+		730CB80C22A0C03800531B34 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CB80B22A0C03800531B34 /* CustomBackgroundView.swift */; };
+		730CB80E22A0C1ED00531B34 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CB80D22A0C1ED00531B34 /* BaseViewController.swift */; };
 		7311F328205C2206007CB8D4 /* SelfHeatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */; };
 		7316D84620C3356800779873 /* VariousTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316D84520C3356800779873 /* VariousTest.swift */; };
 		7316D84820C3357700779873 /* BasicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316D84720C3357700779873 /* BasicTest.swift */; };
@@ -60,6 +62,8 @@
 		2D44237AF23877FFDF774815 /* Pods_FireDynamicsCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireDynamicsCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73015479204A59E40096293B /* todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiationPoolFireViewController.swift; sourceTree = "<group>"; };
+		730CB80B22A0C03800531B34 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
+		730CB80D22A0C1ED00531B34 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7311F327205C2206007CB8D4 /* SelfHeatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHeatingViewController.swift; sourceTree = "<group>"; };
 		7316D84520C3356800779873 /* VariousTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariousTest.swift; sourceTree = "<group>"; };
 		7316D84720C3357700779873 /* BasicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTest.swift; sourceTree = "<group>"; };
@@ -185,9 +189,11 @@
 				73015479204A59E40096293B /* todo.rtf */,
 				7379945520154EBC0076F570 /* AppDelegate.swift */,
 				7379946C201559750076F570 /* RoundedButton.swift */,
+				730CB80B22A0C03800531B34 /* CustomBackgroundView.swift */,
 				7343F5DE201EBA1A0090CBB6 /* Conversion.swift */,
 				7316D84720C3357700779873 /* BasicTest.swift */,
 				7379945920154EBC0076F570 /* Main.storyboard */,
+				730CB80D22A0C1ED00531B34 /* BaseViewController.swift */,
 				7379946720154F820076F570 /* ReportListTableViewController.swift */,
 				7379946B201551590076F570 /* Calculator Controllers */,
 				7379945C20154EBC0076F570 /* Assets.xcassets */,
@@ -452,6 +458,8 @@
 				7309F24A20461EBD008C8D93 /* RadiationPoolFireViewController.swift in Sources */,
 				73EAC59B205B3AEF009742C8 /* OxygenLevelsGraphViewController.swift in Sources */,
 				7379946D201559750076F570 /* RoundedButton.swift in Sources */,
+				730CB80C22A0C03800531B34 /* CustomBackgroundView.swift in Sources */,
+				730CB80E22A0C1ED00531B34 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

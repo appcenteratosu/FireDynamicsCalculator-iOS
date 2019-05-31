@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,7 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         setupKeyboard()
         setupPicker()
         defaultLabels()
+        setupBackground()
         
     }
 
@@ -26,6 +27,10 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     // MARK: - Outlets
+    // View
+    @IBOutlet weak var backgroundView: CustomBackgroundView!
+    
+    
     // Textfields
     @IBOutlet weak var widthTF: UITextField!
     @IBOutlet weak var lengthTF: UITextField!
@@ -250,6 +255,16 @@ class FlashoverViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         mqhLabel.text = ""
         babrLabel.text = ""
         tomLabel.text = ""
+    }
+    
+    func setupBackground() {
+        view.addSubview(topView)
+        view.sendSubview(toBack: topView)
+        topView.contentMode = .scaleAspectFill
+        topView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.right.left.equalToSuperview()
+        }
     }
     
     @IBOutlet var toolbar: UIToolbar!
