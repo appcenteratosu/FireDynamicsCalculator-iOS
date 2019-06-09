@@ -18,6 +18,9 @@
 		7320F20720C24702001AE407 /* FlashoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320F20620C24702001AE407 /* FlashoverTests.swift */; };
 		732666FB2053372200C0CF16 /* OpenPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FA2053372200C0CF16 /* OpenPipeViewController.swift */; };
 		732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */; };
+		733425A922ACC66800D8CB46 /* FlameHeightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733425A822ACC66800D8CB46 /* FlameHeightViewModel.swift */; };
+		733425AB22ACC67400D8CB46 /* FlameHeightCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733425AA22ACC67400D8CB46 /* FlameHeightCalculator.swift */; };
+		733425AD22ACD07300D8CB46 /* FlameHeightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733425AC22ACD07300D8CB46 /* FlameHeightTests.swift */; };
 		7340734020589E15004374CA /* GasAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340733F20589E15004374CA /* GasAmountViewController.swift */; };
 		7341264722A2D89500E04737 /* HRRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7341264622A2D89500E04737 /* HRRViewModel.swift */; };
 		7341264A22A2D94800E04737 /* HRRCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7341264922A2D94800E04737 /* HRRCalculator.swift */; };
@@ -76,6 +79,9 @@
 		7320F20620C24702001AE407 /* FlashoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashoverTests.swift; sourceTree = "<group>"; };
 		732666FA2053372200C0CF16 /* OpenPipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPipeViewController.swift; sourceTree = "<group>"; };
 		732666FC2054869B00C0CF16 /* GasConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasConcentrationViewController.swift; sourceTree = "<group>"; };
+		733425A822ACC66800D8CB46 /* FlameHeightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightViewModel.swift; sourceTree = "<group>"; };
+		733425AA22ACC67400D8CB46 /* FlameHeightCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightCalculator.swift; sourceTree = "<group>"; };
+		733425AC22ACD07300D8CB46 /* FlameHeightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightTests.swift; sourceTree = "<group>"; };
 		7340733F20589E15004374CA /* GasAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasAmountViewController.swift; sourceTree = "<group>"; };
 		7341264622A2D89500E04737 /* HRRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRViewModel.swift; sourceTree = "<group>"; };
 		7341264922A2D94800E04737 /* HRRCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRCalculator.swift; sourceTree = "<group>"; };
@@ -144,12 +150,23 @@
 			isa = PBXGroup;
 			children = (
 				7320F1FE20C2469E001AE407 /* FireDynamicsCalculatorTests.swift */,
+				733425AC22ACD07300D8CB46 /* FlameHeightTests.swift */,
 				7320F20620C24702001AE407 /* FlashoverTests.swift */,
 				7369134520C30E5A00E91DFA /* TGasLayerTests.swift */,
 				7316D84520C3356800779873 /* VariousTest.swift */,
 				7320F20020C2469F001AE407 /* Info.plist */,
 			);
 			path = FireDynamicsCalculatorTests;
+			sourceTree = "<group>";
+		};
+		733425A722ACC65200D8CB46 /* Flame Height */ = {
+			isa = PBXGroup;
+			children = (
+				73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */,
+				733425A822ACC66800D8CB46 /* FlameHeightViewModel.swift */,
+				733425AA22ACC67400D8CB46 /* FlameHeightCalculator.swift */,
+			);
+			path = "Flame Height";
 			sourceTree = "<group>";
 		};
 		7340734120589E1A004374CA /* Gas Concentration */ = {
@@ -226,7 +243,7 @@
 			children = (
 				73799469201551550076F570 /* FlashoverViewController.swift */,
 				7341264822A2D8BE00E04737 /* HRR */,
-				73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */,
+				733425A722ACC65200D8CB46 /* Flame Height */,
 				73E9E8562044DBF7009B6BE9 /* t2 */,
 				7309F24920461EBD008C8D93 /* RadiationPoolFireViewController.swift */,
 				73768A89204A2B8C00F7CA97 /* ConductionViewController.swift */,
@@ -437,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733425AD22ACD07300D8CB46 /* FlameHeightTests.swift in Sources */,
 				7320F20720C24702001AE407 /* FlashoverTests.swift in Sources */,
 				7316D84620C3356800779873 /* VariousTest.swift in Sources */,
 				7369134620C30E5A00E91DFA /* TGasLayerTests.swift in Sources */,
@@ -460,6 +478,7 @@
 				7343F5DF201EBA1A0090CBB6 /* Conversion.swift in Sources */,
 				739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */,
 				73EAC59E205B3B1C009742C8 /* OxygenLevelsResultsViewController.swift in Sources */,
+				733425AB22ACC67400D8CB46 /* FlameHeightCalculator.swift in Sources */,
 				7341264C22A3066A00E04737 /* Materials.swift in Sources */,
 				7379945620154EBC0076F570 /* AppDelegate.swift in Sources */,
 				73E9E8582044DC11009B6BE9 /* t2GraphViewController.swift in Sources */,
@@ -480,6 +499,7 @@
 				7379946D201559750076F570 /* RoundedButton.swift in Sources */,
 				730CB80C22A0C03800531B34 /* CustomBackgroundView.swift in Sources */,
 				730CB80E22A0C1ED00531B34 /* BaseViewController.swift in Sources */,
+				733425A922ACC66800D8CB46 /* FlameHeightViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

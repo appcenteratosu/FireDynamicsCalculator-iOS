@@ -8,8 +8,9 @@
 
 import UIKit
 
-class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class FlameHeightViewController: BaseViewController, UITextFieldDelegate {
 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,18 +21,10 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
         setupButtons()
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - DataSource
-    let length: [String] = ["Please Select an option", "m", "cm", "ft", "mm", "in"]
-    let heat: [String] = ["Please Select an option", "kW", "Btu / Sec"]
-    let area: [String] = ["Please Select an option", "m²", "ft²", "in²"]
-    
-    var currentDataSet: [String] = []
+    var viewModel = FlameHeightViewModel()
+    var pickerData = [String]()
     
     // MARK: - Setup
     func setupToolbar() {
@@ -43,7 +36,6 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
     func setupPicker() {
         self.picker.delegate = self
         self.picker.dataSource = self
-        self.picker.isHidden = true
     }
     
     func setupButtons() {
@@ -61,10 +53,6 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.left.right.equalToSuperview()
         }
-    }
-    func setupPicker() {
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
     }
     
     // MARK: - Outlets
@@ -84,27 +72,27 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
     
     @IBOutlet weak var picker: UIPickerView!
     
-    // MARK: - Buttons
+    // MARK: - Actions
     @IBAction func changeHRR_Units(_ sender: Any) {
-        setData(source: heat)
+        setData(source: viewModel.heat)
         openPicker()
         buttonForEditing = HRR_Units
     }
     
     @IBAction func changeDiameter_Units(_ sender: Any) {
-        setData(source: length)
+        setData(source: viewModel.length)
         openPicker()
         buttonForEditing = diameter_Units
     }
     
     @IBAction func changeArea_Units(_ sender: Any) {
-        setData(source: area)
+        setData(source: viewModel.area)
         openPicker()
         buttonForEditing = area_Units
     }
     
     @IBAction func changeAvgFlameHeight_Units(_ sender: Any) {
-        setData(source: length)
+        setData(source: viewModel.length)
         openPicker()
         buttonForEditing = avgFlameHeight_Units
     }
@@ -113,22 +101,18 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
     
     @IBAction func closeView(_ sender: Any) {
         self.view.endEditing(true)
+        closePicker()
     }
-    
     
     @IBAction func calculate(_ sender: Any) {
         
-        guard let hrr = HRR_TF.text else {
-            return
-        }
-        
-        guard let qq = Double(hrr) else {
+        guard let hrr = Double(HRR_TF.text!) else {
             return
         }
         
         let qUnits = Conversion.Energy().getEnergyUnits(from: getUnits(button: HRR_Units))
 
-        let q = Conversion.Energy().energy(value: qq, from: qUnits)
+        let q = Conversion.Energy().energy(value: hrr, from: qUnits)
         
         if diameterTF.isEnabled {
             guard let diam = diameterTF.text else {
@@ -146,6 +130,7 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
             
             let avgFlameHeight = getL(value: result, to: avgFlameUnits)
             avgFlameHeightLabel.text = "Average Flame Height: \(avgFlameHeight.rounded(toPlaces: 2))"
+            
         } else if area_TF.isEnabled {
             guard let a = area_TF.text else { return }
             guard let area = Double(a) else { return }
@@ -159,6 +144,12 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
             
         }
         
+    }
+    
+    // MARK: - Class Methods
+    func setData(source: [String]) {
+        self.pickerData = source
+        self.picker.reloadAllComponents()
     }
     
     func getUnits(button: UIButton) -> String {
@@ -205,61 +196,6 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
         }
     }
     
-    
-    // MARK: - Picker
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currentDataSet.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currentDataSet[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if currentDataSet == heat {
-            let title = heat[row]
-            HRR_Units.setTitle(title, for: .normal)
-            closePicker()
-            
-        } else if currentDataSet == length {
-            if buttonForEditing == diameter_Units {
-                let title = length[row]
-                diameter_Units.setTitle(title, for: .normal)
-                closePicker()
-            } else {
-                let title = length[row]
-                avgFlameHeight_Units.setTitle(title, for: .normal)
-                closePicker()
-            }
-            
-        } else if currentDataSet == area {
-            let title = area[row]
-            area_Units.setTitle(title, for: .normal)
-            closePicker()
-        }
-    }
-    
-    func openPicker() {
-        self.picker.isHidden = false
-        self.picker.selectRow(0, inComponent: 0, animated: false)
-    }
-    
-    func closePicker() {
-        self.picker.isHidden = true
-    }
-    
-    // MARK: - Functionality
-    func setData(source: [String]) {
-        self.currentDataSet = source
-        self.picker.reloadAllComponents()
-    }
-
-    
-    
     // MARK: - TextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == HRR_TF {
@@ -292,6 +228,59 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPick
             }
         }
     }
+}
+
+extension FlameHeightViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    // MARK: - Picker
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selected = pickerData[row]
+        if buttonForEditing == HRR_Units {
+            HRR_Units.setTitle(selected, for: .normal)
+        } else if buttonForEditing == diameter_Units {
+            diameter_Units.setTitle(selected, for: .normal)
+        } else if buttonForEditing == avgFlameHeight_Units {
+            avgFlameHeight_Units.setTitle(selected, for: .normal)
+        } else if buttonForEditing == area_Units {
+            area_Units.setTitle(selected, for: .normal)
+        }
+    }
+    
+    func openPicker() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.addSubview(self.picker)
+            self.view.addSubview(self.toolbar)
+        }) { (done) in
+            if done {
+                self.picker.snp.makeConstraints({ (make) in
+                    make.left.right.bottom.equalToSuperview()
+                })
+                self.toolbar.snp.makeConstraints({ (make) in
+                    make.left.right.equalToSuperview()
+                    make.bottom.equalTo(self.picker.snp.top)
+                    self.picker.sizeToFit()
+                })
+            }
+        }
+    }
+    
+    func closePicker() {
+        UIView.animate(withDuration: 0.3) {
+            self.picker.snp.removeConstraints()
+            self.toolbar.snp.removeConstraints()
+            self.picker.removeFromSuperview()
+            self.toolbar.removeFromSuperview()
+        }
+    }
 }
