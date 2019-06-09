@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class FlameHeightViewController: BaseViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     var currentDataSet: [String] = []
     
-    // MARK: - Setup Items
+    // MARK: - Setup
     func setupToolbar() {
         HRR_TF.inputAccessoryView = toolbar
         diameterTF.inputAccessoryView = toolbar
@@ -53,6 +53,20 @@ class FlameHeightViewController: UIViewController, UITextFieldDelegate, UIPicker
         avgFlameHeight_Units.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
     }
 
+    func setupTop() {
+        view.addSubview(topView)
+        view.sendSubview(toBack: topView)
+        topView.contentMode = .scaleAspectFill
+        topView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview()
+        }
+    }
+    func setupPicker() {
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+    }
+    
     // MARK: - Outlets
     @IBOutlet weak var HRR_TF: UITextField!
     @IBOutlet weak var HRR_Units: UIButton!
