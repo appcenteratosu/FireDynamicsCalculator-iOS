@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OxygenLevelsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class OxygenLevelsViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +73,11 @@ class OxygenLevelsViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     // MARK: - Setup
     func configure() {
+        setupBackground()
         setupButtons()
         setupTextFields()
         setupPicker()
+        setupCard()
     }
     
     func setupTextFields() {
@@ -97,6 +99,11 @@ class OxygenLevelsViewController: UIViewController, UIPickerViewDelegate, UIPick
     func setupPicker() {
         picker.delegate = self
         picker.dataSource = self
+    }
+    
+    @IBOutlet weak var cardView: UIView!
+    func setupCard() {
+        cardView.layer.cornerRadius = 5
     }
     
     // MARK: - Toolbar

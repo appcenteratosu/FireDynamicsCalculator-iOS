@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, PickerDelegate {
+class SolidIgnitionViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, PickerDelegate {
     
 
     override func viewDidLoad() {
@@ -17,8 +17,10 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         self.title = "Solid Ignition"
 
+        setupBackground()
         setupPicker()
-        
+        setupCards()
+        methodSelectionButton.layer.borderWidth = 0
     }
 
     // MARK: Method Selection
@@ -53,9 +55,8 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
             self.view.addSubview(thermallyThinUIView)
             
             thermallyThinUIView.snp.makeConstraints({ (make) in
-                make.top.equalTo(methodSelectionButton).offset(25)
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
+                make.top.equalTo(methodSelectionButton.snp.bottom).offset(25)
+                make.left.right.equalToSuperview().inset(16)
                 make.height.equalTo(380)
             })
         } else if view == thermallyThickUIVIew {
@@ -66,9 +67,8 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
             self.view.addSubview(thermallyThickUIVIew)
             
             thermallyThickUIVIew.snp.makeConstraints({ (make) in
-                make.top.equalTo(methodSelectionButton).offset(25)
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
+                make.top.equalTo(methodSelectionButton.snp.bottom).offset(25)
+                make.left.right.equalToSuperview().inset(16)
                 make.height.equalTo(400)
             })
             
@@ -80,9 +80,8 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
             self.view.addSubview(thermallyThinkWithMaterialsUIView)
             
             thermallyThinkWithMaterialsUIView.snp.makeConstraints({ (make) in
-                make.top.equalTo(methodSelectionButton).offset(25)
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
+                make.top.equalTo(methodSelectionButton.snp.bottom).offset(25)
+                make.left.right.equalToSuperview().inset(16)
                 make.height.equalTo(275)
             })
         }
@@ -104,6 +103,11 @@ class SolidIgnitionViewController: UIViewController, UIPickerViewDelegate, UIPic
         picker.delegate = self
         picker.dataSource = self
         picker.isHidden = true
+    }
+    func setupCards() {
+        thermallyThinUIView.layer.cornerRadius = 5
+        thermallyThickUIVIew.layer.cornerRadius = 5
+        thermallyThinkWithMaterialsUIView.layer.cornerRadius = 5
     }
     
     

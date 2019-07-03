@@ -16,6 +16,7 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate {
         
         self.title = "Flame Height"
 
+        setupBackground()
         setupToolbar()
         setupPicker()
         setupButtons()
@@ -43,16 +44,6 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate {
         diameter_Units.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         area_Units.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         avgFlameHeight_Units.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
-    }
-
-    func setupTop() {
-        view.addSubview(topView)
-        view.sendSubview(toBack: topView)
-        topView.contentMode = .scaleAspectFill
-        topView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.left.right.equalToSuperview()
-        }
     }
     
     // MARK: - Outlets
@@ -105,44 +96,23 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func calculate(_ sender: Any) {
+        let calculator = FlameHeightCalculator()
         
-        guard let hrr = Double(HRR_TF.text!) else {
-            return
+        let lengthUnits = avgFlameHeight_Units.titleLabel!.text!
+        if let hrr = Double(HRR_TF.text!), let diameter = Double(diameterTF.text!) {
+            let hrrUnits = Conversion.energy.getEnergyUnits(from: HRR_Units.titleLabel!.text!)
+            let diameterUnits = diameter_Units.titleLabel!.text!
+            
+//            calculator.calculate(Q: hrr, qUnits: .btuPerSecond,
+//                                 D: diameter, dUnits: diameterUnits,
+//                                 lUnit: )
+        } else if let area = Double(area_TF.text!) {
+            let areaUnits = area_Units.titleLabel!.text!
+            
         }
         
-        let qUnits = Conversion.Energy().getEnergyUnits(from: getUnits(button: HRR_Units))
-
-        let q = Conversion.Energy().energy(value: hrr, from: qUnits)
         
-        if diameterTF.isEnabled {
-            guard let diam = diameterTF.text else {
-                return
-            }
-            guard let dd = Double(diam) else {
-                return
-            }
-            let units = Conversion.Length().getLengthUnits(from: getUnits(button: diameter_Units))
-            let d = Conversion.Length().convertLength(value: dd, from: units)
-            
-            let result = calculateDiam(q: q, diam: d)
-            let avgFlameUnits = Conversion.Length().getLengthUnits(from: getUnits(button: avgFlameHeight_Units))
-            
-            
-            let avgFlameHeight = getL(value: result, to: avgFlameUnits)
-            avgFlameHeightLabel.text = "Average Flame Height: \(avgFlameHeight.rounded(toPlaces: 2))"
-            
-        } else if area_TF.isEnabled {
-            guard let a = area_TF.text else { return }
-            guard let area = Double(a) else { return }
-            let diameter = diameterFrom(area: area)
-            
-            let result = calculateDiam(q: q, diam: diameter)
-            let avgFlameUnits = Conversion.Length().getLengthUnits(from: getUnits(button: avgFlameHeight_Units))
-            
-            let avgFlameHeight = getL(value: result, to: avgFlameUnits)
-            avgFlameHeightLabel.text = "Average Flame Height: \(avgFlameHeight.rounded(toPlaces: 2))"
-            
-        }
+        
         
     }
     

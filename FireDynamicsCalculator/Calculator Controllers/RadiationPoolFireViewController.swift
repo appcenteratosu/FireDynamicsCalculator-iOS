@@ -9,13 +9,14 @@
 import UIKit
 import SnapKit
 
-class RadiationPoolFireViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class RadiationPoolFireViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Radiation Poolsnp"
 
+        setupBackground()
         setupDiameterButtons()
         setupPicker()
         setupTextfields()
@@ -234,19 +235,19 @@ class RadiationPoolFireViewController: UIViewController, UIPickerViewDelegate, U
         switch option {
         case dd:
             self.view.addSubview(diameterView)
+            diameterView.layer.cornerRadius = 5
             diameterView.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview()
-                make.top.equalTo(selectMethodButton).offset(32)
-                make.right.equalToSuperview()
+                make.left.right.equalToSuperview().inset(16)
+                make.top.equalTo(selectMethodButton.snp.bottom).offset(32)
                 make.height.equalTo(300)
             })
             setupDiameterButtons()
         case lwd:
             self.view.addSubview(lengthWidthView)
+            lengthWidthView.layer.cornerRadius = 5
             lengthWidthView.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview()
-                make.top.equalTo(selectMethodButton).offset(32)
-                make.right.equalToSuperview()
+                make.left.right.equalToSuperview().inset(16)
+                make.top.equalTo(selectMethodButton.snp.bottom).offset(32)
                 make.height.equalTo(300)
             })
         default:

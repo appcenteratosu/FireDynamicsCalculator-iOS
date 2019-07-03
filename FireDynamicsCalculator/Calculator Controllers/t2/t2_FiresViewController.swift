@@ -9,15 +9,16 @@
 import UIKit
 import Charts
 
-class t2_FiresViewController: UIViewController {
+class t2_FiresViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "t2 Fires"
 
+        setupBackground()
         setupToolbar()
-        
+        configureCard()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +31,7 @@ class t2_FiresViewController: UIViewController {
     @IBOutlet weak var peakHRR: UITextField!
     @IBOutlet weak var time: UITextField!
     
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet var toolbar: UIToolbar!
     func setupToolbar() {
         self.t1.inputAccessoryView = toolbar
@@ -120,7 +122,9 @@ class t2_FiresViewController: UIViewController {
         
     }
 
-
+    func configureCard() {
+        cardView.layer.cornerRadius = 5
+    }
     
     // MARK: - Navigation
 

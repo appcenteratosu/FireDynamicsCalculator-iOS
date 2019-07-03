@@ -10,6 +10,21 @@ import Foundation
 
 class Conversion {
     
+    static let unitString = UnitString()
+    static let length = Length()
+    static let density = Density()
+    static let energy = Energy()
+    static let energyDensity = EnergyDensity()
+    static let area = Area()
+    static let volume = Volume()
+    static let time = Time()
+    static let pressure = Pressure()
+    static let flow = Flow()
+    static let temperature = Temperature()
+    static let units = Units()
+    static let materials = Materials()
+    static let mass = Mass()
+    
     struct UnitString {
         let gases = ["Please select an option", "Propane", "Methane", "User Specified"]
         let area = ["Please select an option", "ft²", "in²", "m²"]
@@ -293,6 +308,8 @@ class Conversion {
             default:
                 return .inchesH2O
             }
+            
+            
         }
     }
     
@@ -617,8 +634,6 @@ class Conversion {
         }
     }
     
-    
-    
     struct Mass {
         enum Mass {
             case g
@@ -669,6 +684,7 @@ class Conversion {
 
 extension Double {
     /// Rounds the double to decimal places value
+    /// - Parameter places: Number of places to round to
     func rounded(toPlaces places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor

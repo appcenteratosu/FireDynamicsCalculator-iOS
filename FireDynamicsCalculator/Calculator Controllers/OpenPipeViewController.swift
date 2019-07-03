@@ -8,13 +8,14 @@
 
 import UIKit
 
-class OpenPipeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class OpenPipeViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Open Pipe"
 
+        setupBackground()
         setupPicker()
         setuptextfields()
         
@@ -36,6 +37,10 @@ class OpenPipeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         pickerData = set
         picker.reloadAllComponents()
     }
+    func configureCard() {
+        cardView.layer.cornerRadius = 5
+    }
+    @IBOutlet weak var cardView: UIView!
     
     // MARK: - Picker
     @IBOutlet weak var picker: UIPickerView!

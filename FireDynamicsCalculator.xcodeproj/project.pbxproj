@@ -42,6 +42,7 @@
 		7379946A201551550076F570 /* FlashoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73799469201551550076F570 /* FlashoverViewController.swift */; };
 		7379946D201559750076F570 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379946C201559750076F570 /* RoundedButton.swift */; };
 		737D068F204E146800B8D36E /* SolidIgnitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */; };
+		739D850422CA99C200625068 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D850322CA99C200625068 /* RoundedView.swift */; };
 		739F99AB2050F69C00285105 /* ThermallyThinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739F99AA2050F69C00285105 /* ThermallyThinView.swift */; };
 		73CB56F6203B6E4E002A901E /* FlameHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */; };
 		73D23255205227810039DFE5 /* ThermallyThickMaterialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */; };
@@ -105,6 +106,7 @@
 		73799469201551550076F570 /* FlashoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashoverViewController.swift; sourceTree = "<group>"; };
 		7379946C201559750076F570 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		737D068E204E146800B8D36E /* SolidIgnitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidIgnitionViewController.swift; sourceTree = "<group>"; };
+		739D850322CA99C200625068 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		739F99AA2050F69C00285105 /* ThermallyThinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThinView.swift; sourceTree = "<group>"; };
 		73CB56F5203B6E4E002A901E /* FlameHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlameHeightViewController.swift; sourceTree = "<group>"; };
 		73D23254205227810039DFE5 /* ThermallyThickMaterialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermallyThickMaterialsView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				73015479204A59E40096293B /* todo.rtf */,
 				7379945520154EBC0076F570 /* AppDelegate.swift */,
 				7379946C201559750076F570 /* RoundedButton.swift */,
+				739D850322CA99C200625068 /* RoundedView.swift */,
 				730CB80B22A0C03800531B34 /* CustomBackgroundView.swift */,
 				7343F5DE201EBA1A0090CBB6 /* Conversion.swift */,
 				7341264B22A3066A00E04737 /* Materials.swift */,
@@ -489,6 +492,7 @@
 				7379946820154F820076F570 /* ReportListTableViewController.swift in Sources */,
 				7341264722A2D89500E04737 /* HRRViewModel.swift in Sources */,
 				732666FD2054869B00C0CF16 /* GasConcentrationViewController.swift in Sources */,
+				739D850422CA99C200625068 /* RoundedView.swift in Sources */,
 				736CD4E82051DB0B00CBAA33 /* ThermallyThickView.swift in Sources */,
 				73768A8A204A2B8C00F7CA97 /* ConductionViewController.swift in Sources */,
 				73464ABD2058909A00E85853 /* GasConcentrationGraphViewController.swift in Sources */,

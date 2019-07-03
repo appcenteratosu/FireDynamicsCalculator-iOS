@@ -257,16 +257,6 @@ class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPicke
         tomLabel.text = ""
     }
     
-    func setupBackground() {
-        view.addSubview(topView)
-        view.sendSubview(toBack: topView)
-        topView.contentMode = .scaleAspectFill
-        topView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.right.left.equalToSuperview()
-        }
-    }
-    
     @IBOutlet var toolbar: UIToolbar!
     @IBAction func closeKeyboard(_ sender: Any) {
         self.view.endEditing(true)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GasAmountViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class GasAmountViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,9 +178,8 @@ class GasAmountViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func showResults() {
         self.view.addSubview(resultsView)
         resultsView.snp.makeConstraints { (make) in
-            make.top.equalTo(calculateButton).offset(30)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.top.equalTo(calculateButton.snp.bottom).offset(30)
+            make.left.right.equalToSuperview().inset(16)
             make.height.equalTo(170)
         }
         showingResults = true
@@ -199,9 +198,11 @@ class GasAmountViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     // MARK: - Setup
     func configure() {
+        setupBackground()
         setupTextfields()
         setupPicker()
         setupButtons()
+        setupCard()
     }
     
     func setupTextfields() {
@@ -224,6 +225,11 @@ class GasAmountViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func setupButtons() {
         areaUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         heightUnits.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+    }
+    
+    @IBOutlet weak var cardView: UIView!
+    func setupCard() {
+        cardView.layer.cornerRadius = 5
     }
     
     

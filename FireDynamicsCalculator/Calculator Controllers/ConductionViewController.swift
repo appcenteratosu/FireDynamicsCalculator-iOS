@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ConductionViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,7 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     // MARK: - Outlets / Actions
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var selectedMaterial: UIButton!
     @IBOutlet weak var thicknessUnits: UIButton!
     @IBOutlet weak var t2Units: UIButton!
@@ -130,10 +131,12 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var buttonForEditing: UIButton?
     
     func masterSetup() {
+        setupBackground()
         setupLabels()
         setupPicker()
         setupButtons()
         setupTextFields()
+        configureCard()
     }
     
     func setupLabels() {
@@ -166,6 +169,9 @@ class ConductionViewController: UIViewController, UIPickerViewDelegate, UIPicker
         picker.reloadAllComponents()
     }
     
+    func configureCard() {
+        cardView.layer.cornerRadius = 5
+    }
     
     
     // MARK: - Calculation

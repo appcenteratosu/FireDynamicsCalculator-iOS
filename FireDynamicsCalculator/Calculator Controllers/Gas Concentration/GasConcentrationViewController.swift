@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GasConcentrationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class GasConcentrationViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class GasConcentrationViewController: UIViewController, UIPickerViewDataSource, 
     let volume = ["ft³", "gallon", "in³", "liter", "m³"]
     
     // MARK: - Outlets
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var airchangeTF: UITextField!
     @IBOutlet weak var leakageRateTF: UITextField!
     @IBOutlet weak var volumeTF: UITextField!
@@ -48,6 +49,7 @@ class GasConcentrationViewController: UIViewController, UIPickerViewDataSource, 
         openPicker()
     }
     
+    @IBOutlet weak var calculateButton: UIButton!
     @IBAction func calculate(_ sender: Any) {
         let set = createDataSet(airChanges: airchangeTF.text!,
                       gasLeakage: leakageRateTF.text!,
@@ -63,9 +65,11 @@ class GasConcentrationViewController: UIViewController, UIPickerViewDataSource, 
     
     // MARK: - Setup
     func configure() {
+        setupBackground()
         setupButtons()
         setupTextFields()
         setupPicker()
+        configureCard()
     }
     
     func setupTextFields() {
@@ -84,6 +88,11 @@ class GasConcentrationViewController: UIViewController, UIPickerViewDataSource, 
         picker.delegate = self
         picker.dataSource = self
         picker.isHidden = true
+    }
+    
+    func configureCard() {
+        cardView.layer.cornerRadius = 5
+        calculateButton.layer.cornerRadius = 5
     }
     
     

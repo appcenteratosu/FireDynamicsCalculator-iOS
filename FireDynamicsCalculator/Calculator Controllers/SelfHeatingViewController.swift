@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelfHeatingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class SelfHeatingViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,9 +85,11 @@ class SelfHeatingViewController: UIViewController, UIPickerViewDelegate, UIPicke
     // MARK: - Setup
     
     func configure() {
+        setupBackground()
         setupPicker()
         setupButtons()
         setupTextField()
+        setupCard()
     }
     
     func setupButtons() {
@@ -114,6 +116,11 @@ class SelfHeatingViewController: UIViewController, UIPickerViewDelegate, UIPicke
         picker.delegate = self
         picker.dataSource = self
         picker.isHidden = true
+    }
+    
+    @IBOutlet weak var cardView: UIView!
+    func setupCard() {
+        cardView.layer.cornerRadius = 5
     }
     
     

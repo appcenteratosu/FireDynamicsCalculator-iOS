@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TGasLayerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class TGasLayerViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,9 +165,11 @@ class TGasLayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     // MARK: - Setup
     func configure() {
+        setupBackground()
         setupPicker()
         setupButtons()
         setupTextFields()
+        setupCard()
     }
     
     func setupTextFields() {
@@ -204,6 +206,12 @@ class TGasLayerViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         picker.dataSource = self
         picker.isHidden = true
     }
+    
+    @IBOutlet weak var cardView: UIView!
+    func setupCard() {
+        cardView.layer.cornerRadius = 5
+    }
+    
     
     // MARK: - Toolbar
     @IBOutlet var toolbar: UIToolbar!

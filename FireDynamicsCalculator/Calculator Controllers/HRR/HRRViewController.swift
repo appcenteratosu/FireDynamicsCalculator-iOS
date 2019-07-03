@@ -14,7 +14,7 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         self.title = "Heat Release Rate"
-        setupTop()
+        setupBackground()
         setupPicker()
         setupMisc()
     }
@@ -250,15 +250,6 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
     }
     
     // MARK: - Setup
-    func setupTop() {
-        view.addSubview(topView)
-        view.sendSubview(toBack: topView)
-        topView.contentMode = .scaleAspectFill
-        topView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.left.right.equalToSuperview()
-        }
-    }
     func setupPicker() {
         self.pickerView.delegate = self
         self.pickerView.dataSource = self

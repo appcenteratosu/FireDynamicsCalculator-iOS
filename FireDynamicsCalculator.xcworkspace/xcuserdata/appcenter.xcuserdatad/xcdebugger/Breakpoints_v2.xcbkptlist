@@ -12,7 +12,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FireDynamicsCalculator/Calculator Controllers/HRR/HRRViewController.swift"
-            timestampString = "581731935.630451"
+            timestampString = "583862659.168136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"
@@ -29,7 +29,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FireDynamicsCalculator/Calculator Controllers/HRR/HRRViewController.swift"
-            timestampString = "581731935.630675"
+            timestampString = "583862659.168219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -46,11 +46,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FireDynamicsCalculator/Calculator Controllers/HRR/HRRViewController.swift"
-            timestampString = "581731935.630775"
+            timestampString = "583862659.1682791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,7 +97,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FireDynamicsCalculator/Calculator Controllers/HRR/HRRViewController.swift"
-            timestampString = "581731935.6309969"
+            timestampString = "583862659.1685621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -114,10 +114,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FireDynamicsCalculator/Calculator Controllers/Flame Height/FlameHeightViewController.swift"
+            timestampString = "583862659.168623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "calculate(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D365DA44-0CA1-414D-B2FC-4E23AFB37E1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireDynamicsCalculator/Calculator Controllers/Flame Height/FlameHeightViewController.swift"
+            timestampString = "583862659.168676"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "calculate(_:)"
             landmarkType = "7">
          </BreakpointContent>
