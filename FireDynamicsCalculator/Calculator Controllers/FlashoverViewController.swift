@@ -11,6 +11,7 @@ import SnapKit
 
 class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -252,9 +253,9 @@ class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPicke
     }
     
     func defaultLabels() {
-        mqhLabel.text = ""
-        babrLabel.text = ""
-        tomLabel.text = ""
+        mqhLabel.text = "-"
+        babrLabel.text = "-"
+        tomLabel.text = "-"
     }
     
     @IBOutlet var toolbar: UIToolbar!
@@ -389,6 +390,7 @@ class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPicke
 
 }
 
+// MARK: - Picker Extension
 extension FlashoverViewController {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

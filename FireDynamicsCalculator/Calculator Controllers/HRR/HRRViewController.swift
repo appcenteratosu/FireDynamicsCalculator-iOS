@@ -17,6 +17,8 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
         setupBackground()
         setupPicker()
         setupMisc()
+        setupTextFields()
+        setupToolbar()
     }
 
     // MARK: - Properties
@@ -30,6 +32,7 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var toolbar: UIToolbar!
     @IBAction func toolbarDoneButton(_ sender: UIBarButtonItem) {
+        
         hidePicker()
     }
     
@@ -68,7 +71,11 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
         selectedButton = sender
         
         // Show picker
-        showPicker()
+        if let index = viewModel.fuelChoices.index(of: sender.titleLabel!.text!) {
+            showPicker(at: index)
+        } else {
+            showPicker()
+        }
     }
     @IBAction func selectAreaUnit(_ sender: RoundedButton) {
         // set picker data
@@ -83,7 +90,9 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
         selectedButton = sender
         
         // Show picker
-        showPicker()
+        if let index = viewModel.areaChoices.index(of: sender.titleLabel!.text!) {
+            showPicker(at: index)
+        }
     }
     @IBAction func selectQUnits(_ sender: RoundedButton) {
         // Set picker data
@@ -94,7 +103,9 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
         selectedButton = sender
         
         // Show picker
-        showPicker()
+        if let index = viewModel.energyChoices.index(of: sender.titleLabel!.text!) {
+            showPicker(at: index)
+        }
     }
     @IBAction func calculate(_ sender: RoundedButton) {
         // Grab all values
@@ -222,42 +233,66 @@ class HRRViewController: BaseViewController, UITextFieldDelegate {
         
     }
     
-    func showPicker() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.addSubview(self.pickerView)
-            self.view.addSubview(self.toolbar)
-        }) { (done) in
-            if done {
-                self.pickerView.snp.makeConstraints({ (make) in
-                    make.left.right.bottom.equalToSuperview()
-                })
-                self.toolbar.snp.makeConstraints({ (make) in
-                    make.left.right.equalToSuperview()
-                    make.bottom.equalTo(self.pickerView.snp.top)
-                    self.pickerView.sizeToFit()
-                })
-            }
+    func showPicker(at index: Int = 0) {
+        self.pickerView.isHidden = false
+        self.view.addSubview(self.toolbar)
+        self.toolbar.isHidden = false
+        self.toolbar.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(self.pickerView.snp.top)
+            self.toolbar.sizeToFit()
         }
+        pickerView.selectRow(index, inComponent: 0, animated: false)
     }
     
     func hidePicker() {
-        UIView.animate(withDuration: 0.3) {
-            self.pickerView.snp.removeConstraints()
-            self.toolbar.snp.removeConstraints()
-            self.pickerView.removeFromSuperview()
-            self.toolbar.removeFromSuperview()
-        }
+        self.view.endEditing(true)
+        self.pickerView.isHidden = true
+        self.toolbar.isHidden = true
+        self.toolbar.snp.removeConstraints()
     }
     
     // MARK: - Setup
     func setupPicker() {
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        self.view.addSubview(self.pickerView)
+        self.pickerView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            self.pickerView.sizeToFit()
+        }
+        self.pickerView.isHidden = true
     }
+    
+    func setupToolbar() {
+        self.view.addSubview(self.toolbar)
+        self.toolbar.isHidden = true
+    }
+    
     func setupMisc() {
         qLabel.layer.cornerRadius = 5
+        qLabel.clipsToBounds = true
+        fuelLabel.text = ""
+    }
+    
+    func setupTextFields() {
+        areaTextField.delegate = self
+        areaTextField.inputAccessoryView = toolbar
+    }
+    
+}
+
+extension HRRViewController {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == areaTextField {
+            self.toolbar.removeFromSuperview()
+            self.toolbar.isHidden = false
+        }
+        
+        return true
     }
 }
+
 
 extension HRRViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -280,8 +315,10 @@ extension HRRViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             switch selectedItem {
             case "Area":
                 selectedAreaLabel.text = "Area:"
+                areaUnitsButton.setTitle(viewModel.areaChoices[0], for: .normal)
             case "Radius":
                 selectedAreaLabel.text = "Radius:"
+                areaUnitsButton.setTitle(viewModel.lengthChoices[0], for: .normal)
             default:
                 break
             }
