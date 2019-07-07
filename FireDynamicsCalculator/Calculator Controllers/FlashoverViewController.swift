@@ -245,10 +245,9 @@ class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPicke
 //        picker.backgroundColor = UIColor.lightGray
         picker.selectRow(0, inComponent: 0, animated: false)
         picker.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.right.equalToSuperview()
-            make.height.equalTo(200)
+            self.picker.sizeToFit()
         }
     }
     
@@ -258,11 +257,50 @@ class FlashoverViewController: BaseViewController, UIPickerViewDelegate, UIPicke
         tomLabel.text = "-"
     }
     
+    // MARK: - Toolbar
+    var currentTextField: UITextField?
     @IBOutlet var toolbar: UIToolbar!
+    @IBAction func lastField(_ sender: UIBarButtonItem) {
+        switch currentTextField {
+        case widthTF:
+            widthTF.resignFirstResponder()
+        case lengthTF:
+            widthTF.becomeFirstResponder()
+        case heightTF:
+            lengthTF.becomeFirstResponder()
+        case vWidthTF:
+            heightTF.becomeFirstResponder()
+        case vHeightTF:
+            vWidthTF.becomeFirstResponder()
+        case thickness:
+            vHeightTF.becomeFirstResponder()
+        default:
+            break
+        }
+    }
+    
+    @IBAction func nextField(_ sender: UIBarButtonItem) {
+        switch currentTextField {
+        case widthTF:
+            lengthTF.becomeFirstResponder()
+        case lengthTF:
+            heightTF.becomeFirstResponder()
+        case heightTF:
+            vWidthTF.becomeFirstResponder()
+        case vWidthTF:
+            vHeightTF.becomeFirstResponder()
+        case vHeightTF:
+            thickness.becomeFirstResponder()
+        case thickness:
+            thickness.resignFirstResponder()
+        default:
+            break
+        }
+    }
+    
     @IBAction func closeKeyboard(_ sender: Any) {
         self.view.endEditing(true)
     }
-    
     
     // MARK: - PickerView
     @IBOutlet var picker: UIPickerView!
@@ -424,6 +462,14 @@ extension FlashoverViewController {
             let rValue = Int(value.rounded())
             tomLabel.text = "\(rValue)"
         }
+    }
+}
+
+extension FlashoverViewController {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        currentTextField = textField
+        
+        return true
     }
 }
 
