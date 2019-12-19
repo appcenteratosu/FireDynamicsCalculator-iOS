@@ -100,12 +100,15 @@ class FlameHeightViewController: BaseViewController, UITextFieldDelegate {
         
         let lengthUnits = avgFlameHeight_Units.titleLabel!.text!
         if let hrr = Double(HRR_TF.text!), let diameter = Double(diameterTF.text!) {
-            let hrrUnits = Conversion.energy.getEnergyUnits(from: HRR_Units.titleLabel!.text!)
-            let diameterUnits = diameter_Units.titleLabel!.text!
+            let hrrUnits = UnitPower.init(symbol: HRR_Units.titleLabel!.text!)
+            let diameterUnits = UnitLength.init(symbol: diameter_Units.titleLabel!.text!)
+            let lUnits = UnitLength.init(symbol: lengthUnits)
             
-//            calculator.calculate(Q: hrr, qUnits: .btuPerSecond,
-//                                 D: diameter, dUnits: diameterUnits,
-//                                 lUnit: )
+            let result = calculator.calculate(Q: hrr, qUnits: hrrUnits,
+                                 D: diameter, dUnits: diameterUnits,
+                                 lUnit: lUnits)
+            avgFlameHeightLabel.text = "\(result.value.rounded(toPlaces: 3))"
+            
         } else if let area = Double(area_TF.text!) {
             let areaUnits = area_Units.titleLabel!.text!
             
